@@ -1,0 +1,502 @@
+    region                      year avg_gini
+    <chr>                      <int>    <dbl>
+  1 Alsace                      1996    0.292
+  2 Alsace                      1997    0.286
+  3 Alsace                      1998    0.273
+  4 Alsace                      1999    0.289
+  5 Alsace                      2000    0.299
+  6 Alsace                      2001    0.304
+  7 Alsace                      2002    0.307
+  8 Alsace                      2003    0.313
+  9 Alsace                      2004    0.287
+ 10 Alsace                      2005    0.305
+ 11 Alsace                      2006    0.319
+ 12 Alsace                      2007    0.308
+ 13 Alsace                      2008    0.310
+ 14 Alsace                      2009    0.324
+ 15 Alsace                      2010    0.321
+ 16 Alsace                      2011    0.309
+ 17 Alsace                      2012    0.309
+ 18 Alsace                      2013    0.310
+ 19 Alsace                      2014    0.300
+ 20 Alsace                      2015    0.314
+ 21 Alsace                      2016    0.307
+ 22 Alsace                      2017    0.290
+ 23 Alsace                      2018    0.314
+ 24 Aquitaine                   1996    0.311
+ 25 Aquitaine                   1997    0.312
+ 26 Aquitaine                   1998    0.314
+ 27 Aquitaine                   1999    0.304
+ 28 Aquitaine                   2000    0.298
+ 29 Aquitaine                   2001    0.295
+ 30 Aquitaine                   2002    0.328
+ 31 Aquitaine                   2003    0.329
+ 32 Aquitaine                   2004    0.318
+ 33 Aquitaine                   2005    0.318
+ 34 Aquitaine                   2006    0.300
+ 35 Aquitaine                   2007    0.305
+ 36 Aquitaine                   2008    0.339
+ 37 Aquitaine                   2009    0.329
+ 38 Aquitaine                   2010    0.320
+ 39 Aquitaine                   2011    0.320
+ 40 Aquitaine                   2012    0.325
+ 41 Aquitaine                   2013    0.306
+ 42 Aquitaine                   2014    0.316
+ 43 Aquitaine                   2015    0.320
+ 44 Aquitaine                   2016    0.307
+ 45 Aquitaine                   2017    0.294
+ 46 Aquitaine                   2018    0.320
+ 47 Auvergne                    1996    0.310
+ 48 Auvergne                    1997    0.309
+ 49 Auvergne                    1998    0.304
+ 50 Auvergne                    1999    0.299
+ 51 Auvergne                    2000    0.312
+ 52 Auvergne                    2001    0.297
+ 53 Auvergne                    2002    0.311
+ 54 Auvergne                    2003    0.324
+ 55 Auvergne                    2004    0.345
+ 56 Auvergne                    2005    0.319
+ 57 Auvergne                    2006    0.312
+ 58 Auvergne                    2007    0.330
+ 59 Auvergne                    2008    0.313
+ 60 Auvergne                    2009    0.370
+ 61 Auvergne                    2010    0.360
+ 62 Auvergne                    2011    0.313
+ 63 Auvergne                    2012    0.292
+ 64 Auvergne                    2013    0.303
+ 65 Auvergne                    2014    0.290
+ 66 Auvergne                    2015    0.309
+ 67 Auvergne                    2016    0.297
+ 68 Auvergne                    2017    0.297
+ 69 Auvergne                    2018    0.288
+ 70 Basse-Normandie             1996    0.311
+ 71 Basse-Normandie             1997    0.306
+ 72 Basse-Normandie             1998    0.296
+ 73 Basse-Normandie             1999    0.300
+ 74 Basse-Normandie             2000    0.291
+ 75 Basse-Normandie             2001    0.289
+ 76 Basse-Normandie             2002    0.298
+ 77 Basse-Normandie             2003    0.298
+ 78 Basse-Normandie             2004    0.277
+ 79 Basse-Normandie             2005    0.303
+ 80 Basse-Normandie             2006    0.291
+ 81 Basse-Normandie             2007    0.292
+ 82 Basse-Normandie             2008    0.303
+ 83 Basse-Normandie             2009    0.317
+ 84 Basse-Normandie             2010    0.319
+ 85 Basse-Normandie             2011    0.318
+ 86 Basse-Normandie             2012    0.332
+ 87 Basse-Normandie             2013    0.298
+ 88 Basse-Normandie             2014    0.289
+ 89 Basse-Normandie             2015    0.285
+ 90 Basse-Normandie             2016    0.303
+ 91 Basse-Normandie             2017    0.288
+ 92 Basse-Normandie             2018    0.284
+ 93 Bourgogne                   1996    0.274
+ 94 Bourgogne                   1997    0.280
+ 95 Bourgogne                   1998    0.287
+ 96 Bourgogne                   1999    0.292
+ 97 Bourgogne                   2000    0.291
+ 98 Bourgogne                   2001    0.279
+ 99 Bourgogne                   2002    0.285
+100 Bourgogne                   2003    0.314
+101 Bourgogne                   2004    0.303
+102 Bourgogne                   2005    0.295
+103 Bourgogne                   2006    0.302
+104 Bourgogne                   2007    0.302
+105 Bourgogne                   2008    0.330
+106 Bourgogne                   2009    0.295
+107 Bourgogne                   2010    0.327
+108 Bourgogne                   2011    0.300
+109 Bourgogne                   2012    0.293
+110 Bourgogne                   2013    0.285
+111 Bourgogne                   2014    0.294
+112 Bourgogne                   2015    0.301
+113 Bourgogne                   2016    0.304
+114 Bourgogne                   2017    0.306
+115 Bourgogne                   2018    0.315
+116 Bretagne                    1996    0.275
+117 Bretagne                    1997    0.287
+118 Bretagne                    1998    0.291
+119 Bretagne                    1999    0.300
+120 Bretagne                    2000    0.304
+121 Bretagne                    2001    0.306
+122 Bretagne                    2002    0.312
+123 Bretagne                    2003    0.316
+124 Bretagne                    2004    0.293
+125 Bretagne                    2005    0.315
+126 Bretagne                    2006    0.304
+127 Bretagne                    2007    0.316
+128 Bretagne                    2008    0.317
+129 Bretagne                    2009    0.291
+130 Bretagne                    2010    0.312
+131 Bretagne                    2011    0.334
+132 Bretagne                    2012    0.305
+133 Bretagne                    2013    0.279
+134 Bretagne                    2014    0.285
+135 Bretagne                    2015    0.295
+136 Bretagne                    2016    0.294
+137 Bretagne                    2017    0.304
+138 Bretagne                    2018    0.312
+139 Centre                      1996    0.292
+140 Centre                      1997    0.280
+141 Centre                      1998    0.282
+142 Centre                      1999    0.288
+143 Centre                      2000    0.279
+144 Centre                      2001    0.283
+145 Centre                      2002    0.299
+146 Centre                      2003    0.301
+147 Centre                      2004    0.304
+148 Centre                      2005    0.264
+149 Centre                      2006    0.295
+150 Centre                      2007    0.290
+151 Centre                      2008    0.291
+152 Centre                      2009    0.300
+153 Centre                      2010    0.294
+154 Centre                      2011    0.313
+155 Centre                      2012    0.307
+156 Centre                      2013    0.310
+157 Centre                      2014    0.324
+158 Centre                      2015    0.306
+159 Centre                      2016    0.291
+160 Centre                      2017    0.294
+161 Centre                      2018    0.292
+162 Champagne-Ardenne           1996    0.298
+163 Champagne-Ardenne           1997    0.303
+164 Champagne-Ardenne           1998    0.294
+165 Champagne-Ardenne           1999    0.293
+166 Champagne-Ardenne           2000    0.308
+167 Champagne-Ardenne           2001    0.303
+168 Champagne-Ardenne           2002    0.328
+169 Champagne-Ardenne           2003    0.295
+170 Champagne-Ardenne           2004    0.302
+171 Champagne-Ardenne           2005    0.308
+172 Champagne-Ardenne           2006    0.338
+173 Champagne-Ardenne           2007    0.352
+174 Champagne-Ardenne           2008    0.332
+175 Champagne-Ardenne           2009    0.312
+176 Champagne-Ardenne           2010    0.321
+177 Champagne-Ardenne           2011    0.317
+178 Champagne-Ardenne           2012    0.309
+179 Champagne-Ardenne           2013    0.321
+180 Champagne-Ardenne           2014    0.308
+181 Champagne-Ardenne           2015    0.310
+182 Champagne-Ardenne           2016    0.295
+183 Champagne-Ardenne           2017    0.299
+184 Champagne-Ardenne           2018    0.301
+185 Corse                       2002    0.377
+186 Corse                       2003    0.373
+187 Corse                       2004    0.335
+188 Corse                       2005    0.339
+189 Corse                       2006    0.389
+190 Corse                       2007    0.289
+191 Corse                       2008    0.318
+192 Corse                       2009    0.324
+193 Corse                       2010    0.368
+194 Corse                       2011    0.312
+195 Corse                       2012    0.314
+196 Corse                       2013    0.324
+197 Corse                       2014    0.301
+198 Corse                       2015    0.318
+199 Corse                       2016    0.275
+200 Corse                       2017    0.285
+201 Corse                       2018    0.312
+202 Franche-Comté               1996    0.265
+203 Franche-Comté               1997    0.267
+204 Franche-Comté               1998    0.282
+205 Franche-Comté               1999    0.279
+206 Franche-Comté               2000    0.267
+207 Franche-Comté               2001    0.271
+208 Franche-Comté               2002    0.280
+209 Franche-Comté               2003    0.276
+210 Franche-Comté               2004    0.272
+211 Franche-Comté               2005    0.283
+212 Franche-Comté               2006    0.283
+213 Franche-Comté               2007    0.289
+214 Franche-Comté               2008    0.320
+215 Franche-Comté               2009    0.292
+216 Franche-Comté               2010    0.298
+217 Franche-Comté               2011    0.288
+218 Franche-Comté               2012    0.299
+219 Franche-Comté               2013    0.290
+220 Franche-Comté               2014    0.294
+221 Franche-Comté               2015    0.295
+222 Franche-Comté               2016    0.318
+223 Franche-Comté               2017    0.297
+224 Franche-Comté               2018    0.301
+225 Haute-Normandie             1996    0.281
+226 Haute-Normandie             1997    0.281
+227 Haute-Normandie             1998    0.272
+228 Haute-Normandie             1999    0.291
+229 Haute-Normandie             2000    0.306
+230 Haute-Normandie             2001    0.314
+231 Haute-Normandie             2002    0.289
+232 Haute-Normandie             2003    0.280
+233 Haute-Normandie             2004    0.280
+234 Haute-Normandie             2005    0.276
+235 Haute-Normandie             2006    0.282
+236 Haute-Normandie             2007    0.305
+237 Haute-Normandie             2008    0.308
+238 Haute-Normandie             2009    0.300
+239 Haute-Normandie             2010    0.290
+240 Haute-Normandie             2011    0.312
+241 Haute-Normandie             2012    0.307
+242 Haute-Normandie             2013    0.303
+243 Haute-Normandie             2014    0.298
+244 Haute-Normandie             2015    0.289
+245 Haute-Normandie             2016    0.310
+246 Haute-Normandie             2017    0.294
+247 Haute-Normandie             2018    0.292
+248 Ile-de-France               1996    0.297
+249 Ile-de-France               1997    0.308
+250 Ile-de-France               1998    0.309
+251 Ile-de-France               1999    0.323
+252 Ile-de-France               2000    0.331
+253 Ile-de-France               2001    0.326
+254 Ile-de-France               2002    0.327
+255 Ile-de-France               2003    0.327
+256 Ile-de-France               2004    0.337
+257 Ile-de-France               2005    0.349
+258 Ile-de-France               2006    0.348
+259 Ile-de-France               2007    0.349
+260 Ile-de-France               2008    0.355
+261 Ile-de-France               2009    0.356
+262 Ile-de-France               2010    0.365
+263 Ile-de-France               2011    0.379
+264 Ile-de-France               2012    0.368
+265 Ile-de-France               2013    0.338
+266 Ile-de-France               2014    0.350
+267 Ile-de-France               2015    0.338
+268 Ile-de-France               2016    0.344
+269 Ile-de-France               2017    0.352
+270 Ile-de-France               2018    0.374
+271 Languedoc-Roussillon        1996    0.319
+272 Languedoc-Roussillon        1997    0.329
+273 Languedoc-Roussillon        1998    0.329
+274 Languedoc-Roussillon        1999    0.326
+275 Languedoc-Roussillon        2000    0.325
+276 Languedoc-Roussillon        2001    0.315
+277 Languedoc-Roussillon        2002    0.312
+278 Languedoc-Roussillon        2003    0.321
+279 Languedoc-Roussillon        2004    0.317
+280 Languedoc-Roussillon        2005    0.324
+281 Languedoc-Roussillon        2006    0.335
+282 Languedoc-Roussillon        2007    0.373
+283 Languedoc-Roussillon        2008    0.324
+284 Languedoc-Roussillon        2009    0.318
+285 Languedoc-Roussillon        2010    0.326
+286 Languedoc-Roussillon        2011    0.339
+287 Languedoc-Roussillon        2012    0.352
+288 Languedoc-Roussillon        2013    0.326
+289 Languedoc-Roussillon        2014    0.338
+290 Languedoc-Roussillon        2015    0.334
+291 Languedoc-Roussillon        2016    0.322
+292 Languedoc-Roussillon        2017    0.307
+293 Languedoc-Roussillon        2018    0.336
+294 Limousin                    1996    0.290
+295 Limousin                    1997    0.301
+296 Limousin                    1998    0.306
+297 Limousin                    1999    0.311
+298 Limousin                    2000    0.308
+299 Limousin                    2001    0.301
+300 Limousin                    2002    0.292
+301 Limousin                    2003    0.310
+302 Limousin                    2004    0.310
+303 Limousin                    2005    0.336
+304 Limousin                    2006    0.335
+305 Limousin                    2007    0.318
+306 Limousin                    2008    0.293
+307 Limousin                    2009    0.313
+308 Limousin                    2010    0.325
+309 Limousin                    2011    0.295
+310 Limousin                    2012    0.327
+311 Limousin                    2013    0.276
+312 Limousin                    2014    0.295
+313 Limousin                    2015    0.300
+314 Limousin                    2016    0.292
+315 Limousin                    2017    0.290
+316 Limousin                    2018    0.289
+317 Lorraine                    1996    0.291
+318 Lorraine                    1997    0.294
+319 Lorraine                    1998    0.286
+320 Lorraine                    1999    0.292
+321 Lorraine                    2000    0.300
+322 Lorraine                    2001    0.290
+323 Lorraine                    2002    0.294
+324 Lorraine                    2003    0.290
+325 Lorraine                    2004    0.302
+326 Lorraine                    2005    0.326
+327 Lorraine                    2006    0.323
+328 Lorraine                    2007    0.321
+329 Lorraine                    2008    0.299
+330 Lorraine                    2009    0.298
+331 Lorraine                    2010    0.314
+332 Lorraine                    2011    0.327
+333 Lorraine                    2012    0.334
+334 Lorraine                    2013    0.331
+335 Lorraine                    2014    0.298
+336 Lorraine                    2015    0.316
+337 Lorraine                    2016    0.311
+338 Lorraine                    2017    0.324
+339 Lorraine                    2018    0.303
+340 Midi-Pyrénées               1996    0.313
+341 Midi-Pyrénées               1997    0.351
+342 Midi-Pyrénées               1998    0.323
+343 Midi-Pyrénées               1999    0.315
+344 Midi-Pyrénées               2000    0.310
+345 Midi-Pyrénées               2001    0.311
+346 Midi-Pyrénées               2002    0.287
+347 Midi-Pyrénées               2003    0.310
+348 Midi-Pyrénées               2004    0.321
+349 Midi-Pyrénées               2005    0.304
+350 Midi-Pyrénées               2006    0.331
+351 Midi-Pyrénées               2007    0.337
+352 Midi-Pyrénées               2008    0.328
+353 Midi-Pyrénées               2009    0.345
+354 Midi-Pyrénées               2010    0.313
+355 Midi-Pyrénées               2011    0.315
+356 Midi-Pyrénées               2012    0.330
+357 Midi-Pyrénées               2013    0.324
+358 Midi-Pyrénées               2014    0.355
+359 Midi-Pyrénées               2015    0.349
+360 Midi-Pyrénées               2016    0.308
+361 Midi-Pyrénées               2017    0.325
+362 Midi-Pyrénées               2018    0.318
+363 Nord-Pas de Calais          1996    0.274
+364 Nord-Pas de Calais          1997    0.296
+365 Nord-Pas de Calais          1998    0.279
+366 Nord-Pas de Calais          1999    0.280
+367 Nord-Pas de Calais          2000    0.307
+368 Nord-Pas de Calais          2001    0.311
+369 Nord-Pas de Calais          2002    0.302
+370 Nord-Pas de Calais          2003    0.294
+371 Nord-Pas de Calais          2004    0.296
+372 Nord-Pas de Calais          2005    0.319
+373 Nord-Pas de Calais          2006    0.296
+374 Nord-Pas de Calais          2007    0.297
+375 Nord-Pas de Calais          2008    0.309
+376 Nord-Pas de Calais          2009    0.342
+377 Nord-Pas de Calais          2010    0.330
+378 Nord-Pas de Calais          2011    0.321
+379 Nord-Pas de Calais          2012    0.309
+380 Nord-Pas de Calais          2013    0.312
+381 Nord-Pas de Calais          2014    0.318
+382 Nord-Pas de Calais          2015    0.318
+383 Nord-Pas de Calais          2016    0.312
+384 Nord-Pas de Calais          2017    0.301
+385 Nord-Pas de Calais          2018    0.309
+386 Pays de la Loire            1996    0.265
+387 Pays de la Loire            1997    0.294
+388 Pays de la Loire            1998    0.285
+389 Pays de la Loire            1999    0.290
+390 Pays de la Loire            2000    0.306
+391 Pays de la Loire            2001    0.296
+392 Pays de la Loire            2002    0.301
+393 Pays de la Loire            2003    0.296
+394 Pays de la Loire            2004    0.311
+395 Pays de la Loire            2005    0.340
+396 Pays de la Loire            2006    0.303
+397 Pays de la Loire            2007    0.315
+398 Pays de la Loire            2008    0.313
+399 Pays de la Loire            2009    0.316
+400 Pays de la Loire            2010    0.333
+401 Pays de la Loire            2011    0.318
+402 Pays de la Loire            2012    0.302
+403 Pays de la Loire            2013    0.298
+404 Pays de la Loire            2014    0.294
+405 Pays de la Loire            2015    0.292
+406 Pays de la Loire            2016    0.282
+407 Pays de la Loire            2017    0.291
+408 Pays de la Loire            2018    0.332
+409 Picardie                    1996    0.292
+410 Picardie                    1997    0.285
+411 Picardie                    1998    0.282
+412 Picardie                    1999    0.281
+413 Picardie                    2000    0.275
+414 Picardie                    2001    0.282
+415 Picardie                    2002    0.289
+416 Picardie                    2003    0.284
+417 Picardie                    2004    0.284
+418 Picardie                    2005    0.285
+419 Picardie                    2006    0.301
+420 Picardie                    2007    0.306
+421 Picardie                    2008    0.314
+422 Picardie                    2009    0.287
+423 Picardie                    2010    0.294
+424 Picardie                    2011    0.303
+425 Picardie                    2012    0.329
+426 Picardie                    2013    0.305
+427 Picardie                    2014    0.300
+428 Picardie                    2015    0.292
+429 Picardie                    2016    0.293
+430 Picardie                    2017    0.299
+431 Picardie                    2018    0.285
+432 Poitou-Charentes            1996    0.312
+433 Poitou-Charentes            1997    0.310
+434 Poitou-Charentes            1998    0.292
+435 Poitou-Charentes            1999    0.304
+436 Poitou-Charentes            2000    0.306
+437 Poitou-Charentes            2001    0.306
+438 Poitou-Charentes            2002    0.314
+439 Poitou-Charentes            2003    0.330
+440 Poitou-Charentes            2004    0.303
+441 Poitou-Charentes            2005    0.315
+442 Poitou-Charentes            2006    0.315
+443 Poitou-Charentes            2007    0.317
+444 Poitou-Charentes            2008    0.311
+445 Poitou-Charentes            2009    0.352
+446 Poitou-Charentes            2010    0.299
+447 Poitou-Charentes            2011    0.302
+448 Poitou-Charentes            2012    0.281
+449 Poitou-Charentes            2013    0.282
+450 Poitou-Charentes            2014    0.294
+451 Poitou-Charentes            2015    0.292
+452 Poitou-Charentes            2016    0.295
+453 Poitou-Charentes            2017    0.286
+454 Poitou-Charentes            2018    0.288
+455 Provence-Alpes-Côte-d'Azur  2002    0.331
+456 Provence-Alpes-Côte-d'Azur  2003    0.324
+457 Provence-Alpes-Côte-d'Azur  2004    0.310
+458 Provence-Alpes-Côte-d'Azur  2005    0.312
+459 Provence-Alpes-Côte-d'Azur  2006    0.314
+460 Provence-Alpes-Côte-d'Azur  2007    0.339
+461 Provence-Alpes-Côte-d'Azur  2008    0.322
+462 Provence-Alpes-Côte-d'Azur  2009    0.322
+463 Provence-Alpes-Côte-d'Azur  2010    0.334
+464 Provence-Alpes-Côte-d'Azur  2011    0.343
+465 Provence-Alpes-Côte-d'Azur  2012    0.340
+466 Provence-Alpes-Côte-d'Azur  2013    0.327
+467 Provence-Alpes-Côte-d'Azur  2014    0.329
+468 Provence-Alpes-Côte-d'Azur  2015    0.343
+469 Provence-Alpes-Côte-d'Azur  2016    0.318
+470 Provence-Alpes-Côte-d'Azur  2017    0.326
+471 Provence-Alpes-Côte-d'Azur  2018    0.337
+472 Provence-Côte d'Azur-Corse  1996    0.296
+473 Provence-Côte d'Azur-Corse  1997    0.299
+474 Provence-Côte d'Azur-Corse  1998    0.302
+475 Provence-Côte d'Azur-Corse  1999    0.310
+476 Provence-Côte d'Azur-Corse  2000    0.315
+477 Provence-Côte d'Azur-Corse  2001    0.302
+478 Rhône-Alpes                 1996    0.312
+479 Rhône-Alpes                 1997    0.299
+480 Rhône-Alpes                 1998    0.296
+481 Rhône-Alpes                 1999    0.313
+482 Rhône-Alpes                 2000    0.308
+483 Rhône-Alpes                 2001    0.301
+484 Rhône-Alpes                 2002    0.294
+485 Rhône-Alpes                 2003    0.304
+486 Rhône-Alpes                 2004    0.325
+487 Rhône-Alpes                 2005    0.318
+488 Rhône-Alpes                 2006    0.321
+489 Rhône-Alpes                 2007    0.312
+490 Rhône-Alpes                 2008    0.303
+491 Rhône-Alpes                 2009    0.316
+492 Rhône-Alpes                 2010    0.324
+493 Rhône-Alpes                 2011    0.334
+494 Rhône-Alpes                 2012    0.330
+495 Rhône-Alpes                 2013    0.305
+496 Rhône-Alpes                 2014    0.319
+497 Rhône-Alpes                 2015    0.329
+498 Rhône-Alpes                 2016    0.322
+499 Rhône-Alpes                 2017    0.308
+500 Rhône-Alpes                 2018    0.316

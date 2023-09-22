@@ -1,0 +1,500 @@
+region,year,avg_gini
+Alsace,1997,0.286
+Alsace,1998,0.273
+Alsace,1999,0.289
+Alsace,2000,0.299
+Alsace,2001,0.304
+Alsace,2002,0.307
+Alsace,2003,0.313
+Alsace,2004,0.287
+Alsace,2005,0.305
+Alsace,2006,0.319
+Alsace,2007,0.308
+Alsace,2008,0.31
+Alsace,2009,0.324
+Alsace,2010,0.321
+Alsace,2011,0.309
+Alsace,2012,0.309
+Alsace,2013,0.31
+Alsace,2014,0.3
+Alsace,2015,0.314
+Alsace,2016,0.307
+Alsace,2017,0.29
+Alsace,2018,0.314
+Aquitaine,1996,0.311
+Aquitaine,1997,0.312
+Aquitaine,1998,0.314
+Aquitaine,1999,0.304
+Aquitaine,2000,0.298
+Aquitaine,2001,0.295
+Aquitaine,2002,0.328
+Aquitaine,2003,0.329
+Aquitaine,2004,0.318
+Aquitaine,2005,0.318
+Aquitaine,2006,0.3
+Aquitaine,2007,0.305
+Aquitaine,2008,0.339
+Aquitaine,2009,0.329
+Aquitaine,2010,0.32
+Aquitaine,2011,0.32
+Aquitaine,2012,0.325
+Aquitaine,2013,0.306
+Aquitaine,2014,0.316
+Aquitaine,2015,0.32
+Aquitaine,2016,0.307
+Aquitaine,2017,0.294
+Aquitaine,2018,0.32
+Auvergne,1996,0.31
+Auvergne,1997,0.309
+Auvergne,1998,0.304
+Auvergne,1999,0.299
+Auvergne,2000,0.312
+Auvergne,2001,0.297
+Auvergne,2002,0.311
+Auvergne,2003,0.324
+Auvergne,2004,0.345
+Auvergne,2005,0.319
+Auvergne,2006,0.312
+Auvergne,2007,0.33
+Auvergne,2008,0.313
+Auvergne,2009,0.37
+Auvergne,2010,0.36
+Auvergne,2011,0.313
+Auvergne,2012,0.292
+Auvergne,2013,0.303
+Auvergne,2014,0.29
+Auvergne,2015,0.309
+Auvergne,2016,0.297
+Auvergne,2017,0.297
+Auvergne,2018,0.288
+Basse-Normandie,1996,0.311
+Basse-Normandie,1997,0.306
+Basse-Normandie,1998,0.296
+Basse-Normandie,1999,0.3
+Basse-Normandie,2000,0.291
+Basse-Normandie,2001,0.289
+Basse-Normandie,2002,0.298
+Basse-Normandie,2003,0.298
+Basse-Normandie,2004,0.277
+Basse-Normandie,2005,0.303
+Basse-Normandie,2006,0.291
+Basse-Normandie,2007,0.292
+Basse-Normandie,2008,0.303
+Basse-Normandie,2009,0.317
+Basse-Normandie,2010,0.319
+Basse-Normandie,2011,0.318
+Basse-Normandie,2012,0.332
+Basse-Normandie,2013,0.298
+Basse-Normandie,2014,0.289
+Basse-Normandie,2015,0.285
+Basse-Normandie,2016,0.303
+Basse-Normandie,2017,0.288
+Basse-Normandie,2018,0.284
+Bourgogne,1996,0.274
+Bourgogne,1997,0.28
+Bourgogne,1998,0.287
+Bourgogne,1999,0.292
+Bourgogne,2000,0.291
+Bourgogne,2001,0.279
+Bourgogne,2002,0.285
+Bourgogne,2003,0.314
+Bourgogne,2004,0.303
+Bourgogne,2005,0.295
+Bourgogne,2006,0.302
+Bourgogne,2007,0.302
+Bourgogne,2008,0.33
+Bourgogne,2009,0.295
+Bourgogne,2010,0.327
+Bourgogne,2011,0.3
+Bourgogne,2012,0.293
+Bourgogne,2013,0.285
+Bourgogne,2014,0.294
+Bourgogne,2015,0.301
+Bourgogne,2016,0.304
+Bourgogne,2017,0.306
+Bourgogne,2018,0.315
+Bretagne,1996,0.275
+Bretagne,1997,0.287
+Bretagne,1998,0.291
+Bretagne,1999,0.3
+Bretagne,2000,0.304
+Bretagne,2001,0.306
+Bretagne,2002,0.312
+Bretagne,2003,0.316
+Bretagne,2004,0.293
+Bretagne,2005,0.315
+Bretagne,2006,0.304
+Bretagne,2007,0.316
+Bretagne,2008,0.317
+Bretagne,2009,0.291
+Bretagne,2010,0.312
+Bretagne,2011,0.334
+Bretagne,2012,0.305
+Bretagne,2013,0.279
+Bretagne,2014,0.285
+Bretagne,2015,0.295
+Bretagne,2016,0.294
+Bretagne,2017,0.304
+Bretagne,2018,0.312
+Centre,1996,0.292
+Centre,1997,0.28
+Centre,1998,0.282
+Centre,1999,0.288
+Centre,2000,0.279
+Centre,2001,0.283
+Centre,2002,0.299
+Centre,2003,0.301
+Centre,2004,0.304
+Centre,2005,0.264
+Centre,2006,0.295
+Centre,2007,0.29
+Centre,2008,0.291
+Centre,2009,0.3
+Centre,2010,0.294
+Centre,2011,0.313
+Centre,2012,0.307
+Centre,2013,0.31
+Centre,2014,0.324
+Centre,2015,0.306
+Centre,2016,0.291
+Centre,2017,0.294
+Centre,2018,0.292
+Champagne-Arden,1996,0.298
+Champagne-Arden,1997,0.303
+Champagne-Arden,1998,0.294
+Champagne-Arden,1999,0.293
+Champagne-Arden,2000,0.308
+Champagne-Arden,2001,0.303
+Champagne-Arden,2002,0.328
+Champagne-Arden,2003,0.295
+Champagne-Arden,2004,0.302
+Champagne-Arden,2005,0.308
+Champagne-Arden,2006,0.338
+Champagne-Arden,2007,0.352
+Champagne-Arden,2008,0.332
+Champagne-Arden,2009,0.312
+Champagne-Arden,2010,0.321
+Champagne-Arden,2011,0.317
+Champagne-Arden,2012,0.309
+Champagne-Arden,2013,0.321
+Champagne-Arden,2014,0.308
+Champagne-Arden,2015,0.31
+Champagne-Arden,2016,0.295
+Champagne-Arden,2017,0.299
+Champagne-Arden,2018,0.301
+Corse,2002,0.377
+Corse,2003,0.373
+Corse,2004,0.335
+Corse,2005,0.339
+Corse,2006,0.389
+Corse,2007,0.289
+Corse,2008,0.318
+Corse,2009,0.324
+Corse,2010,0.368
+Corse,2011,0.312
+Corse,2012,0.314
+Corse,2013,0.324
+Corse,2014,0.301
+Corse,2015,0.318
+Corse,2016,0.275
+Corse,2017,0.285
+Corse,2018,0.312
+Franche-Comté,1996,0.265
+Franche-Comté,1997,0.267
+Franche-Comté,1998,0.282
+Franche-Comté,1999,0.279
+Franche-Comté,2000,0.267
+Franche-Comté,2001,0.271
+Franche-Comté,2002,0.28
+Franche-Comté,2003,0.276
+Franche-Comté,2004,0.272
+Franche-Comté,2005,0.283
+Franche-Comté,2006,0.283
+Franche-Comté,2007,0.289
+Franche-Comté,2008,0.32
+Franche-Comté,2009,0.292
+Franche-Comté,2010,0.298
+Franche-Comté,2011,0.288
+Franche-Comté,2012,0.299
+Franche-Comté,2013,0.29
+Franche-Comté,2014,0.294
+Franche-Comté,2015,0.295
+Franche-Comté,2016,0.318
+Franche-Comté,2017,0.297
+Franche-Comté,2018,0.301
+Haute-Normandie,1996,0.281
+Haute-Normandie,1997,0.281
+Haute-Normandie,1998,0.272
+Haute-Normandie,1999,0.291
+Haute-Normandie,2000,0.306
+Haute-Normandie,2001,0.314
+Haute-Normandie,2002,0.289
+Haute-Normandie,2003,0.28
+Haute-Normandie,2004,0.28
+Haute-Normandie,2005,0.276
+Haute-Normandie,2006,0.282
+Haute-Normandie,2007,0.305
+Haute-Normandie,2008,0.308
+Haute-Normandie,2009,0.3
+Haute-Normandie,2010,0.29
+Haute-Normandie,2011,0.312
+Haute-Normandie,2012,0.307
+Haute-Normandie,2013,0.303
+Haute-Normandie,2014,0.298
+Haute-Normandie,2015,0.289
+Haute-Normandie,2016,0.31
+Haute-Normandie,2017,0.294
+Haute-Normandie,2018,0.292
+Ile-de-France,1996,0.297
+Ile-de-France,1997,0.308
+Ile-de-France,1998,0.309
+Ile-de-France,1999,0.323
+Ile-de-France,2000,0.331
+Ile-de-France,2001,0.326
+Ile-de-France,2002,0.327
+Ile-de-France,2003,0.327
+Ile-de-France,2004,0.337
+Ile-de-France,2005,0.349
+Ile-de-France,2006,0.348
+Ile-de-France,2007,0.349
+Ile-de-France,2008,0.355
+Ile-de-France,2009,0.356
+Ile-de-France,2010,0.365
+Ile-de-France,2011,0.379
+Ile-de-France,2012,0.368
+Ile-de-France,2013,0.338
+Ile-de-France,2014,0.35
+Ile-de-France,2015,0.338
+Ile-de-France,2016,0.344
+Ile-de-France,2017,0.352
+Ile-de-France,2018,0.374
+Languedoc-Rouss,1996,0.319
+Languedoc-Rouss,1997,0.329
+Languedoc-Rouss,1998,0.329
+Languedoc-Rouss,1999,0.326
+Languedoc-Rouss,2000,0.325
+Languedoc-Rouss,2001,0.315
+Languedoc-Rouss,2002,0.312
+Languedoc-Rouss,2003,0.321
+Languedoc-Rouss,2004,0.317
+Languedoc-Rouss,2005,0.324
+Languedoc-Rouss,2006,0.335
+Languedoc-Rouss,2007,0.373
+Languedoc-Rouss,2008,0.324
+Languedoc-Rouss,2009,0.318
+Languedoc-Rouss,2010,0.326
+Languedoc-Rouss,2011,0.339
+Languedoc-Rouss,2012,0.352
+Languedoc-Rouss,2013,0.326
+Languedoc-Rouss,2014,0.338
+Languedoc-Rouss,2015,0.334
+Languedoc-Rouss,2016,0.322
+Languedoc-Rouss,2017,0.307
+Languedoc-Rouss,2018,0.336
+Limousin,1996,0.29
+Limousin,1997,0.301
+Limousin,1998,0.306
+Limousin,1999,0.311
+Limousin,2000,0.308
+Limousin,2001,0.301
+Limousin,2002,0.292
+Limousin,2003,0.31
+Limousin,2004,0.31
+Limousin,2005,0.336
+Limousin,2006,0.335
+Limousin,2007,0.318
+Limousin,2008,0.293
+Limousin,2009,0.313
+Limousin,2010,0.325
+Limousin,2011,0.295
+Limousin,2012,0.327
+Limousin,2013,0.276
+Limousin,2014,0.295
+Limousin,2015,0.3
+Limousin,2016,0.292
+Limousin,2017,0.29
+Limousin,2018,0.289
+Lorraine,1996,0.291
+Lorraine,1997,0.294
+Lorraine,1998,0.286
+Lorraine,1999,0.292
+Lorraine,2000,0.3
+Lorraine,2001,0.29
+Lorraine,2002,0.294
+Lorraine,2003,0.29
+Lorraine,2004,0.302
+Lorraine,2005,0.326
+Lorraine,2006,0.323
+Lorraine,2007,0.321
+Lorraine,2008,0.299
+Lorraine,2009,0.298
+Lorraine,2010,0.314
+Lorraine,2011,0.327
+Lorraine,2012,0.334
+Lorraine,2013,0.331
+Lorraine,2014,0.298
+Lorraine,2015,0.316
+Lorraine,2016,0.311
+Lorraine,2017,0.324
+Lorraine,2018,0.303
+Midi-Pyrénées,1996,0.313
+Midi-Pyrénées,1997,0.351
+Midi-Pyrénées,1998,0.323
+Midi-Pyrénées,1999,0.315
+Midi-Pyrénées,2000,0.31
+Midi-Pyrénées,2001,0.311
+Midi-Pyrénées,2002,0.287
+Midi-Pyrénées,2003,0.31
+Midi-Pyrénées,2004,0.321
+Midi-Pyrénées,2005,0.304
+Midi-Pyrénées,2006,0.331
+Midi-Pyrénées,2007,0.337
+Midi-Pyrénées,2008,0.328
+Midi-Pyrénées,2009,0.345
+Midi-Pyrénées,2010,0.313
+Midi-Pyrénées,2011,0.315
+Midi-Pyrénées,2012,0.33
+Midi-Pyrénées,2013,0.324
+Midi-Pyrénées,2014,0.355
+Midi-Pyrénées,2015,0.349
+Midi-Pyrénées,2016,0.308
+Midi-Pyrénées,2017,0.325
+Midi-Pyrénées,2018,0.318
+Nord-Pas de Cal,1996,0.274
+Nord-Pas de Cal,1997,0.296
+Nord-Pas de Cal,1998,0.279
+Nord-Pas de Cal,1999,0.28
+Nord-Pas de Cal,2000,0.307
+Nord-Pas de Cal,2001,0.311
+Nord-Pas de Cal,2002,0.302
+Nord-Pas de Cal,2003,0.294
+Nord-Pas de Cal,2004,0.296
+Nord-Pas de Cal,2005,0.319
+Nord-Pas de Cal,2006,0.296
+Nord-Pas de Cal,2007,0.297
+Nord-Pas de Cal,2008,0.309
+Nord-Pas de Cal,2009,0.342
+Nord-Pas de Cal,2010,0.33
+Nord-Pas de Cal,2011,0.321
+Nord-Pas de Cal,2012,0.309
+Nord-Pas de Cal,2013,0.312
+Nord-Pas de Cal,2014,0.318
+Nord-Pas de Cal,2015,0.318
+Nord-Pas de Cal,2016,0.312
+Nord-Pas de Cal,2017,0.301
+Nord-Pas de Cal,2018,0.309
+Pays de la Loir,1996,0.265
+Pays de la Loir,1997,0.294
+Pays de la Loir,1998,0.285
+Pays de la Loir,1999,0.29
+Pays de la Loir,2000,0.306
+Pays de la Loir,2001,0.296
+Pays de la Loir,2002,0.301
+Pays de la Loir,2003,0.296
+Pays de la Loir,2004,0.311
+Pays de la Loir,2005,0.34
+Pays de la Loir,2006,0.303
+Pays de la Loir,2007,0.315
+Pays de la Loir,2008,0.313
+Pays de la Loir,2009,0.316
+Pays de la Loir,2010,0.333
+Pays de la Loir,2011,0.318
+Pays de la Loir,2012,0.302
+Pays de la Loir,2013,0.298
+Pays de la Loir,2014,0.294
+Pays de la Loir,2015,0.292
+Pays de la Loir,2016,0.282
+Pays de la Loir,2017,0.291
+Pays de la Loir,2018,0.332
+Picardie,1996,0.292
+Picardie,1997,0.285
+Picardie,1998,0.282
+Picardie,1999,0.281
+Picardie,2000,0.275
+Picardie,2001,0.282
+Picardie,2002,0.289
+Picardie,2003,0.284
+Picardie,2004,0.284
+Picardie,2005,0.285
+Picardie,2006,0.301
+Picardie,2007,0.306
+Picardie,2008,0.314
+Picardie,2009,0.287
+Picardie,2010,0.294
+Picardie,2011,0.303
+Picardie,2012,0.329
+Picardie,2013,0.305
+Picardie,2014,0.3
+Picardie,2015,0.292
+Picardie,2016,0.293
+Picardie,2017,0.299
+Picardie,2018,0.285
+Poitou-Charente,1996,0.312
+Poitou-Charente,1997,0.31
+Poitou-Charente,1998,0.292
+Poitou-Charente,1999,0.304
+Poitou-Charente,2000,0.306
+Poitou-Charente,2001,0.306
+Poitou-Charente,2002,0.314
+Poitou-Charente,2003,0.33
+Poitou-Charente,2004,0.303
+Poitou-Charente,2005,0.315
+Poitou-Charente,2006,0.315
+Poitou-Charente,2007,0.317
+Poitou-Charente,2008,0.311
+Poitou-Charente,2009,0.352
+Poitou-Charente,2010,0.299
+Poitou-Charente,2011,0.302
+Poitou-Charente,2012,0.281
+Poitou-Charente,2013,0.282
+Poitou-Charente,2014,0.294
+Poitou-Charente,2015,0.292
+Poitou-Charente,2016,0.295
+Poitou-Charente,2017,0.286
+Poitou-Charente,2018,0.288
+Provence-Alpes-,2002,0.331
+Provence-Alpes-,2003,0.324
+Provence-Alpes-,2004,0.31
+Provence-Alpes-,2005,0.312
+Provence-Alpes-,2006,0.314
+Provence-Alpes-,2007,0.339
+Provence-Alpes-,2008,0.322
+Provence-Alpes-,2009,0.322
+Provence-Alpes-,2010,0.334
+Provence-Alpes-,2011,0.343
+Provence-Alpes-,2012,0.34
+Provence-Alpes-,2013,0.327
+Provence-Alpes-,2014,0.329
+Provence-Alpes-,2015,0.343
+Provence-Alpes-,2016,0.318
+Provence-Alpes-,2017,0.326
+Provence-Alpes-,2018,0.337
+Provence-Côte d,1996,0.296
+Provence-Côte d,1997,0.299
+Provence-Côte d,1998,0.302
+Provence-Côte d,1999,0.31
+Provence-Côte d,2000,0.315
+Provence-Côte d,2001,0.302
+Rhône-Alpes,1996,0.312
+Rhône-Alpes,1997,0.299
+Rhône-Alpes,1998,0.296
+Rhône-Alpes,1999,0.313
+Rhône-Alpes,2000,0.308
+Rhône-Alpes,2001,0.301
+Rhône-Alpes,2002,0.294
+Rhône-Alpes,2003,0.304
+Rhône-Alpes,2004,0.325
+Rhône-Alpes,2005,0.318
+Rhône-Alpes,2006,0.321
+Rhône-Alpes,2007,0.312
+Rhône-Alpes,2008,0.303
+Rhône-Alpes,2009,0.316
+Rhône-Alpes,2010,0.324
+Rhône-Alpes,2011,0.334
+Rhône-Alpes,2012,0.33
+Rhône-Alpes,2013,0.305
+Rhône-Alpes,2014,0.319
+Rhône-Alpes,2015,0.329
+Rhône-Alpes,2016,0.322
+Rhône-Alpes,2017,0.308
+Rhône-Alpes,2018,0.316
