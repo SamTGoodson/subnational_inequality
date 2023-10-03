@@ -31,6 +31,11 @@ def clean_inequality_region(df):
 
     return df
 
+def clean_region(region):
+    cleaned_region = re.sub(r'^\[\d+\](.+)', r'\1', region)
+    cleaned_region = re.sub(r'^.*-', '', cleaned_region)
+    
+    return cleaned_region.strip()
 
 def get_country_name(abbreviation):
     try:
@@ -47,7 +52,7 @@ def clean_and_prepare(df_inequality,df_elections):
     df_inequality.dropna(subset=['region'], inplace=True)
     df_elections.dropna(subset=['regionname'], inplace=True)
 
-    df_inequality = clean_inequality_region(df_inequality)
+    df_inequality['cleaned_region'] = df_inequality['region'].str.lower().apply(clean_region)
     df_elections['cleaned_region'] = df_elections['regionname'].str.lower().str.replace('[^\w\s]', '')
 
 
@@ -71,21 +76,21 @@ def return_election_data(df_elections):
     return election_df
 
 def make_join_df(df_inequality, election_df):
-    inequality_with_elections = df_inequality.merge(election_df, left_on=['country_name', 'year'], right_on=['country', 'year'], how='outer')
+
+    regions = df_inequality[['country_name','cleaned_region']]
+    regions.drop_duplicates(inplace=True)
+    region_join = regions.merge(election_df, left_on=['country_name'], right_on=['country'], how='left')
+    inequality_with_elections = df_inequality.merge(region_join, left_on=['country_name','cleaned_region','year'], right_on=['country_name','cleaned_region','year'], how='outer')
+
     inequality_with_elections['flag'].fillna(0, inplace=True)
 
     df = inequality_with_elections[['country_name', 'cleaned_region', 'year', 'avg_gini', 'flag', 'country_y']]
     
-    
-    df.loc[df['country_name'].isna(), 'country_name'] = df['country_y']
+    df['interp_gini'] = df.sort_values(by=['cleaned_region', 'year'])['avg_gini'].transform(lambda x: x.interpolate())
     
     df.sort_values(['country_name', 'cleaned_region', 'year'], inplace=True)
-    
-    
-    df.loc[:, 'gini_since'] = df.groupby(['country_name', 'cleaned_region', 'flag'])['avg_gini'].transform(lambda x: x.expanding().mean().shift(fill_value=0))
-    
-    
-    df.loc[:, 'change_gini'] = df.groupby(['country_name', 'cleaned_region', 'flag'])['avg_gini'].transform(lambda x: x.diff().cumsum().shift(fill_value=0))
+    df['delta_gini'] = df.groupby(['country_name', 'cleaned_region', 'flag'])['interp_gini'].diff()
+    df['avg_gini_period'] = df.groupby(['country_name', 'cleaned_region', 'flag'])['interp_gini'].transform(lambda x: x.rolling(len(x), min_periods=1).mean())
 
     election_years_df = df[df['flag'] == 1].copy()
     election_years_df.reset_index(drop=True, inplace=True)
