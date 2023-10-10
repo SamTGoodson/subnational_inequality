@@ -1,0 +1,2101 @@
+     file  region                                  year im_ratio ed_ratio
+     <chr> <chr>                                  <int>    <dbl>    <dbl>
+   1 at00h [111]AT111 - Mittelburgenland           2000    2.08     0.579
+   2 at00h [112]AT112 - Nordburgenland             2000    1.53     0.883
+   3 at00h [113]AT113 - Südburgenland              2000    1.64     0.567
+   4 at00h [121]AT121 - Mostviertel-Eisenwurzen    2000    1.38     0.565
+   5 at00h [122]AT122 - Niederösterreich-Süd       2000   NA       NA    
+   6 at00h [123]AT123 - Sankt Pölten               2000   NA       NA    
+   7 at00h [124]AT124 - Waldviertel                2000   NA       NA    
+   8 at00h [125]AT125 - Weinviertel                2000    1.52     0.492
+   9 at00h [126]AT126 - Wiener Umland/Nordteil     2000    1.12     0.455
+  10 at00h [127]AT127 - Wiener Umland/Südteil      2000    0.886    0.523
+  11 at00h [131]AT131 - Wien                       2000   NA       NA    
+  12 at00h [211]AT211 - Klagenfurt-Villach         2000    1.06     0.706
+  13 at00h [212]AT212 - Oberkärnten                2000    1.25     0.726
+  14 at00h [213]AT213 - Unterkärnten               2000    1.29     0.564
+  15 at00h [221]AT221 - Graz                       2000    1.38     0.598
+  16 at00h [222]AT222 - Liezen                     2000   NA       NA    
+  17 at00h [223]AT223 - Östliche Obersteiermark    2000    0.510    0.636
+  18 at00h [224]AT224 - Oststeiermark              2000   NA        1.38 
+  19 at00h [225]AT225 - West- und Südsteiermark    2000    1.06     0.826
+  20 at00h [226]AT226 - Westliche Obersteiermark   2000    1.28     0.670
+  21 at00h [311]AT311 - Innviertel                 2000    0.610    0.975
+  22 at00h [312]AT312 - Linz-Wels                  2000    1.21     0.787
+  23 at00h [313]AT313 - Mühlviertel                2000    0.801    0.696
+  24 at00h [314]AT314 - Steyr-Kirchdorf            2000    1.05     1.00 
+  25 at00h [315]AT315 - Traunviertel               2000    1.22     0.573
+  26 at00h [321]AT321 - Lungau                     2000   NA        1.44 
+  27 at00h [322]AT322 - Pinzgau-Pongau             2000   NA        0.779
+  28 at00h [323]AT323 - vSalzburg und Umgebung     2000    1.05     0.699
+  29 at00h [331]AT331 - Außerfern                  2000   NA       NA    
+  30 at00h [332]AT332 - Innsbruck                  2000    1.70     0.879
+  31 at00h [333]AT333 - Osttirol                   2000    1.00     1.48 
+  32 at00h [334]AT334 - Tiroler Oberland           2000    1.07     0.931
+  33 at00h [335]AT335 - Tiroler Unterland          2000    0.988    0.532
+  34 at00h [341]AT341 - Bludenz-Bregenzer Wald     2000    0.931    0.627
+  35 at00h [342]AT342 - Rheintal-Bodenseegebiet    2000    0.984    0.779
+  36 at00h <NA>                                    2000    1.85     0.424
+  37 at03h [11]Burgenland                          2003    1.13     0.690
+  38 at03h [12]Niederösterreich                    2003    1.16     0.663
+  39 at03h [13]Wien                                2003   NA       NA    
+  40 at03h [21]Kärnten                             2003    1.26     0.671
+  41 at03h [22]Steiermark                          2003    1.12     0.833
+  42 at03h [31]Oberösterreich                      2003    1.20     0.798
+  43 at03h [32]Salzburg                            2003    1.29     0.698
+  44 at03h [33]Tirol                               2003    1.03     0.752
+  45 at03h [34]Vorarlberg                          2003    1.10     0.616
+  46 at04h [11]Burgenland                          2004    1.11     0.670
+  47 at04h [12]Niederösterreich                    2004    1.33     0.696
+  48 at04h [13]Wien                                2004    1.26     0.809
+  49 at04h [21]Kärnten                             2004    1.04     0.890
+  50 at04h [22]Steiermark                          2004    1.17     0.745
+  51 at04h [31]Oberösterreich                      2004    1.18     0.705
+  52 at04h [32]Salzburg                            2004   NA       NA    
+  53 at04h [33]Tirol                               2004    1.07     0.732
+  54 at04h [34]Vorarlberg                          2004    1.13     0.623
+  55 at05h [11]Burgenland                          2005    1.20     0.533
+  56 at05h [12]Niederösterreich                    2005    1.21     0.683
+  57 at05h [13]Wien                                2005    1.32     0.688
+  58 at05h [21]Kärnten                             2005    1.09     0.810
+  59 at05h [22]Steiermark                          2005    1.28     0.785
+  60 at05h [31]Oberösterreich                      2005    1.27     0.679
+  61 at05h [32]Salzburg                            2005    1.19     0.734
+  62 at05h [33]Tirol                               2005    0.942    0.668
+  63 at05h [34]Vorarlberg                          2005    1.16     0.811
+  64 at06h [11]Burgenland                          2006    1.25     0.615
+  65 at06h [12]Niederösterreich                    2006   NA       NA    
+  66 at06h [13]Wien                                2006    1.29     0.639
+  67 at06h [21]Kärnten                             2006    1.21     0.707
+  68 at06h [22]Steiermark                          2006    1.30     0.767
+  69 at06h [31]Oberösterreich                      2006    1.28     0.732
+  70 at06h [32]Salzburg                            2006    1.11     0.814
+  71 at06h [33]Tirol                               2006    1.02     0.680
+  72 at06h [34]Vorarlberg                          2006    1.00     0.636
+  73 at07h [11]Burgenland                          2007    1.48     0.567
+  74 at07h [12]Niederösterreich                    2007    1.34     0.653
+  75 at07h [13]Wien                                2007    1.43     0.710
+  76 at07h [21]Kärnten                             2007    1.30     0.664
+  77 at07h [22]Steiermark                          2007    1.38     0.776
+  78 at07h [31]Oberösterreich                      2007    1.29     0.678
+  79 at07h [32]Salzburg                            2007    1.34     0.881
+  80 at07h [33]Tirol                               2007    1.07     0.793
+  81 at07h [34]Vorarlberg                          2007    1.15     0.793
+  82 at08h [11]Burgenland                          2008    1.55     0.520
+  83 at08h [12]Niederösterreich                    2008   NA        0.648
+  84 at08h [13]Wien                                2008    1.35     0.669
+  85 at08h [21]Kärnten                             2008    1.29     0.659
+  86 at08h [22]Steiermark                          2008    1.29     0.716
+  87 at08h [31]Oberösterreich                      2008    1.34     0.709
+  88 at08h [32]Salzburg                            2008    1.24     0.822
+  89 at08h [33]Tirol                               2008    1.16     0.749
+  90 at08h [34]Vorarlberg                          2008   NA        0.815
+  91 at09h [11]Burgenland                          2009    1.27     0.677
+  92 at09h [12]Niederösterreich                    2009    1.30     0.632
+  93 at09h [13]Wien                                2009    1.48     0.596
+  94 at09h [21]Kärnten                             2009    1.41     0.699
+  95 at09h [22]Steiermark                          2009    1.35     0.650
+  96 at09h [31]Oberösterreich                      2009    1.30     0.723
+  97 at09h [32]Salzburg                            2009    1.19     0.743
+  98 at09h [33]Tirol                               2009    1.27     0.654
+  99 at09h [34]Vorarlberg                          2009    1.32     0.775
+ 100 at10h [11]Burgenland                          2010    1.88     0.780
+ 101 at10h [12]Niederösterreich                    2010    1.23     0.709
+ 102 at10h [13]Wien                                2010    1.42     0.606
+ 103 at10h [21]Kärnten                             2010    1.38     0.699
+ 104 at10h [22]Steiermark                          2010    1.25     0.726
+ 105 at10h [31]Oberösterreich                      2010    1.25     0.719
+ 106 at10h [32]Salzburg                            2010    1.26     0.624
+ 107 at10h [33]Tirol                               2010    1.15     0.728
+ 108 at10h [34]Vorarlberg                          2010    1.10     0.719
+ 109 at11h [11]Burgenland                          2011    1.45     0.830
+ 110 at11h [12]Niederösterreich                    2011    1.29     0.654
+ 111 at11h [13]Wien                                2011    1.41     0.656
+ 112 at11h [21]Kärnten                             2011    1.39     0.693
+ 113 at11h [22]Steiermark                          2011    1.13     0.750
+ 114 at11h [31]Oberösterreich                      2011    1.24     0.766
+ 115 at11h [32]Salzburg                            2011    1.41     0.681
+ 116 at11h [33]Tirol                               2011    0.976    0.713
+ 117 at11h [34]Vorarlberg                          2011    1.09     0.626
+ 118 at12h [11]Burgenland                          2012    1.32     0.732
+ 119 at12h [12]Niederösterreich                    2012   NA       NA    
+ 120 at12h [13]Wien                                2012    1.45     0.697
+ 121 at12h [21]Kärnten                             2012   NA       NA    
+ 122 at12h [22]Steiermark                          2012   NA       NA    
+ 123 at12h [31]Oberösterreich                      2012   NA       NA    
+ 124 at12h [32]Salzburg                            2012   NA       NA    
+ 125 at12h [33]Tirol                               2012   NA       NA    
+ 126 at12h [34]Vorarlberg                          2012    1.27     0.767
+ 127 at13h [11]Burgenland                          2013    1.50     0.727
+ 128 at13h [12]Niederösterreich                    2013   NA       NA    
+ 129 at13h [13]Wien                                2013   NA       NA    
+ 130 at13h [21]Kärnten                             2013   NA       NA    
+ 131 at13h [22]Steiermark                          2013    1.20     0.670
+ 132 at13h [31]Oberösterreich                      2013   NA       NA    
+ 133 at13h [32]Salzburg                            2013   NA        0.777
+ 134 at13h [33]Tirol                               2013   NA       NA    
+ 135 at13h [34]Vorarlberg                          2013    1.24     0.609
+ 136 at14h [11]Burgenland                          2014    1.51     0.654
+ 137 at14h [12]Niederösterreich                    2014   NA        0.599
+ 138 at14h [13]Wien                                2014   NA        0.695
+ 139 at14h [21]Kärnten                             2014    1.30     0.654
+ 140 at14h [22]Steiermark                          2014   NA        0.741
+ 141 at14h [31]Oberösterreich                      2014    1.24     0.758
+ 142 at14h [32]Salzburg                            2014    1.31     0.774
+ 143 at14h [33]Tirol                               2014   NA       NA    
+ 144 at14h [34]Vorarlberg                          2014    1.15     0.532
+ 145 at15h [11]Burgenland                          2015    1.48     0.669
+ 146 at15h [12]Niederösterreich                    2015    1.21     0.622
+ 147 at15h [13]Wien                                2015    1.54     0.683
+ 148 at15h [21]Kärnten                             2015    1.38     0.801
+ 149 at15h [22]Steiermark                          2015    1.43     0.775
+ 150 at15h [31]Oberösterreich                      2015    1.43     0.643
+ 151 at15h [32]Salzburg                            2015    1.13     0.728
+ 152 at15h [33]Tirol                               2015    1.13     0.825
+ 153 at15h [34]Vorarlberg                          2015    1.22     0.657
+ 154 at16h [11]Burgenland                          2016   NA       NA    
+ 155 at16h [12]Niederösterreich                    2016   NA       NA    
+ 156 at16h [13]Wien                                2016   NA       NA    
+ 157 at16h [21]Kärnten                             2016    1.24     0.578
+ 158 at16h [22]Steiermark                          2016   NA       NA    
+ 159 at16h [31]Oberösterreich                      2016   NA       NA    
+ 160 at16h [32]Salzburg                            2016   NA       NA    
+ 161 at16h [33]Tirol                               2016    1.14     0.802
+ 162 at16h [34]Vorarlberg                          2016    1.10     0.663
+ 163 at17h [11]Burgenland                          2017    1.41     0.528
+ 164 at17h [12]Niederösterreich                    2017   NA       NA    
+ 165 at17h [13]Wien                                2017   NA       NA    
+ 166 at17h [21]Kärnten                             2017   NA        0.821
+ 167 at17h [22]Steiermark                          2017   NA       NA    
+ 168 at17h [31]Oberösterreich                      2017   NA        0.667
+ 169 at17h [32]Salzburg                            2017   NA        0.701
+ 170 at17h [33]Tirol                               2017   NA       NA    
+ 171 at17h [34]Vorarlberg                          2017    1.12     0.681
+ 172 at18h [11]Burgenland                          2018   NA       NA    
+ 173 at18h [12]Niederösterreich                    2018    1.39     0.662
+ 174 at18h [13]Wien                                2018    1.35     0.739
+ 175 at18h [21]Kärnten                             2018    1.33     0.839
+ 176 at18h [22]Steiermark                          2018    1.32     0.805
+ 177 at18h [31]Oberösterreich                      2018   NA       NA    
+ 178 at18h [32]Salzburg                            2018   NA        0.687
+ 179 at18h [33]Tirol                               2018    1.15     0.771
+ 180 at18h [34]Vorarlberg                          2018    1.34     0.782
+ 181 at19h [11]Burgenland                          2019   NA       NA    
+ 182 at19h [12]Niederösterreich                    2019   NA       NA    
+ 183 at19h [13]Wien                                2019   NA        0.709
+ 184 at19h [21]Kärnten                             2019   NA       NA    
+ 185 at19h [22]Steiermark                          2019   NA       NA    
+ 186 at19h [31]Oberösterreich                      2019   NA       NA    
+ 187 at19h [32]Salzburg                            2019   NA       NA    
+ 188 at19h [33]Tirol                               2019   NA        0.743
+ 189 at19h [34]Vorarlberg                          2019    1.32     0.643
+ 190 at20h [11]Burgenland                          2020    1.37     0.751
+ 191 at20h [12]Niederösterreich                    2020   NA       NA    
+ 192 at20h [13]Wien                                2020   NA       NA    
+ 193 at20h [21]Kärnten                             2020   NA        0.629
+ 194 at20h [22]Steiermark                          2020   NA       NA    
+ 195 at20h [31]Oberösterreich                      2020   NA       NA    
+ 196 at20h [32]Salzburg                            2020   NA       NA    
+ 197 at20h [33]Tirol                               2020   NA       NA    
+ 198 at20h [34]Vorarlberg                          2020   NA        0.726
+ 199 at94h [111]AT111 - Mittelburgenland           1994    1.63     0.549
+ 200 at94h [112]AT112 - Nordburgenland             1994   NA        0.797
+ 201 at94h [113]AT113 - Südburgenland              1994    0.714    0.694
+ 202 at94h [121]AT121 - Mostviertel-Eisenwurzen    1994   NA       NA    
+ 203 at94h [122]AT122 - Niederösterreich-Süd       1994   NA       NA    
+ 204 at94h [123]AT123 - Sankt Pölten               1994    1.03     0.601
+ 205 at94h [124]AT124 - Waldviertel                1994   NA       NA    
+ 206 at94h [125]AT125 - Weinviertel                1994    1.28     0.825
+ 207 at94h [126]AT126 - Wiener Umland/Nordteil     1994    0.751    0.699
+ 208 at94h [127]AT127 - Wiener Umland/Südteil      1994    0.920    0.532
+ 209 at94h [131]AT131 - Wien                       1994   NA       NA    
+ 210 at94h [211]AT211 - Klagenfurt-Villach         1994   NA        0.736
+ 211 at94h [212]AT212 - Oberkärnten                1994    1.52     0.870
+ 212 at94h [213]AT213 - Unterkärnten               1994    0.619    0.482
+ 213 at94h [221]AT221 - Graz                       1994    1.25     0.820
+ 214 at94h [222]AT222 - Liezen                     1994    0.282   NA    
+ 215 at94h [223]AT223 - Östliche Obersteiermark    1994    1.07     0.721
+ 216 at94h [224]AT224 - Oststeiermark              1994    1.29     0.872
+ 217 at94h [225]AT225 - West- und Südsteiermark    1994    1.22     0.570
+ 218 at94h [226]AT226 - Westliche Obersteiermark   1994    0.951    0.420
+ 219 at94h [311]AT311 - Innviertel                 1994    0.633    0.885
+ 220 at94h [312]AT312 - Linz-Wels                  1994    1.07     0.687
+ 221 at94h [313]AT313 - Mühlviertel                1994    1.34     0.803
+ 222 at94h [314]AT314 - Steyr-Kirchdorf            1994    0.873    0.934
+ 223 at94h [315]AT315 - Traunviertel               1994    1.25     0.611
+ 224 at94h [321]AT321 - Lungau                     1994   NA        0.451
+ 225 at94h [322]AT322 - Pinzgau-Pongau             1994    0.952    0.944
+ 226 at94h [323]AT323 - vSalzburg und Umgebung     1994    1.12     0.754
+ 227 at94h [331]AT331 - Außerfern                  1994    1.62     1.64 
+ 228 at94h [332]AT332 - Innsbruck                  1994   NA       NA    
+ 229 at94h [333]AT333 - Osttirol                   1994    0.821    0.919
+ 230 at94h [334]AT334 - Tiroler Oberland           1994    0.640    1.01 
+ 231 at94h [335]AT335 - Tiroler Unterland          1994    1.48     0.567
+ 232 at94h [341]AT341 - Bludenz-Bregenzer Wald     1994    1.37     0.657
+ 233 at94h [342]AT342 - Rheintal-Bodenseegebiet    1994    1.40     0.733
+ 234 at95h [110]AT11 - Burgenland                  1995   NA       NA    
+ 235 at95h [111]AT111 - Mittelburgenland           1995    1.29     0.731
+ 236 at95h [112]AT112 - Nordburgenland             1995   NA        0.855
+ 237 at95h [113]AT113 - Südburgenland              1995    0.629    0.712
+ 238 at95h [120]AT12 - Niederösterreich            1995   NA       NA    
+ 239 at95h [121]AT121 - Mostviertel-Eisenwurzen    1995   NA       NA    
+ 240 at95h [122]AT122 - Niederösterreich-Süd       1995   NA       NA    
+ 241 at95h [123]AT123 - Sankt Pölten               1995    1.09     0.777
+ 242 at95h [124]AT124 - Waldviertel                1995    1.02     0.564
+ 243 at95h [125]AT125 - Weinviertel                1995    1.35     0.628
+ 244 at95h [126]AT126 - Wiener Umland/Nordteil     1995   NA        0.398
+ 245 at95h [127]AT127 - Wiener Umland/Südteil      1995    0.864    0.530
+ 246 at95h [131]AT131 - Wien                       1995   NA       NA    
+ 247 at95h [200]AT2 - Südösterreich                1995    1.49    NA    
+ 248 at95h [210]AT21 - Kärnten                     1995   14.6     16.8  
+ 249 at95h [211]AT211 - Klagenfurt-Villach         1995    1.26     0.754
+ 250 at95h [212]AT212 - Oberkärnten                1995    1.10     0.770
+ 251 at95h [213]AT213 - Unterkärnten               1995    1.08     0.559
+ 252 at95h [221]AT221 - Graz                       1995   NA       NA    
+ 253 at95h [222]AT222 - Liezen                     1995    1.39    NA    
+ 254 at95h [223]AT223 - Östliche Obersteiermark    1995    1.28     0.687
+ 255 at95h [224]AT224 - Oststeiermark              1995   NA       NA    
+ 256 at95h [225]AT225 - West- und Südsteiermark    1995    1.66     0.693
+ 257 at95h [226]AT226 - Westliche Obersteiermark   1995    1.18     0.583
+ 258 at95h [300]AT3 - Westösterreich               1995   NA       NA    
+ 259 at95h [311]AT311 - Innviertel                 1995    0.611    1.05 
+ 260 at95h [312]AT312 - Linz-Wels                  1995    0.955    0.709
+ 261 at95h [313]AT313 - Mühlviertel                1995    1.18     0.794
+ 262 at95h [314]AT314 - Steyr-Kirchdorf            1995   NA       NA    
+ 263 at95h [315]AT315 - Traunviertel               1995   NA       NA    
+ 264 at95h [320]AT32 - Salzburg                    1995   NA       NA    
+ 265 at95h [321]AT321 - Lungau                     1995   NA        0.532
+ 266 at95h [322]AT322 - Pinzgau-Pongau             1995    0.777    0.987
+ 267 at95h [323]AT323 - vSalzburg und Umgebung     1995    1.14     0.796
+ 268 at95h [331]AT331 - Außerfern                  1995    0.983    0.763
+ 269 at95h [332]AT332 - Innsbruck                  1995    1.37     0.902
+ 270 at95h [333]AT333 - Osttirol                   1995   NA       NA    
+ 271 at95h [334]AT334 - Tiroler Oberland           1995    0.803    0.812
+ 272 at95h [335]AT335 - Tiroler Unterland          1995    0.791    0.567
+ 273 at95h [341]AT341 - Bludenz-Bregenzer Wald     1995   NA       NA    
+ 274 at95h [342]AT342 - Rheintal-Bodenseegebiet    1995    0.924    0.295
+ 275 at96h [110]AT11 - Burgenland                  1996   NA       NA    
+ 276 at96h [111]AT111 - Mittelburgenland           1996    0.905    0.657
+ 277 at96h [112]AT112 - Nordburgenland             1996   NA        0.629
+ 278 at96h [113]AT113 - Südburgenland              1996    0.553    0.635
+ 279 at96h [120]AT12 - Niederösterreich            1996   NA       NA    
+ 280 at96h [121]AT121 - Mostviertel-Eisenwurzen    1996   NA       NA    
+ 281 at96h [122]AT122 - Niederösterreich-Süd       1996    1.20     0.854
+ 282 at96h [123]AT123 - Sankt Pölten               1996    0.644    0.800
+ 283 at96h [124]AT124 - Waldviertel                1996   NA       NA    
+ 284 at96h [125]AT125 - Weinviertel                1996    1.19     0.646
+ 285 at96h [126]AT126 - Wiener Umland/Nordteil     1996    1.08     0.656
+ 286 at96h [127]AT127 - Wiener Umland/Südteil      1996    0.981    0.576
+ 287 at96h [131]AT131 - Wien                       1996   NA       NA    
+ 288 at96h [200]AT2 - Südösterreich                1996   NA       NA    
+ 289 at96h [210]AT21 - Kärnten                     1996    1.87     1.62 
+ 290 at96h [211]AT211 - Klagenfurt-Villach         1996    1.28     0.783
+ 291 at96h [212]AT212 - Oberkärnten                1996    1.35     0.831
+ 292 at96h [213]AT213 - Unterkärnten               1996    1.32     0.716
+ 293 at96h [221]AT221 - Graz                       1996    1.56     0.942
+ 294 at96h [222]AT222 - Liezen                     1996    1.07    NA    
+ 295 at96h [223]AT223 - Östliche Obersteiermark    1996    1.04     0.676
+ 296 at96h [224]AT224 - Oststeiermark              1996    0.902    0.797
+ 297 at96h [225]AT225 - West- und Südsteiermark    1996    2.18     0.624
+ 298 at96h [226]AT226 - Westliche Obersteiermark   1996    1.20     0.649
+ 299 at96h [300]AT3 - Westösterreich               1996   NA       NA    
+ 300 at96h [311]AT311 - Innviertel                 1996    0.623    1.05 
+ 301 at96h [312]AT312 - Linz-Wels                  1996    1.04     0.699
+ 302 at96h [313]AT313 - Mühlviertel                1996    1.13     0.737
+ 303 at96h [314]AT314 - Steyr-Kirchdorf            1996    1.05     0.879
+ 304 at96h [315]AT315 - Traunviertel               1996    0.839    0.602
+ 305 at96h [320]AT32 - Salzburg                    1996   NA       NA    
+ 306 at96h [321]AT321 - Lungau                     1996    0.396    0.569
+ 307 at96h [322]AT322 - Pinzgau-Pongau             1996    0.929    1.19 
+ 308 at96h [323]AT323 - vSalzburg und Umgebung     1996    1.02     0.819
+ 309 at96h [331]AT331 - Außerfern                  1996    0.831    0.736
+ 310 at96h [332]AT332 - Innsbruck                  1996   NA        0.704
+ 311 at96h [333]AT333 - Osttirol                   1996   NA       NA    
+ 312 at96h [334]AT334 - Tiroler Oberland           1996    0.862    0.730
+ 313 at96h [335]AT335 - Tiroler Unterland          1996   NA       NA    
+ 314 at96h [341]AT341 - Bludenz-Bregenzer Wald     1996    0.720    0.674
+ 315 at96h [342]AT342 - Rheintal-Bodenseegebiet    1996    1.07     0.579
+ 316 at96h <NA>                                    1996   NA        1.25 
+ 317 at97h [111]AT111 - Mittelburgenland           1997    1.11     0.329
+ 318 at97h [112]AT112 - Nordburgenland             1997   NA        0.873
+ 319 at97h [113]AT113 - Südburgenland              1997    1.11     0.680
+ 320 at97h [121]AT121 - Mostviertel-Eisenwurzen    1997    1.13     0.698
+ 321 at97h [122]AT122 - Niederösterreich-Süd       1997    1.48     1.16 
+ 322 at97h [123]AT123 - Sankt Pölten               1997    0.810    0.819
+ 323 at97h [124]AT124 - Waldviertel                1997    0.883    0.449
+ 324 at97h [125]AT125 - Weinviertel                1997    1.16     0.641
+ 325 at97h [126]AT126 - Wiener Umland/Nordteil     1997    1.05     0.534
+ 326 at97h [127]AT127 - Wiener Umland/Südteil      1997    0.997    0.650
+ 327 at97h [131]AT131 - Wien                       1997   NA       NA    
+ 328 at97h [211]AT211 - Klagenfurt-Villach         1997    1.22     0.806
+ 329 at97h [212]AT212 - Oberkärnten                1997    1.29     1.31 
+ 330 at97h [213]AT213 - Unterkärnten               1997   NA        0.573
+ 331 at97h [221]AT221 - Graz                       1997    1.18     0.788
+ 332 at97h [222]AT222 - Liezen                     1997    1.06    NA    
+ 333 at97h [223]AT223 - Östliche Obersteiermark    1997    0.504    0.650
+ 334 at97h [224]AT224 - Oststeiermark              1997   NA       NA    
+ 335 at97h [225]AT225 - West- und Südsteiermark    1997    0.718    0.639
+ 336 at97h [226]AT226 - Westliche Obersteiermark   1997    1.26     0.586
+ 337 at97h [311]AT311 - Innviertel                 1997   NA       NA    
+ 338 at97h [312]AT312 - Linz-Wels                  1997    1.02     0.888
+ 339 at97h [313]AT313 - Mühlviertel                1997    1.01     0.629
+ 340 at97h [314]AT314 - Steyr-Kirchdorf            1997    0.987    0.833
+ 341 at97h [315]AT315 - Traunviertel               1997    0.908    0.691
+ 342 at97h [321]AT321 - Lungau                     1997   NA       NA    
+ 343 at97h [322]AT322 - Pinzgau-Pongau             1997    0.586    0.955
+ 344 at97h [323]AT323 - vSalzburg und Umgebung     1997   NA        0.728
+ 345 at97h [331]AT331 - Außerfern                  1997    0.686    0.727
+ 346 at97h [332]AT332 - Innsbruck                  1997    1.23     0.569
+ 347 at97h [333]AT333 - Osttirol                   1997   NA        0.829
+ 348 at97h [334]AT334 - Tiroler Oberland           1997    0.828    0.738
+ 349 at97h [335]AT335 - Tiroler Unterland          1997    1.09     0.507
+ 350 at97h [341]AT341 - Bludenz-Bregenzer Wald     1997    0.791    0.631
+ 351 at97h [342]AT342 - Rheintal-Bodenseegebiet    1997    0.936    0.682
+ 352 at97h <NA>                                    1997    1.01     0.929
+ 353 at98h [111]AT111 - Mittelburgenland           1998    2.15     0.518
+ 354 at98h [112]AT112 - Nordburgenland             1998    1.28     1.15 
+ 355 at98h [113]AT113 - Südburgenland              1998    1.03     0.754
+ 356 at98h [121]AT121 - Mostviertel-Eisenwurzen    1998    1.20     0.732
+ 357 at98h [122]AT122 - Niederösterreich-Süd       1998   NA        0.980
+ 358 at98h [123]AT123 - Sankt Pölten               1998    0.913    1.17 
+ 359 at98h [124]AT124 - Waldviertel                1998   NA        0.450
+ 360 at98h [125]AT125 - Weinviertel                1998    1.43     0.705
+ 361 at98h [126]AT126 - Wiener Umland/Nordteil     1998    1.04     0.541
+ 362 at98h [127]AT127 - Wiener Umland/Südteil      1998    0.906    0.535
+ 363 at98h [131]AT131 - Wien                       1998   NA        0.731
+ 364 at98h [210]AT21 - Kärnten                     1998   NA       NA    
+ 365 at98h [211]AT211 - Klagenfurt-Villach         1998   NA        0.854
+ 366 at98h [212]AT212 - Oberkärnten                1998    1.38     0.975
+ 367 at98h [213]AT213 - Unterkärnten               1998    1.13     0.677
+ 368 at98h [221]AT221 - Graz                       1998    1.38     0.830
+ 369 at98h [222]AT222 - Liezen                     1998    0.968   NA    
+ 370 at98h [223]AT223 - Östliche Obersteiermark    1998    0.872    0.472
+ 371 at98h [224]AT224 - Oststeiermark              1998    0.724    1.83 
+ 372 at98h [225]AT225 - West- und Südsteiermark    1998    0.837    0.748
+ 373 at98h [226]AT226 - Westliche Obersteiermark   1998    1.20     0.489
+ 374 at98h [311]AT311 - Innviertel                 1998    0.722    1.05 
+ 375 at98h [312]AT312 - Linz-Wels                  1998    0.947    0.804
+ 376 at98h [313]AT313 - Mühlviertel                1998   NA        0.603
+ 377 at98h [314]AT314 - Steyr-Kirchdorf            1998    0.828    0.780
+ 378 at98h [315]AT315 - Traunviertel               1998    0.931    0.726
+ 379 at98h [321]AT321 - Lungau                     1998   NA       NA    
+ 380 at98h [322]AT322 - Pinzgau-Pongau             1998    0.664    1.07 
+ 381 at98h [323]AT323 - vSalzburg und Umgebung     1998   NA        0.802
+ 382 at98h [331]AT331 - Außerfern                  1998    0.810    0.853
+ 383 at98h [332]AT332 - Innsbruck                  1998    1.23     0.735
+ 384 at98h [333]AT333 - Osttirol                   1998    1.11     0.849
+ 385 at98h [334]AT334 - Tiroler Oberland           1998    0.668    0.945
+ 386 at98h [335]AT335 - Tiroler Unterland          1998    1.19     0.444
+ 387 at98h [341]AT341 - Bludenz-Bregenzer Wald     1998    0.891    0.784
+ 388 at98h [342]AT342 - Rheintal-Bodenseegebiet    1998    1.06     0.732
+ 389 at98h <NA>                                    1998    1.20     0.795
+ 390 at99h [111]AT111 - Mittelburgenland           1999    2.39     0.488
+ 391 at99h [112]AT112 - Nordburgenland             1999    1.65     1.35 
+ 392 at99h [113]AT113 - Südburgenland              1999    0.919    0.669
+ 393 at99h [121]AT121 - Mostviertel-Eisenwurzen    1999    1.20     0.630
+ 394 at99h [122]AT122 - Niederösterreich-Süd       1999   NA       NA    
+ 395 at99h [123]AT123 - Sankt Pölten               1999    0.659    0.788
+ 396 at99h [124]AT124 - Waldviertel                1999    1.25     0.424
+ 397 at99h [125]AT125 - Weinviertel                1999    1.30     0.486
+ 398 at99h [126]AT126 - Wiener Umland/Nordteil     1999    0.979    0.613
+ 399 at99h [127]AT127 - Wiener Umland/Südteil      1999    0.943    0.736
+ 400 at99h [131]AT131 - Wien                       1999   NA       NA    
+ 401 at99h [211]AT211 - Klagenfurt-Villach         1999    1.25     0.794
+ 402 at99h [212]AT212 - Oberkärnten                1999    1.24     0.745
+ 403 at99h [213]AT213 - Unterkärnten               1999    1.26     0.563
+ 404 at99h [221]AT221 - Graz                       1999   NA        0.845
+ 405 at99h [222]AT222 - Liezen                     1999    1.22    NA    
+ 406 at99h [223]AT223 - Östliche Obersteiermark    1999    0.726    0.489
+ 407 at99h [224]AT224 - Oststeiermark              1999    0.754    1.65 
+ 408 at99h [225]AT225 - West- und Südsteiermark    1999    1.10     0.861
+ 409 at99h [226]AT226 - Westliche Obersteiermark   1999    1.21     0.547
+ 410 at99h [311]AT311 - Innviertel                 1999    0.654    1.19 
+ 411 at99h [312]AT312 - Linz-Wels                  1999    1.08     0.897
+ 412 at99h [313]AT313 - Mühlviertel                1999   NA       NA    
+ 413 at99h [314]AT314 - Steyr-Kirchdorf            1999    0.728    0.781
+ 414 at99h [315]AT315 - Traunviertel               1999    1.04     0.686
+ 415 at99h [321]AT321 - Lungau                     1999   NA       NA    
+ 416 at99h [322]AT322 - Pinzgau-Pongau             1999    0.748    0.757
+ 417 at99h [323]AT323 - vSalzburg und Umgebung     1999    0.919    0.678
+ 418 at99h [331]AT331 - Außerfern                  1999    1.06     0.659
+ 419 at99h [332]AT332 - Innsbruck                  1999    1.89     0.708
+ 420 at99h [333]AT333 - Osttirol                   1999    1.06     0.987
+ 421 at99h [334]AT334 - Tiroler Oberland           1999    0.871    0.995
+ 422 at99h [335]AT335 - Tiroler Unterland          1999    1.13     0.464
+ 423 at99h [341]AT341 - Bludenz-Bregenzer Wald     1999    0.846    0.653
+ 424 at99h [342]AT342 - Rheintal-Bodenseegebiet    1999   NA       NA    
+ 425 at99h <NA>                                    1999    1.91     0.619
+ 426 be00h [1]Brussels Capital Region              2000   NA       NA    
+ 427 be00h [2]Flemish Region                       2000   NA       NA    
+ 428 be00h [3]Walloon Region                       2000   NA       NA    
+ 429 be03h [1]Brussels Capital Region              2003   NA       NA    
+ 430 be03h [2]Flemish Region                       2003   NA       NA    
+ 431 be03h [3]Walloon Region                       2003   NA       NA    
+ 432 be04h [1]Brussels Capital Region              2004   NA       NA    
+ 433 be04h [2]Flemish Region                       2004   NA       NA    
+ 434 be04h [3]Walloon Region                       2004   NA       NA    
+ 435 be05h [1]Brussels Capital Region              2005    1.03     0.565
+ 436 be05h [2]Flemish Region                       2005    1.11     0.586
+ 437 be05h [3]Walloon Region                       2005   NA       NA    
+ 438 be06h [1]Brussels Capital Region              2006    1.15     0.613
+ 439 be06h [2]Flemish Region                       2006    1.13     0.618
+ 440 be06h [3]Walloon Region                       2006    1.19     0.594
+ 441 be07h [1]Brussels Capital Region              2007    1.13     0.627
+ 442 be07h [2]Flemish Region                       2007    1.09     0.601
+ 443 be07h [3]Walloon Region                       2007    1.27     0.605
+ 444 be08h [1]Brussels Capital Region              2008    1.13     0.558
+ 445 be08h [2]Flemish Region                       2008    1.13     0.616
+ 446 be08h [3]Walloon Region                       2008    1.17     0.622
+ 447 be09h [1]Brussels Capital Region              2009    1.22     0.577
+ 448 be09h [2]Flemish Region                       2009    1.21     0.604
+ 449 be09h [3]Walloon Region                       2009    1.19     0.632
+ 450 be10h [1]Brussels Capital Region              2010    1.13     0.540
+ 451 be10h [2]Flemish Region                       2010    1.24     0.591
+ 452 be10h [3]Walloon Region                       2010    1.18     0.620
+ 453 be11h [1]Brussels Capital Region              2011    1.14     0.537
+ 454 be11h [2]Flemish Region                       2011    1.21     0.602
+ 455 be11h [3]Walloon Region                       2011    1.13     0.622
+ 456 be12h [1]Brussels Capital Region              2012    1.11     0.566
+ 457 be12h [2]Flemish Region                       2012    1.11     0.585
+ 458 be12h [3]Walloon Region                       2012    1.11     0.601
+ 459 be13h [1]Brussels Capital Region              2013    1.00     0.515
+ 460 be13h [2]Flemish Region                       2013    1.23     0.573
+ 461 be13h [3]Walloon Region                       2013    1.16     0.573
+ 462 be14h [1]Brussels Capital Region              2014    1.01     0.561
+ 463 be14h [2]Flemish Region                       2014    1.20     0.598
+ 464 be14h [3]Walloon Region                       2014    1.19     0.595
+ 465 be15h [1]Brussels Capital Region              2015    1.04     0.562
+ 466 be15h [2]Flemish Region                       2015    1.24     0.600
+ 467 be15h [3]Walloon Region                       2015    1.20     0.619
+ 468 be16h [1]Brussels Capital Region              2016    1.06     0.578
+ 469 be16h [2]Flemish Region                       2016    1.18     0.595
+ 470 be16h [3]Walloon Region                       2016    1.15     0.642
+ 471 be17h [1]Brussels Capital Region              2017    1.11     0.633
+ 472 be17h [2]Flemish Region                       2017    1.28     0.612
+ 473 be17h [3]Walloon Region                       2017    1.16     0.636
+ 474 be88h [1]Brussels Capital Region              1988    1.23     0.840
+ 475 be88h [2]Flemish Region                       1988    1.02     0.690
+ 476 be88h [3]Walloon Region                       1988    1.07     0.676
+ 477 be92h [1]Brussels Capital Region              1992   NA        0.706
+ 478 be92h [2]Flemish Region                       1992   NA        0.651
+ 479 be92h [3]Walloon Region                       1992   NA        0.667
+ 480 be95h [1]Brussels Capital Region              1995   NA       NA    
+ 481 be95h [2]Flemish Region                       1995   NA       NA    
+ 482 be95h [3]Walloon Region                       1995   NA       NA    
+ 483 be97h [1]Brussels Capital Region              1997    1.36     0.563
+ 484 be97h [2]Flemish Region                       1997    1.26     0.593
+ 485 be97h [3]Walloon Region                       1997    1.14     0.612
+ 486 de00h [1]DE1 - Baden-Wuerttemberg             2000    1.23     0.717
+ 487 de00h [10]DEA - North Rhine-Westphalia        2000    1.30     0.674
+ 488 de00h [11]DEB - Rhineland-Palatinate          2000    1.17     0.656
+ 489 de00h [12]DEC - Saarland                      2000    1.11     0.737
+ 490 de00h [13]DED - Saxony                        2000    1.07     0.707
+ 491 de00h [14]DEE - Saxony-Anhalt                 2000    1.17     0.757
+ 492 de00h [15]DEF - Schleswig-Holstein            2000    1.29     0.533
+ 493 de00h [16]DEG - Thuringia                     2000    1.29     0.784
+ 494 de00h [2]DE2 - Bavaria                        2000    1.17     0.717
+ 495 de00h [3]DE3 - Berlin                         2000    1.52     0.790
+ 496 de00h [4]DE4 - Brandenburg                    2000    1.17     0.757
+ 497 de00h [5]DE5 - Bremen                         2000    0.841    0.940
+ 498 de00h [6]DE6 - Hamburg                        2000    1.41     0.561
+ 499 de00h [7]DE7 - Hesse                          2000    1.30     0.508
+ 500 de00h [8]DE8 - Mecklenburg-Western Pomerania  2000    1.18     0.646
+ 501 de00h [9]DE9 - Lower Saxony                   2000    1.31     0.655
+ 502 de01h [1]DE1 - Baden-Wuerttemberg             2001    1.24     0.659
+ 503 de01h [10]DEA - North Rhine-Westphalia        2001    1.26     0.634
+ 504 de01h [11]DEB - Rhineland-Palatinate          2001    1.03     0.636
+ 505 de01h [12]DEC - Saarland                      2001    1.11     0.707
+ 506 de01h [13]DED - Saxony                        2001    1.13     0.790
+ 507 de01h [14]DEE - Saxony-Anhalt                 2001    1.20     0.700
+ 508 de01h [15]DEF - Schleswig-Holstein            2001    1.19     0.583
+ 509 de01h [16]DEG - Thuringia                     2001    1.49     0.749
+ 510 de01h [2]DE2 - Bavaria                        2001    1.17     0.614
+ 511 de01h [3]DE3 - Berlin                         2001    1.26     0.833
+ 512 de01h [4]DE4 - Brandenburg                    2001    1.12     0.744
+ 513 de01h [5]DE5 - Bremen                         2001    1.08     0.570
+ 514 de01h [6]DE6 - Hamburg                        2001    1.32     0.609
+ 515 de01h [7]DE7 - Hesse                          2001    1.28     0.520
+ 516 de01h [8]DE8 - Mecklenburg-Western Pomerania  2001    1.23     0.688
+ 517 de01h [9]DE9 - Lower Saxony                   2001    1.41     0.595
+ 518 de02h [1]DE1 - Baden-Wuerttemberg             2002    1.27     0.685
+ 519 de02h [10]DEA - North Rhine-Westphalia        2002    1.31     0.615
+ 520 de02h [11]DEB - Rhineland-Palatinate          2002    0.949    0.636
+ 521 de02h [12]DEC - Saarland                      2002    1.19     0.692
+ 522 de02h [13]DED - Saxony                        2002    1.05     0.810
+ 523 de02h [14]DEE - Saxony-Anhalt                 2002    1.09     0.755
+ 524 de02h [15]DEF - Schleswig-Holstein            2002    1.15     0.618
+ 525 de02h [16]DEG - Thuringia                     2002    1.35     0.715
+ 526 de02h [2]DE2 - Bavaria                        2002    1.18     0.625
+ 527 de02h [3]DE3 - Berlin                         2002    1.42     0.766
+ 528 de02h [4]DE4 - Brandenburg                    2002    1.15     0.702
+ 529 de02h [5]DE5 - Bremen                         2002    1.19     0.580
+ 530 de02h [6]DE6 - Hamburg                        2002    1.06     0.631
+ 531 de02h [7]DE7 - Hesse                          2002    1.33     0.608
+ 532 de02h [8]DE8 - Mecklenburg-Western Pomerania  2002    1.21     0.722
+ 533 de02h [9]DE9 - Lower Saxony                   2002    1.36     0.629
+ 534 de03h [1]DE1 - Baden-Wuerttemberg             2003    1.25     0.677
+ 535 de03h [10]DEA - North Rhine-Westphalia        2003    1.25     0.629
+ 536 de03h [11]DEB - Rhineland-Palatinate          2003    1.02     0.677
+ 537 de03h [12]DEC - Saarland                      2003    1.23     0.724
+ 538 de03h [13]DED - Saxony                        2003    1.12     0.787
+ 539 de03h [14]DEE - Saxony-Anhalt                 2003    1.12     0.801
+ 540 de03h [15]DEF - Schleswig-Holstein            2003    1.29     0.591
+ 541 de03h [16]DEG - Thuringia                     2003    1.32     0.802
+ 542 de03h [2]DE2 - Bavaria                        2003    1.18     0.679
+ 543 de03h [3]DE3 - Berlin                         2003    1.30     0.795
+ 544 de03h [4]DE4 - Brandenburg                    2003    1.12     0.708
+ 545 de03h [5]DE5 - Bremen                         2003    1.18     0.551
+ 546 de03h [6]DE6 - Hamburg                        2003    1.66     0.525
+ 547 de03h [7]DE7 - Hesse                          2003    1.42     0.578
+ 548 de03h [8]DE8 - Mecklenburg-Western Pomerania  2003    1.15     0.695
+ 549 de03h [9]DE9 - Lower Saxony                   2003    1.35     0.614
+ 550 de04h [1]DE1 - Baden-Wuerttemberg             2004    1.26     0.659
+ 551 de04h [10]DEA - North Rhine-Westphalia        2004    1.29     0.603
+ 552 de04h [11]DEB - Rhineland-Palatinate          2004    1.01     0.652
+ 553 de04h [12]DEC - Saarland                      2004    1.31     0.730
+ 554 de04h [13]DED - Saxony                        2004    1.35     0.774
+ 555 de04h [14]DEE - Saxony-Anhalt                 2004    1.15     0.736
+ 556 de04h [15]DEF - Schleswig-Holstein            2004    1.11     0.542
+ 557 de04h [16]DEG - Thuringia                     2004    1.38     0.742
+ 558 de04h [2]DE2 - Bavaria                        2004    1.17     0.655
+ 559 de04h [3]DE3 - Berlin                         2004    1.33     0.755
+ 560 de04h [4]DE4 - Brandenburg                    2004    1.20     0.660
+ 561 de04h [5]DE5 - Bremen                         2004    1.32     0.608
+ 562 de04h [6]DE6 - Hamburg                        2004    1.44     0.721
+ 563 de04h [7]DE7 - Hesse                          2004    1.45     0.581
+ 564 de04h [8]DE8 - Mecklenburg-Western Pomerania  2004    1.05     0.698
+ 565 de04h [9]DE9 - Lower Saxony                   2004    1.30     0.626
+ 566 de05h [1]DE1 - Baden-Wuerttemberg             2005    1.31     0.672
+ 567 de05h [10]DEA - North Rhine-Westphalia        2005    1.33     0.579
+ 568 de05h [11]DEB - Rhineland-Palatinate          2005    1.04     0.614
+ 569 de05h [12]DEC - Saarland                      2005    1.40     0.646
+ 570 de05h [13]DED - Saxony                        2005    1.30     0.861
+ 571 de05h [14]DEE - Saxony-Anhalt                 2005    1.18     0.736
+ 572 de05h [15]DEF - Schleswig-Holstein            2005    1.20     0.532
+ 573 de05h [16]DEG - Thuringia                     2005    1.38     0.686
+ 574 de05h [2]DE2 - Bavaria                        2005    1.20     0.649
+ 575 de05h [3]DE3 - Berlin                         2005    1.29     0.685
+ 576 de05h [4]DE4 - Brandenburg                    2005    1.46     0.699
+ 577 de05h [5]DE5 - Bremen                         2005    1.56     0.546
+ 578 de05h [6]DE6 - Hamburg                        2005    1.72     0.619
+ 579 de05h [7]DE7 - Hesse                          2005    1.33     0.520
+ 580 de05h [8]DE8 - Mecklenburg-Western Pomerania  2005    0.989    0.748
+ 581 de05h [9]DE9 - Lower Saxony                   2005    1.31     0.570
+ 582 de06h [1]DE1 - Baden-Wuerttemberg             2006    1.29     0.639
+ 583 de06h [10]DEA - North Rhine-Westphalia        2006    1.33     0.575
+ 584 de06h [11]DEB - Rhineland-Palatinate          2006    1.07     0.644
+ 585 de06h [12]DEC - Saarland                      2006    1.16     0.816
+ 586 de06h [13]DED - Saxony                        2006    1.26     0.817
+ 587 de06h [14]DEE - Saxony-Anhalt                 2006    1.12     0.775
+ 588 de06h [15]DEF - Schleswig-Holstein            2006    1.17     0.525
+ 589 de06h [16]DEG - Thuringia                     2006    1.33     0.747
+ 590 de06h [2]DE2 - Bavaria                        2006    1.19     0.641
+ 591 de06h [3]DE3 - Berlin                         2006    1.26     0.782
+ 592 de06h [4]DE4 - Brandenburg                    2006    1.18     0.716
+ 593 de06h [5]DE5 - Bremen                         2006    1.82     0.552
+ 594 de06h [6]DE6 - Hamburg                        2006    1.71     0.674
+ 595 de06h [7]DE7 - Hesse                          2006    1.30     0.538
+ 596 de06h [8]DE8 - Mecklenburg-Western Pomerania  2006    1.25     0.726
+ 597 de06h [9]DE9 - Lower Saxony                   2006    1.25     0.591
+ 598 de07h [1]DE1 - Baden-Wuerttemberg             2007    1.33     0.614
+ 599 de07h [10]DEA - North Rhine-Westphalia        2007    1.36     0.579
+ 600 de07h [11]DEB - Rhineland-Palatinate          2007    1.03     0.653
+ 601 de07h [12]DEC - Saarland                      2007    1.41     0.762
+ 602 de07h [13]DED - Saxony                        2007    1.10     0.838
+ 603 de07h [14]DEE - Saxony-Anhalt                 2007    1.04     0.920
+ 604 de07h [15]DEF - Schleswig-Holstein            2007    1.16     0.568
+ 605 de07h [16]DEG - Thuringia                     2007    1.38     0.743
+ 606 de07h [2]DE2 - Bavaria                        2007    1.20     0.632
+ 607 de07h [3]DE3 - Berlin                         2007    1.31     0.693
+ 608 de07h [4]DE4 - Brandenburg                    2007    1.06     0.666
+ 609 de07h [5]DE5 - Bremen                         2007    1.76     0.584
+ 610 de07h [6]DE6 - Hamburg                        2007    1.41     0.692
+ 611 de07h [7]DE7 - Hesse                          2007    1.29     0.541
+ 612 de07h [8]DE8 - Mecklenburg-Western Pomerania  2007    1.09     0.650
+ 613 de07h [9]DE9 - Lower Saxony                   2007    1.26     0.581
+ 614 de08h [1]DE1 - Baden-Wuerttemberg             2008    1.32     0.632
+ 615 de08h [10]DEA - North Rhine-Westphalia        2008    1.31     0.566
+ 616 de08h [11]DEB - Rhineland-Palatinate          2008    1.15     0.695
+ 617 de08h [12]DEC - Saarland                      2008    1.26     0.713
+ 618 de08h [13]DED - Saxony                        2008    1.19     0.736
+ 619 de08h [14]DEE - Saxony-Anhalt                 2008    1.12     0.868
+ 620 de08h [15]DEF - Schleswig-Holstein            2008    1.23     0.611
+ 621 de08h [16]DEG - Thuringia                     2008    1.37     0.724
+ 622 de08h [2]DE2 - Bavaria                        2008    1.24     0.644
+ 623 de08h [3]DE3 - Berlin                         2008    1.18     0.769
+ 624 de08h [4]DE4 - Brandenburg                    2008    1.17     0.631
+ 625 de08h [5]DE5 - Bremen                         2008    2.27     0.666
+ 626 de08h [6]DE6 - Hamburg                        2008    1.30     0.574
+ 627 de08h [7]DE7 - Hesse                          2008    1.35     0.533
+ 628 de08h [8]DE8 - Mecklenburg-Western Pomerania  2008    1.10     0.547
+ 629 de08h [9]DE9 - Lower Saxony                   2008    1.20     0.562
+ 630 de09h [1]DE1 - Baden-Wuerttemberg             2009    1.29     0.662
+ 631 de09h [10]DEA - North Rhine-Westphalia        2009    1.24     0.580
+ 632 de09h [11]DEB - Rhineland-Palatinate          2009    1.08     0.698
+ 633 de09h [12]DEC - Saarland                      2009    1.23     0.780
+ 634 de09h [13]DED - Saxony                        2009    1.20     0.762
+ 635 de09h [14]DEE - Saxony-Anhalt                 2009    1.23     0.589
+ 636 de09h [15]DEF - Schleswig-Holstein            2009    1.20     0.615
+ 637 de09h [16]DEG - Thuringia                     2009    1.41     0.619
+ 638 de09h [2]DE2 - Bavaria                        2009    1.17     0.668
+ 639 de09h [3]DE3 - Berlin                         2009    1.20     0.701
+ 640 de09h [4]DE4 - Brandenburg                    2009    1.57     0.655
+ 641 de09h [5]DE5 - Bremen                         2009    1.56     0.599
+ 642 de09h [6]DE6 - Hamburg                        2009    1.64     0.541
+ 643 de09h [7]DE7 - Hesse                          2009    1.30     0.511
+ 644 de09h [8]DE8 - Mecklenburg-Western Pomerania  2009    0.884    0.518
+ 645 de09h [9]DE9 - Lower Saxony                   2009    1.18     0.568
+ 646 de10h [1]DE1 - Baden-Wuerttemberg             2010    1.23     0.636
+ 647 de10h [10]DEA - North Rhine-Westphalia        2010    1.21     0.588
+ 648 de10h [11]DEB - Rhineland-Palatinate          2010    1.04     0.744
+ 649 de10h [12]DEC - Saarland                      2010    1.36     0.793
+ 650 de10h [13]DED - Saxony                        2010    1.20     0.760
+ 651 de10h [14]DEE - Saxony-Anhalt                 2010    1.07     0.656
+ 652 de10h [15]DEF - Schleswig-Holstein            2010    1.24     0.590
+ 653 de10h [16]DEG - Thuringia                     2010    1.51     0.587
+ 654 de10h [2]DE2 - Bavaria                        2010    1.19     0.641
+ 655 de10h [3]DE3 - Berlin                         2010    1.22     0.723
+ 656 de10h [4]DE4 - Brandenburg                    2010    1.64     0.638
+ 657 de10h [5]DE5 - Bremen                         2010    1.34     0.678
+ 658 de10h [6]DE6 - Hamburg                        2010    1.46     0.557
+ 659 de10h [7]DE7 - Hesse                          2010    1.30     0.547
+ 660 de10h [8]DE8 - Mecklenburg-Western Pomerania  2010    0.978    0.667
+ 661 de10h [9]DE9 - Lower Saxony                   2010    1.19     0.603
+ 662 de11h [1]DE1 - Baden-Wuerttemberg             2011    1.22     0.665
+ 663 de11h [10]DEA - North Rhine-Westphalia        2011    1.25     0.616
+ 664 de11h [11]DEB - Rhineland-Palatinate          2011    1.01     0.687
+ 665 de11h [12]DEC - Saarland                      2011    1.33     0.876
+ 666 de11h [13]DED - Saxony                        2011    1.20     0.787
+ 667 de11h [14]DEE - Saxony-Anhalt                 2011    1.18     0.573
+ 668 de11h [15]DEF - Schleswig-Holstein            2011    1.10     0.624
+ 669 de11h [16]DEG - Thuringia                     2011    1.55     0.596
+ 670 de11h [2]DE2 - Bavaria                        2011    1.17     0.636
+ 671 de11h [3]DE3 - Berlin                         2011    1.20     0.703
+ 672 de11h [4]DE4 - Brandenburg                    2011    1.50     0.497
+ 673 de11h [5]DE5 - Bremen                         2011    1.04     0.563
+ 674 de11h [6]DE6 - Hamburg                        2011    1.56     0.531
+ 675 de11h [7]DE7 - Hesse                          2011    1.28     0.531
+ 676 de11h [8]DE8 - Mecklenburg-Western Pomerania  2011    0.992    0.652
+ 677 de11h [9]DE9 - Lower Saxony                   2011    1.15     0.623
+ 678 de12h [1]DE1 - Baden-Wuerttemberg             2012    1.28     0.642
+ 679 de12h [10]DEA - North Rhine-Westphalia        2012    1.33     0.611
+ 680 de12h [11]DEB - Rhineland-Palatinate          2012    1.06     0.696
+ 681 de12h [12]DEC - Saarland                      2012    1.35     0.806
+ 682 de12h [13]DED - Saxony                        2012    1.26     0.767
+ 683 de12h [14]DEE - Saxony-Anhalt                 2012    1.50     0.683
+ 684 de12h [15]DEF - Schleswig-Holstein            2012    1.33     0.634
+ 685 de12h [16]DEG - Thuringia                     2012    1.27     0.573
+ 686 de12h [2]DE2 - Bavaria                        2012    1.20     0.596
+ 687 de12h [3]DE3 - Berlin                         2012    1.39     0.689
+ 688 de12h [4]DE4 - Brandenburg                    2012    1.34     0.509
+ 689 de12h [5]DE5 - Bremen                         2012    1.14     0.660
+ 690 de12h [6]DE6 - Hamburg                        2012    1.36     0.590
+ 691 de12h [7]DE7 - Hesse                          2012    1.43     0.551
+ 692 de12h [8]DE8 - Mecklenburg-Western Pomerania  2012    1.10     0.606
+ 693 de12h [9]DE9 - Lower Saxony                   2012    1.25     0.618
+ 694 de13h [1]DE1 - Baden-Wuerttemberg             2013    1.25     0.659
+ 695 de13h [10]DEA - North Rhine-Westphalia        2013    1.29     0.603
+ 696 de13h [11]DEB - Rhineland-Palatinate          2013    0.966    0.708
+ 697 de13h [12]DEC - Saarland                      2013    1.31     0.602
+ 698 de13h [13]DED - Saxony                        2013    1.03     0.798
+ 699 de13h [14]DEE - Saxony-Anhalt                 2013    1.30     0.701
+ 700 de13h [15]DEF - Schleswig-Holstein            2013    1.26     0.738
+ 701 de13h [16]DEG - Thuringia                     2013    1.52     0.522
+ 702 de13h [2]DE2 - Bavaria                        2013    1.21     0.590
+ 703 de13h [3]DE3 - Berlin                         2013    1.29     0.706
+ 704 de13h [4]DE4 - Brandenburg                    2013    1.42     0.517
+ 705 de13h [5]DE5 - Bremen                         2013    1.09     1.08 
+ 706 de13h [6]DE6 - Hamburg                        2013    1.41     0.590
+ 707 de13h [7]DE7 - Hesse                          2013    1.36     0.576
+ 708 de13h [8]DE8 - Mecklenburg-Western Pomerania  2013    0.968    0.648
+ 709 de13h [9]DE9 - Lower Saxony                   2013    1.30     0.635
+ 710 de14h [1]DE1 - Baden-Wuerttemberg             2014    1.24     0.673
+ 711 de14h [10]DEA - North Rhine-Westphalia        2014    1.35     0.580
+ 712 de14h [11]DEB - Rhineland-Palatinate          2014    1.22     0.608
+ 713 de14h [12]DEC - Saarland                      2014    1.27     0.672
+ 714 de14h [13]DED - Saxony                        2014    1.03     0.895
+ 715 de14h [14]DEE - Saxony-Anhalt                 2014    1.28     0.632
+ 716 de14h [15]DEF - Schleswig-Holstein            2014    1.42     0.720
+ 717 de14h [16]DEG - Thuringia                     2014    1.53     0.577
+ 718 de14h [2]DE2 - Bavaria                        2014    1.19     0.592
+ 719 de14h [3]DE3 - Berlin                         2014    1.24     0.696
+ 720 de14h [4]DE4 - Brandenburg                    2014    1.40     0.511
+ 721 de14h [5]DE5 - Bremen                         2014    1.26     0.910
+ 722 de14h [6]DE6 - Hamburg                        2014    1.39     0.478
+ 723 de14h [7]DE7 - Hesse                          2014    1.35     0.504
+ 724 de14h [8]DE8 - Mecklenburg-Western Pomerania  2014    1.09     0.626
+ 725 de14h [9]DE9 - Lower Saxony                   2014    1.35     0.608
+ 726 de15h [1]DE1 - Baden-Wuerttemberg             2015    1.29     0.660
+ 727 de15h [10]DEA - North Rhine-Westphalia        2015    1.33     0.622
+ 728 de15h [11]DEB - Rhineland-Palatinate          2015    1.19     0.626
+ 729 de15h [12]DEC - Saarland                      2015    1.28     0.613
+ 730 de15h [13]DED - Saxony                        2015    1.05     0.841
+ 731 de15h [14]DEE - Saxony-Anhalt                 2015    1.24     0.666
+ 732 de15h [15]DEF - Schleswig-Holstein            2015    1.25     0.720
+ 733 de15h [16]DEG - Thuringia                     2015    1.41     0.626
+ 734 de15h [2]DE2 - Bavaria                        2015    1.15     0.581
+ 735 de15h [3]DE3 - Berlin                         2015    1.15     0.867
+ 736 de15h [4]DE4 - Brandenburg                    2015    1.39     0.591
+ 737 de15h [5]DE5 - Bremen                         2015    1.30     0.814
+ 738 de15h [6]DE6 - Hamburg                        2015    1.29     0.634
+ 739 de15h [7]DE7 - Hesse                          2015    1.37     0.522
+ 740 de15h [8]DE8 - Mecklenburg-Western Pomerania  2015    0.957    0.683
+ 741 de15h [9]DE9 - Lower Saxony                   2015    1.29     0.626
+ 742 de16h [1]DE1 - Baden-Wuerttemberg             2016    1.32     0.637
+ 743 de16h [10]DEA - North Rhine-Westphalia        2016    1.30     0.608
+ 744 de16h [11]DEB - Rhineland-Palatinate          2016    1.24     0.625
+ 745 de16h [12]DEC - Saarland                      2016    1.32     0.659
+ 746 de16h [13]DED - Saxony                        2016    1.09     0.841
+ 747 de16h [14]DEE - Saxony-Anhalt                 2016    1.43     0.679
+ 748 de16h [15]DEF - Schleswig-Holstein            2016    1.23     0.625
+ 749 de16h [16]DEG - Thuringia                     2016    1.46     0.655
+ 750 de16h [2]DE2 - Bavaria                        2016    1.18     0.604
+ 751 de16h [3]DE3 - Berlin                         2016    1.27     0.809
+ 752 de16h [4]DE4 - Brandenburg                    2016    1.61     0.520
+ 753 de16h [5]DE5 - Bremen                         2016    1.36     0.791
+ 754 de16h [6]DE6 - Hamburg                        2016    1.34     0.550
+ 755 de16h [7]DE7 - Hesse                          2016    1.35     0.562
+ 756 de16h [8]DE8 - Mecklenburg-Western Pomerania  2016    1.05     0.684
+ 757 de16h [9]DE9 - Lower Saxony                   2016    1.38     0.598
+ 758 de17h [1]DE1 - Baden-Wuerttemberg             2017    1.26     0.670
+ 759 de17h [10]DEA - North Rhine-Westphalia        2017    1.31     0.612
+ 760 de17h [11]DEB - Rhineland-Palatinate          2017    1.24     0.632
+ 761 de17h [12]DEC - Saarland                      2017    1.24     0.632
+ 762 de17h [13]DED - Saxony                        2017    1.02     0.796
+ 763 de17h [14]DEE - Saxony-Anhalt                 2017    1.14     0.750
+ 764 de17h [15]DEF - Schleswig-Holstein            2017    1.27     0.581
+ 765 de17h [16]DEG - Thuringia                     2017    1.49     0.729
+ 766 de17h [2]DE2 - Bavaria                        2017    1.16     0.591
+ 767 de17h [3]DE3 - Berlin                         2017    1.31     0.785
+ 768 de17h [4]DE4 - Brandenburg                    2017    1.49     0.520
+ 769 de17h [5]DE5 - Bremen                         2017    1.56     0.592
+ 770 de17h [6]DE6 - Hamburg                        2017    1.31     0.611
+ 771 de17h [7]DE7 - Hesse                          2017    1.35     0.576
+ 772 de17h [8]DE8 - Mecklenburg-Western Pomerania  2017    1.23     0.633
+ 773 de17h [9]DE9 - Lower Saxony                   2017    1.46     0.586
+ 774 de18h [1]DE1 - Baden-Wuerttemberg             2018    1.30     0.645
+ 775 de18h [10]DEA - North Rhine-Westphalia        2018    1.26     0.619
+ 776 de18h [11]DEB - Rhineland-Palatinate          2018    1.39     0.590
+ 777 de18h [12]DEC - Saarland                      2018    1.44     0.540
+ 778 de18h [13]DED - Saxony                        2018    1.07     0.782
+ 779 de18h [14]DEE - Saxony-Anhalt                 2018    1.24     0.655
+ 780 de18h [15]DEF - Schleswig-Holstein            2018    1.43     0.614
+ 781 de18h [16]DEG - Thuringia                     2018    1.45     0.650
+ 782 de18h [2]DE2 - Bavaria                        2018    1.17     0.615
+ 783 de18h [3]DE3 - Berlin                         2018    1.23     0.807
+ 784 de18h [4]DE4 - Brandenburg                    2018    1.50     0.575
+ 785 de18h [5]DE5 - Bremen                         2018    1.31     0.820
+ 786 de18h [6]DE6 - Hamburg                        2018    1.22     0.605
+ 787 de18h [7]DE7 - Hesse                          2018    1.39     0.591
+ 788 de18h [8]DE8 - Mecklenburg-Western Pomerania  2018    1.30     0.742
+ 789 de18h [9]DE9 - Lower Saxony                   2018    1.34     0.627
+ 790 de18h <NA>                                    2018    0.763    0.562
+ 791 de19h [1]DE1 - Baden-Wuerttemberg             2019    1.28     0.668
+ 792 de19h [10]DEA - North Rhine-Westphalia        2019    1.21     0.614
+ 793 de19h [11]DEB - Rhineland-Palatinate          2019    1.26     0.626
+ 794 de19h [12]DEC - Saarland                      2019    1.54     0.524
+ 795 de19h [13]DED - Saxony                        2019    1.13     0.855
+ 796 de19h [14]DEE - Saxony-Anhalt                 2019    1.36     0.778
+ 797 de19h [15]DEF - Schleswig-Holstein            2019    1.39     0.585
+ 798 de19h [16]DEG - Thuringia                     2019    1.34     0.671
+ 799 de19h [2]DE2 - Bavaria                        2019    1.15     0.680
+ 800 de19h [3]DE3 - Berlin                         2019    1.24     0.858
+ 801 de19h [4]DE4 - Brandenburg                    2019    1.50     0.710
+ 802 de19h [5]DE5 - Bremen                         2019    1.47     0.713
+ 803 de19h [6]DE6 - Hamburg                        2019    1.37     0.586
+ 804 de19h [7]DE7 - Hesse                          2019    1.37     0.578
+ 805 de19h [8]DE8 - Mecklenburg-Western Pomerania  2019    0.946    0.691
+ 806 de19h [9]DE9 - Lower Saxony                   2019    1.42     0.660
+ 807 de89h [1]DE1 - Baden-Wuerttemberg             1989    1.14     0.680
+ 808 de89h [10]DEA - North Rhine-Westphalia        1989    1.15     0.610
+ 809 de89h [11]DEB - Rhineland-Palatinate          1989    1.04     0.501
+ 810 de89h [12]DEC - Saarland                      1989    1.34     0.438
+ 811 de89h [15]DEF - Schleswig-Holstein            1989    1.06     0.622
+ 812 de89h [2]DE2 - Bavaria                        1989    1.06     0.721
+ 813 de89h [3]DE3 - Berlin                         1989    1.25     0.764
+ 814 de89h [5]DE5 - Bremen                         1989    1.30     0.366
+ 815 de89h [6]DE6 - Hamburg                        1989    1.29     0.751
+ 816 de89h [7]DE7 - Hesse                          1989    1.25     0.710
+ 817 de89h [9]DE9 - Lower Saxony                   1989    1.11     0.665
+ 818 de90h [1]DE1 - Baden-Wuerttemberg             1990    1.13     0.698
+ 819 de90h [10]DEA - North Rhine-Westphalia        1990    1.19     0.617
+ 820 de90h [11]DEB - Rhineland-Palatinate          1990    1.05     0.726
+ 821 de90h [12]DEC - Saarland                      1990    1.02     0.627
+ 822 de90h [15]DEF - Schleswig-Holstein            1990    1.10     0.601
+ 823 de90h [2]DE2 - Bavaria                        1990    1.02     0.756
+ 824 de90h [3]DE3 - Berlin                         1990    1.45     0.723
+ 825 de90h [5]DE5 - Bremen                         1990    0.984    0.329
+ 826 de90h [6]DE6 - Hamburg                        1990    1.27     0.683
+ 827 de90h [7]DE7 - Hesse                          1990    1.27     0.684
+ 828 de90h [9]DE9 - Lower Saxony                   1990    1.12     0.643
+ 829 de91h [1]DE1 - Baden-Wuerttemberg             1991    1.16     0.622
+ 830 de91h [10]DEA - North Rhine-Westphalia        1991    1.14     0.637
+ 831 de91h [11]DEB - Rhineland-Palatinate          1991    1.13     0.716
+ 832 de91h [12]DEC - Saarland                      1991    1.00     0.751
+ 833 de91h [13]DED - Saxony                        1991    0.950    0.658
+ 834 de91h [14]DEE - Saxony-Anhalt                 1991    1.32     0.732
+ 835 de91h [15]DEF - Schleswig-Holstein            1991    1.04     0.659
+ 836 de91h [16]DEG - Thuringia                     1991    1.21     0.753
+ 837 de91h [2]DE2 - Bavaria                        1991    1.06     0.755
+ 838 de91h [3]DE3 - Berlin                         1991    1.12     0.817
+ 839 de91h [4]DE4 - Brandenburg                    1991    1.06     0.726
+ 840 de91h [5]DE5 - Bremen                         1991    0.807    0.514
+ 841 de91h [6]DE6 - Hamburg                        1991    1.18     0.676
+ 842 de91h [7]DE7 - Hesse                          1991    1.21     0.682
+ 843 de91h [8]DE8 - Mecklenburg-Western Pomerania  1991    0.954    0.741
+ 844 de91h [9]DE9 - Lower Saxony                   1991    1.15     0.609
+ 845 de91h <NA>                                    1991    1.63     0.497
+ 846 de92h [1]DE1 - Baden-Wuerttemberg             1992    1.11     0.665
+ 847 de92h [10]DEA - North Rhine-Westphalia        1992    1.13     0.605
+ 848 de92h [11]DEB - Rhineland-Palatinate          1992    1.12     0.607
+ 849 de92h [12]DEC - Saarland                      1992    1.10     0.754
+ 850 de92h [13]DED - Saxony                        1992    1.03     0.655
+ 851 de92h [14]DEE - Saxony-Anhalt                 1992    1.22     0.693
+ 852 de92h [15]DEF - Schleswig-Holstein            1992    1.01     0.621
+ 853 de92h [16]DEG - Thuringia                     1992    1.18     0.773
+ 854 de92h [2]DE2 - Bavaria                        1992    1.02     0.721
+ 855 de92h [3]DE3 - Berlin                         1992    1.23     0.823
+ 856 de92h [4]DE4 - Brandenburg                    1992    1.14     0.731
+ 857 de92h [5]DE5 - Bremen                         1992    0.753    0.546
+ 858 de92h [6]DE6 - Hamburg                        1992    1.27     0.794
+ 859 de92h [7]DE7 - Hesse                          1992    1.25     0.616
+ 860 de92h [8]DE8 - Mecklenburg-Western Pomerania  1992    1.01     0.654
+ 861 de92h [9]DE9 - Lower Saxony                   1992    1.11     0.580
+ 862 de93h [1]DE1 - Baden-Wuerttemberg             1993    1.11     0.676
+ 863 de93h [10]DEA - North Rhine-Westphalia        1993    1.10     0.592
+ 864 de93h [11]DEB - Rhineland-Palatinate          1993    1.09     0.648
+ 865 de93h [12]DEC - Saarland                      1993    1.19     0.692
+ 866 de93h [13]DED - Saxony                        1993    1.03     0.659
+ 867 de93h [14]DEE - Saxony-Anhalt                 1993    1.12     0.619
+ 868 de93h [15]DEF - Schleswig-Holstein            1993    1.05     0.691
+ 869 de93h [16]DEG - Thuringia                     1993    1.28     0.681
+ 870 de93h [2]DE2 - Bavaria                        1993    1.03     0.722
+ 871 de93h [3]DE3 - Berlin                         1993    1.27     0.733
+ 872 de93h [4]DE4 - Brandenburg                    1993    1.02     0.690
+ 873 de93h [5]DE5 - Bremen                         1993    0.977    0.496
+ 874 de93h [6]DE6 - Hamburg                        1993    1.39     0.804
+ 875 de93h [7]DE7 - Hesse                          1993    1.21     0.619
+ 876 de93h [8]DE8 - Mecklenburg-Western Pomerania  1993    0.975    0.650
+ 877 de93h [9]DE9 - Lower Saxony                   1993    1.03     0.570
+ 878 de94h [1]DE1 - Baden-Wuerttemberg             1994    1.19     0.651
+ 879 de94h [10]DEA - North Rhine-Westphalia        1994    1.24     0.617
+ 880 de94h [11]DEB - Rhineland-Palatinate          1994    1.33     0.627
+ 881 de94h [12]DEC - Saarland                      1994    1.30     0.550
+ 882 de94h [13]DED - Saxony                        1994    1.09     0.644
+ 883 de94h [14]DEE - Saxony-Anhalt                 1994    1.11     0.674
+ 884 de94h [15]DEF - Schleswig-Holstein            1994    1.26     0.711
+ 885 de94h [16]DEG - Thuringia                     1994    1.21     0.747
+ 886 de94h [2]DE2 - Bavaria                        1994    1.09     0.656
+ 887 de94h [3]DE3 - Berlin                         1994    1.34     0.763
+ 888 de94h [4]DE4 - Brandenburg                    1994    1.02     0.727
+ 889 de94h [5]DE5 - Bremen                         1994    1.15     0.655
+ 890 de94h [6]DE6 - Hamburg                        1994    1.36     0.837
+ 891 de94h [7]DE7 - Hesse                          1994    1.38     0.611
+ 892 de94h [8]DE8 - Mecklenburg-Western Pomerania  1994    1.01     0.652
+ 893 de94h [9]DE9 - Lower Saxony                   1994    1.25     0.608
+ 894 de95h [1]DE1 - Baden-Wuerttemberg             1995    1.16     0.680
+ 895 de95h [10]DEA - North Rhine-Westphalia        1995    1.23     0.648
+ 896 de95h [11]DEB - Rhineland-Palatinate          1995    1.33     0.641
+ 897 de95h [12]DEC - Saarland                      1995    1.23     0.651
+ 898 de95h [13]DED - Saxony                        1995    1.09     0.675
+ 899 de95h [14]DEE - Saxony-Anhalt                 1995    1.02     0.681
+ 900 de95h [15]DEF - Schleswig-Holstein            1995    1.16     0.660
+ 901 de95h [16]DEG - Thuringia                     1995    1.18     0.757
+ 902 de95h [2]DE2 - Bavaria                        1995    1.08     0.658
+ 903 de95h [3]DE3 - Berlin                         1995    1.37     0.733
+ 904 de95h [4]DE4 - Brandenburg                    1995    1.16     0.747
+ 905 de95h [5]DE5 - Bremen                         1995    0.963    0.514
+ 906 de95h [6]DE6 - Hamburg                        1995    1.38     0.760
+ 907 de95h [7]DE7 - Hesse                          1995    1.34     0.602
+ 908 de95h [8]DE8 - Mecklenburg-Western Pomerania  1995    1.03     0.685
+ 909 de95h [9]DE9 - Lower Saxony                   1995    1.19     0.656
+ 910 de95h <NA>                                    1995   NA       NA    
+ 911 de96h [1]DE1 - Baden-Wuerttemberg             1996    1.16     0.668
+ 912 de96h [10]DEA - North Rhine-Westphalia        1996    1.24     0.638
+ 913 de96h [11]DEB - Rhineland-Palatinate          1996    1.21     0.651
+ 914 de96h [12]DEC - Saarland                      1996    1.09     0.560
+ 915 de96h [13]DED - Saxony                        1996    1.11     0.674
+ 916 de96h [14]DEE - Saxony-Anhalt                 1996    1.11     0.724
+ 917 de96h [15]DEF - Schleswig-Holstein            1996    1.11     0.749
+ 918 de96h [16]DEG - Thuringia                     1996    1.19     0.703
+ 919 de96h [2]DE2 - Bavaria                        1996    1.04     0.708
+ 920 de96h [3]DE3 - Berlin                         1996    1.51     0.798
+ 921 de96h [4]DE4 - Brandenburg                    1996    1.12     0.805
+ 922 de96h [5]DE5 - Bremen                         1996    0.968    0.479
+ 923 de96h [6]DE6 - Hamburg                        1996    1.09     0.636
+ 924 de96h [7]DE7 - Hesse                          1996    1.38     0.515
+ 925 de96h [8]DE8 - Mecklenburg-Western Pomerania  1996    1.12     0.587
+ 926 de96h [9]DE9 - Lower Saxony                   1996    1.17     0.596
+ 927 de96h <NA>                                    1996   NA       NA    
+ 928 de97h [1]DE1 - Baden-Wuerttemberg             1997    1.16     0.680
+ 929 de97h [10]DEA - North Rhine-Westphalia        1997    1.25     0.617
+ 930 de97h [11]DEB - Rhineland-Palatinate          1997    1.15     0.748
+ 931 de97h [12]DEC - Saarland                      1997    1.30     0.631
+ 932 de97h [13]DED - Saxony                        1997    1.07     0.736
+ 933 de97h [14]DEE - Saxony-Anhalt                 1997    0.991    0.762
+ 934 de97h [15]DEF - Schleswig-Holstein            1997    1.13     0.629
+ 935 de97h [16]DEG - Thuringia                     1997    1.26     0.757
+ 936 de97h [2]DE2 - Bavaria                        1997    1.08     0.686
+ 937 de97h [3]DE3 - Berlin                         1997    1.44     0.770
+ 938 de97h [4]DE4 - Brandenburg                    1997    1.06     0.746
+ 939 de97h [5]DE5 - Bremen                         1997    1.04     0.451
+ 940 de97h [6]DE6 - Hamburg                        1997    1.25     0.660
+ 941 de97h [7]DE7 - Hesse                          1997    1.40     0.538
+ 942 de97h [8]DE8 - Mecklenburg-Western Pomerania  1997    1.12     0.664
+ 943 de97h [9]DE9 - Lower Saxony                   1997    1.15     0.619
+ 944 de98h [1]DE1 - Baden-Wuerttemberg             1998    1.14     0.688
+ 945 de98h [10]DEA - North Rhine-Westphalia        1998    1.25     0.613
+ 946 de98h [11]DEB - Rhineland-Palatinate          1998    1.10     0.697
+ 947 de98h [12]DEC - Saarland                      1998    1.21     0.710
+ 948 de98h [13]DED - Saxony                        1998    0.906    0.733
+ 949 de98h [14]DEE - Saxony-Anhalt                 1998    1.05     0.754
+ 950 de98h [15]DEF - Schleswig-Holstein            1998    1.09     0.521
+ 951 de98h [16]DEG - Thuringia                     1998    1.25     0.736
+ 952 de98h [2]DE2 - Bavaria                        1998    1.10     0.710
+ 953 de98h [3]DE3 - Berlin                         1998    1.56     0.723
+ 954 de98h [4]DE4 - Brandenburg                    1998    1.04     0.721
+ 955 de98h [5]DE5 - Bremen                         1998    0.969    0.622
+ 956 de98h [6]DE6 - Hamburg                        1998    1.25     0.815
+ 957 de98h [7]DE7 - Hesse                          1998    1.35     0.560
+ 958 de98h [8]DE8 - Mecklenburg-Western Pomerania  1998    1.30     0.686
+ 959 de98h [9]DE9 - Lower Saxony                   1998    1.16     0.604
+ 960 de99h [1]DE1 - Baden-Wuerttemberg             1999    1.21     0.694
+ 961 de99h [10]DEA - North Rhine-Westphalia        1999    1.28     0.650
+ 962 de99h [11]DEB - Rhineland-Palatinate          1999    1.13     0.616
+ 963 de99h [12]DEC - Saarland                      1999    1.16     0.634
+ 964 de99h [13]DED - Saxony                        1999    1.19     0.678
+ 965 de99h [14]DEE - Saxony-Anhalt                 1999    1.27     0.758
+ 966 de99h [15]DEF - Schleswig-Holstein            1999    1.26     0.535
+ 967 de99h [16]DEG - Thuringia                     1999    1.26     0.751
+ 968 de99h [2]DE2 - Bavaria                        1999    1.12     0.687
+ 969 de99h [3]DE3 - Berlin                         1999    1.39     0.762
+ 970 de99h [4]DE4 - Brandenburg                    1999    1.19     0.744
+ 971 de99h [5]DE5 - Bremen                         1999    0.911    0.586
+ 972 de99h [6]DE6 - Hamburg                        1999    1.10     0.593
+ 973 de99h [7]DE7 - Hesse                          1999    1.25     0.530
+ 974 de99h [8]DE8 - Mecklenburg-Western Pomerania  1999    1.36     0.634
+ 975 de99h [9]DE9 - Lower Saxony                   1999    1.27     0.656
+ 976 es00h [1]North-East                           2000   NA       NA    
+ 977 es00h [2]North-West                           2000    1.38     0.720
+ 978 es00h [3]Madrid                               2000   NA       NA    
+ 979 es00h [4]Central                              2000   NA       NA    
+ 980 es00h [5]East                                 2000   NA       NA    
+ 981 es00h [6]South                                2000   NA       NA    
+ 982 es00h [7]Canary Islands                       2000    0.627    0.622
+ 983 es00h <NA>                                    2000    0.473    0.561
+ 984 es04h [11]Galicia                             2004   NA       NA    
+ 985 es04h [12]Principado de Asturias              2004    1.66     0.721
+ 986 es04h [13]Cantabria                           2004   NA       NA    
+ 987 es04h [21]País Vasco                          2004   NA       NA    
+ 988 es04h [22]Comunidad Foral de Navarra          2004   NA       NA    
+ 989 es04h [23]La Rioja                            2004    1.22     0.691
+ 990 es04h [24]Aragón                              2004   NA       NA    
+ 991 es04h [30]Comunidad de Madrid                 2004   NA       NA    
+ 992 es04h [41]Castilla y León                     2004   NA       NA    
+ 993 es04h [42]Castilla-La Mancha                  2004    1.05     0.531
+ 994 es04h [43]Extremadura                         2004   NA       NA    
+ 995 es04h [51]Cataluña                            2004   NA       NA    
+ 996 es04h [52]Comunidad Valenciana                2004   NA       NA    
+ 997 es04h [53]Illes Balears                       2004   NA       NA    
+ 998 es04h [61]Andalucía                           2004   NA       NA    
+ 999 es04h [62]Región de Murcia                    2004   NA       NA    
+1000 es04h [63]Ciudad Autónoma de Ceuta            2004   NA       NA    
+1001 es04h [70]Canarias                            2004   NA       NA    
+1002 es05h [11]Galicia                             2005   NA       NA    
+1003 es05h [12]Principado de Asturias              2005    1.36     0.735
+1004 es05h [13]Cantabria                           2005   NA       NA    
+1005 es05h [21]País Vasco                          2005   NA       NA    
+1006 es05h [22]Comunidad Foral de Navarra          2005    1.46     0.633
+1007 es05h [23]La Rioja                            2005    1.12     0.694
+1008 es05h [24]Aragón                              2005    1.40     0.654
+1009 es05h [30]Comunidad de Madrid                 2005   NA       NA    
+1010 es05h [41]Castilla y León                     2005   NA       NA    
+1011 es05h [42]Castilla-La Mancha                  2005   NA       NA    
+1012 es05h [43]Extremadura                         2005   NA       NA    
+1013 es05h [51]Cataluña                            2005   NA       NA    
+1014 es05h [52]Comunidad Valenciana                2005    1.24     0.719
+1015 es05h [53]Illes Balears                       2005   NA       NA    
+1016 es05h [61]Andalucía                           2005   NA       NA    
+1017 es05h [62]Región de Murcia                    2005    1.10     0.696
+1018 es05h [63]Ciudad Autónoma de Ceuta            2005    1.77     0.579
+1019 es05h [64]Ciudad Autónoma de Melilla          2005   NA       NA    
+1020 es05h [70]Canarias                            2005   NA       NA    
+1021 es06h [11]Galicia                             2006    1.11     0.726
+1022 es06h [12]Principado de Asturias              2006    1.34     0.721
+1023 es06h [13]Cantabria                           2006    1.04     0.671
+1024 es06h [21]País Vasco                          2006   NA       NA    
+1025 es06h [22]Comunidad Foral de Navarra          2006    1.35     0.661
+1026 es06h [23]La Rioja                            2006   NA       NA    
+1027 es06h [24]Aragón                              2006   NA       NA    
+1028 es06h [30]Comunidad de Madrid                 2006    1.42     0.594
+1029 es06h [41]Castilla y León                     2006    1.19     0.582
+1030 es06h [42]Castilla-La Mancha                  2006    1.43     0.632
+1031 es06h [43]Extremadura                         2006    1.53     0.508
+1032 es06h [51]Cataluña                            2006    1.40     0.694
+1033 es06h [52]Comunidad Valenciana                2006    1.16     0.670
+1034 es06h [53]Illes Balears                       2006    1.28     0.690
+1035 es06h [61]Andalucía                           2006   NA       NA    
+1036 es06h [62]Región de Murcia                    2006    1.04     0.676
+1037 es06h [63]Ciudad Autónoma de Ceuta            2006   NA       NA    
+1038 es06h [64]Ciudad Autónoma de Melilla          2006    2.13     0.575
+1039 es06h [70]Canarias                            2006    1.16     0.685
+1040 es07h [11]Galicia                             2007    1.28     0.685
+1041 es07h [12]Principado de Asturias              2007    1.43     0.683
+1042 es07h [13]Cantabria                           2007    1.34     0.730
+1043 es07h [21]País Vasco                          2007    1.27     0.659
+1044 es07h [22]Comunidad Foral de Navarra          2007    1.66     0.634
+1045 es07h [23]La Rioja                            2007    1.74     0.730
+1046 es07h [24]Aragón                              2007    1.52     0.694
+1047 es07h [30]Comunidad de Madrid                 2007    1.60     0.582
+1048 es07h [41]Castilla y León                     2007    1.32     0.626
+1049 es07h [42]Castilla-La Mancha                  2007    1.30     0.557
+1050 es07h [43]Extremadura                         2007    1.89     0.525
+1051 es07h [51]Cataluña                            2007    1.54     0.662
+1052 es07h [52]Comunidad Valenciana                2007    1.62     0.669
+1053 es07h [53]Illes Balears                       2007    1.62     0.685
+1054 es07h [61]Andalucía                           2007    1.42     0.620
+1055 es07h [62]Región de Murcia                    2007    1.45     0.639
+1056 es07h [63]Ciudad Autónoma de Ceuta            2007    1.97     0.391
+1057 es07h [64]Ciudad Autónoma de Melilla          2007    1.90     0.712
+1058 es07h [70]Canarias                            2007    1.38     0.673
+1059 es08h [11]Galicia                             2008    1.32     0.679
+1060 es08h [12]Principado de Asturias              2008    1.22     0.638
+1061 es08h [13]Cantabria                           2008    1.38     0.780
+1062 es08h [21]País Vasco                          2008    1.31     0.620
+1063 es08h [22]Comunidad Foral de Navarra          2008    1.55     0.624
+1064 es08h [23]La Rioja                            2008    1.74     0.779
+1065 es08h [24]Aragón                              2008    1.41     0.732
+1066 es08h [30]Comunidad de Madrid                 2008    1.56     0.600
+1067 es08h [41]Castilla y León                     2008    1.44     0.608
+1068 es08h [42]Castilla-La Mancha                  2008    1.10     0.588
+1069 es08h [43]Extremadura                         2008    1.01     0.539
+1070 es08h [51]Cataluña                            2008    1.73     0.647
+1071 es08h [52]Comunidad Valenciana                2008    1.69     0.654
+1072 es08h [53]Illes Balears                       2008    1.57     0.584
+1073 es08h [61]Andalucía                           2008    1.22     0.599
+1074 es08h [62]Región de Murcia                    2008    1.69     0.570
+1075 es08h [63]Ciudad Autónoma de Ceuta            2008    1.50     0.424
+1076 es08h [64]Ciudad Autónoma de Melilla          2008    2.15     0.634
+1077 es08h [70]Canarias                            2008    1.55     0.638
+1078 es09h [11]Galicia                             2009    1.36     0.645
+1079 es09h [12]Principado de Asturias              2009    1.17     0.664
+1080 es09h [13]Cantabria                           2009    1.51     0.678
+1081 es09h [21]País Vasco                          2009    1.52     0.602
+1082 es09h [22]Comunidad Foral de Navarra          2009    1.59     0.596
+1083 es09h [23]La Rioja                            2009    1.72     0.788
+1084 es09h [24]Aragón                              2009    1.42     0.718
+1085 es09h [30]Comunidad de Madrid                 2009    1.49     0.626
+1086 es09h [41]Castilla y León                     2009    1.28     0.648
+1087 es09h [42]Castilla-La Mancha                  2009    1.33     0.525
+1088 es09h [43]Extremadura                         2009    2.13     0.523
+1089 es09h [51]Cataluña                            2009    1.66     0.632
+1090 es09h [52]Comunidad Valenciana                2009    1.66     0.602
+1091 es09h [53]Illes Balears                       2009    1.62     0.634
+1092 es09h [61]Andalucía                           2009    1.23     0.581
+1093 es09h [62]Región de Murcia                    2009    1.65     0.646
+1094 es09h [63]Ciudad Autónoma de Ceuta            2009    1.41     0.495
+1095 es09h [64]Ciudad Autónoma de Melilla          2009    1.77     0.683
+1096 es09h [70]Canarias                            2009    1.50     0.618
+1097 es10h [11]Galicia                             2010    1.30     0.670
+1098 es10h [12]Principado de Asturias              2010    1.49     0.624
+1099 es10h [13]Cantabria                           2010    1.58     0.686
+1100 es10h [21]País Vasco                          2010    1.61     0.609
+1101 es10h [22]Comunidad Foral de Navarra          2010    1.48     0.585
+1102 es10h [23]La Rioja                            2010    1.56     0.747
+1103 es10h [24]Aragón                              2010    1.56     0.602
+1104 es10h [30]Comunidad de Madrid                 2010    1.36     0.552
+1105 es10h [41]Castilla y León                     2010    1.42     0.640
+1106 es10h [42]Castilla-La Mancha                  2010    1.22     0.525
+1107 es10h [43]Extremadura                         2010    2.24     0.587
+1108 es10h [51]Cataluña                            2010    1.67     0.623
+1109 es10h [52]Comunidad Valenciana                2010    1.57     0.629
+1110 es10h [53]Illes Balears                       2010    1.34     0.590
+1111 es10h [61]Andalucía                           2010    1.71     0.573
+1112 es10h [62]Región de Murcia                    2010    1.50     0.616
+1113 es10h [63]Ciudad Autónoma de Ceuta            2010    1.86     0.526
+1114 es10h [64]Ciudad Autónoma de Melilla          2010    1.93     0.720
+1115 es10h [70]Canarias                            2010    1.40     0.687
+1116 es11h [11]Galicia                             2011    1.69     0.665
+1117 es11h [12]Principado de Asturias              2011    1.67     0.588
+1118 es11h [13]Cantabria                           2011    1.28     0.669
+1119 es11h [21]País Vasco                          2011    1.83     0.573
+1120 es11h [22]Comunidad Foral de Navarra          2011    1.69     0.672
+1121 es11h [23]La Rioja                            2011    1.71     0.719
+1122 es11h [24]Aragón                              2011    1.95     0.636
+1123 es11h [30]Comunidad de Madrid                 2011    1.29     0.592
+1124 es11h [41]Castilla y León                     2011    1.50     0.657
+1125 es11h [42]Castilla-La Mancha                  2011    1.51     0.557
+1126 es11h [43]Extremadura                         2011    1.93     0.580
+1127 es11h [51]Cataluña                            2011    1.82     0.640
+1128 es11h [52]Comunidad Valenciana                2011    1.66     0.627
+1129 es11h [53]Illes Balears                       2011    1.39     0.617
+1130 es11h [61]Andalucía                           2011    1.48     0.563
+1131 es11h [62]Región de Murcia                    2011    1.48     0.596
+1132 es11h [63]Ciudad Autónoma de Ceuta            2011    1.47     0.515
+1133 es11h [64]Ciudad Autónoma de Melilla          2011    1.79     0.768
+1134 es11h [70]Canarias                            2011    1.39     0.626
+1135 es12h [11]Galicia                             2012    1.34     0.686
+1136 es12h [12]Principado de Asturias              2012    1.92     0.677
+1137 es12h [13]Cantabria                           2012    1.33     0.702
+1138 es12h [21]País Vasco                          2012    1.72     0.651
+1139 es12h [22]Comunidad Foral de Navarra          2012    1.68     0.799
+1140 es12h [23]La Rioja                            2012    1.90     0.647
+1141 es12h [24]Aragón                              2012    1.43     0.615
+1142 es12h [30]Comunidad de Madrid                 2012    1.50     0.609
+1143 es12h [41]Castilla y León                     2012    1.42     0.638
+1144 es12h [42]Castilla-La Mancha                  2012    1.39     0.570
+1145 es12h [43]Extremadura                         2012    1.48     0.574
+1146 es12h [51]Cataluña                            2012    1.64     0.586
+1147 es12h [52]Comunidad Valenciana                2012    1.80     0.648
+1148 es12h [53]Illes Balears                       2012    1.30     0.668
+1149 es12h [61]Andalucía                           2012    1.43     0.590
+1150 es12h [62]Región de Murcia                    2012    1.68     0.646
+1151 es12h [63]Ciudad Autónoma de Ceuta            2012    1.43     0.346
+1152 es12h [64]Ciudad Autónoma de Melilla          2012    1.99     0.629
+1153 es12h [70]Canarias                            2012    1.35     0.691
+1154 es13h [11]Galicia                             2013    1.05     0.661
+1155 es13h [12]Principado de Asturias              2013    1.81     0.693
+1156 es13h [13]Cantabria                           2013    1.54     0.710
+1157 es13h [21]País Vasco                          2013    1.61     0.659
+1158 es13h [22]Comunidad Foral de Navarra          2013    2.06     0.702
+1159 es13h [23]La Rioja                            2013    2.11     0.647
+1160 es13h [24]Aragón                              2013    1.93     0.620
+1161 es13h [30]Comunidad de Madrid                 2013    1.53     0.590
+1162 es13h [41]Castilla y León                     2013    1.61     0.644
+1163 es13h [42]Castilla-La Mancha                  2013    1.45     0.592
+1164 es13h [43]Extremadura                         2013    1.12     0.588
+1165 es13h [51]Cataluña                            2013    1.74     0.580
+1166 es13h [52]Comunidad Valenciana                2013    1.91     0.603
+1167 es13h [53]Illes Balears                       2013    1.57     0.737
+1168 es13h [61]Andalucía                           2013    1.44     0.582
+1169 es13h [62]Región de Murcia                    2013    1.56     0.578
+1170 es13h [63]Ciudad Autónoma de Ceuta            2013    1.22     0.357
+1171 es13h [64]Ciudad Autónoma de Melilla          2013    2.57     0.437
+1172 es13h [70]Canarias                            2013    1.09     0.755
+1173 es14h [11]Galicia                             2014    1.15     0.657
+1174 es14h [12]Principado de Asturias              2014    2.14     0.703
+1175 es14h [13]Cantabria                           2014    1.30     0.686
+1176 es14h [21]País Vasco                          2014    1.73     0.689
+1177 es14h [22]Comunidad Foral de Navarra          2014    1.66     0.742
+1178 es14h [23]La Rioja                            2014    1.67     0.630
+1179 es14h [24]Aragón                              2014    1.56     0.585
+1180 es14h [30]Comunidad de Madrid                 2014    1.50     0.563
+1181 es14h [41]Castilla y León                     2014    1.50     0.634
+1182 es14h [42]Castilla-La Mancha                  2014    1.56     0.559
+1183 es14h [43]Extremadura                         2014    0.881    0.561
+1184 es14h [51]Cataluña                            2014    1.53     0.576
+1185 es14h [52]Comunidad Valenciana                2014    1.80     0.641
+1186 es14h [53]Illes Balears                       2014    1.54     0.709
+1187 es14h [61]Andalucía                           2014    1.61     0.555
+1188 es14h [62]Región de Murcia                    2014    1.78     0.604
+1189 es14h [63]Ciudad Autónoma de Ceuta            2014    1.45     0.400
+1190 es14h [64]Ciudad Autónoma de Melilla          2014    1.96     0.579
+1191 es14h [70]Canarias                            2014    1.10     0.639
+1192 es15h [11]Galicia                             2015    1.20     0.603
+1193 es15h [12]Principado de Asturias              2015    1.63     0.639
+1194 es15h [13]Cantabria                           2015    1.88     0.627
+1195 es15h [21]País Vasco                          2015    1.75     0.655
+1196 es15h [22]Comunidad Foral de Navarra          2015    1.75     0.671
+1197 es15h [23]La Rioja                            2015    1.52     0.660
+1198 es15h [24]Aragón                              2015    1.50     0.605
+1199 es15h [30]Comunidad de Madrid                 2015    1.48     0.557
+1200 es15h [41]Castilla y León                     2015    1.36     0.652
+1201 es15h [42]Castilla-La Mancha                  2015    1.34     0.535
+1202 es15h [43]Extremadura                         2015    1.47     0.537
+1203 es15h [51]Cataluña                            2015    1.51     0.605
+1204 es15h [52]Comunidad Valenciana                2015    1.57     0.662
+1205 es15h [53]Illes Balears                       2015    1.41     0.736
+1206 es15h [61]Andalucía                           2015    1.66     0.543
+1207 es15h [62]Región de Murcia                    2015    1.59     0.570
+1208 es15h [63]Ciudad Autónoma de Ceuta            2015    1.03     0.501
+1209 es15h [64]Ciudad Autónoma de Melilla          2015    2.21     0.547
+1210 es15h [70]Canarias                            2015    0.923    0.663
+1211 es16h [11]Galicia                             2016    1.32     0.633
+1212 es16h [12]Principado de Asturias              2016    1.81     0.600
+1213 es16h [13]Cantabria                           2016    1.57     0.673
+1214 es16h [21]País Vasco                          2016    1.56     0.637
+1215 es16h [22]Comunidad Foral de Navarra          2016    1.62     0.673
+1216 es16h [23]La Rioja                            2016    1.65     0.636
+1217 es16h [24]Aragón                              2016    1.67     0.633
+1218 es16h [30]Comunidad de Madrid                 2016    1.60     0.558
+1219 es16h [41]Castilla y León                     2016    1.57     0.636
+1220 es16h [42]Castilla-La Mancha                  2016    1.56     0.603
+1221 es16h [43]Extremadura                         2016    1.64     0.534
+1222 es16h [51]Cataluña                            2016    1.38     0.607
+1223 es16h [52]Comunidad Valenciana                2016    1.55     0.614
+1224 es16h [53]Illes Balears                       2016    1.77     0.597
+1225 es16h [61]Andalucía                           2016    1.38     0.528
+1226 es16h [62]Región de Murcia                    2016    1.80     0.572
+1227 es16h [63]Ciudad Autónoma de Ceuta            2016    1.44     0.550
+1228 es16h [64]Ciudad Autónoma de Melilla          2016    2.15     0.628
+1229 es16h [70]Canarias                            2016    1.14     0.694
+1230 es17h [11]Galicia                             2017    1.30     0.586
+1231 es17h [12]Principado de Asturias              2017    1.42     0.623
+1232 es17h [13]Cantabria                           2017    1.72     0.630
+1233 es17h [21]País Vasco                          2017    1.90     0.629
+1234 es17h [22]Comunidad Foral de Navarra          2017    1.50     0.699
+1235 es17h [23]La Rioja                            2017    1.78     0.661
+1236 es17h [24]Aragón                              2017    1.41     0.676
+1237 es17h [30]Comunidad de Madrid                 2017    1.54     0.586
+1238 es17h [41]Castilla y León                     2017    1.53     0.643
+1239 es17h [42]Castilla-La Mancha                  2017    1.55     0.547
+1240 es17h [43]Extremadura                         2017    1.29     0.560
+1241 es17h [51]Cataluña                            2017    1.43     0.628
+1242 es17h [52]Comunidad Valenciana                2017    1.72     0.606
+1243 es17h [53]Illes Balears                       2017    1.38     0.643
+1244 es17h [61]Andalucía                           2017    1.53     0.500
+1245 es17h [62]Región de Murcia                    2017    1.91     0.564
+1246 es17h [63]Ciudad Autónoma de Ceuta            2017    1.39     0.451
+1247 es17h [64]Ciudad Autónoma de Melilla          2017    3.05     0.625
+1248 es17h [70]Canarias                            2017    1.13     0.671
+1249 es18h [11]Galicia                             2018    1.47     0.653
+1250 es18h [12]Principado de Asturias              2018    2.19     0.563
+1251 es18h [13]Cantabria                           2018    1.57     0.623
+1252 es18h [21]País Vasco                          2018    1.72     0.650
+1253 es18h [22]Comunidad Foral de Navarra          2018    1.57     0.633
+1254 es18h [23]La Rioja                            2018    1.64     0.735
+1255 es18h [24]Aragón                              2018    1.74     0.688
+1256 es18h [30]Comunidad de Madrid                 2018    1.66     0.596
+1257 es18h [41]Castilla y León                     2018    1.51     0.596
+1258 es18h [42]Castilla-La Mancha                  2018    1.72     0.621
+1259 es18h [43]Extremadura                         2018    1.47     0.621
+1260 es18h [51]Cataluña                            2018    1.45     0.610
+1261 es18h [52]Comunidad Valenciana                2018    1.65     0.626
+1262 es18h [53]Illes Balears                       2018    1.44     0.736
+1263 es18h [61]Andalucía                           2018    1.48     0.568
+1264 es18h [62]Región de Murcia                    2018    1.48     0.690
+1265 es18h [63]Ciudad Autónoma de Ceuta            2018    1.47     0.375
+1266 es18h [64]Ciudad Autónoma de Melilla          2018    3.22     0.600
+1267 es18h [70]Canarias                            2018    1.38     0.697
+1268 es19h [11]Galicia                             2019    1.38     0.705
+1269 es19h [12]Principado de Asturias              2019    1.86     0.642
+1270 es19h [13]Cantabria                           2019    1.31     0.668
+1271 es19h [21]País Vasco                          2019    1.68     0.703
+1272 es19h [22]Comunidad Foral de Navarra          2019    2.01     0.573
+1273 es19h [23]La Rioja                            2019    1.60     0.664
+1274 es19h [24]Aragón                              2019    1.51     0.750
+1275 es19h [30]Comunidad de Madrid                 2019    1.54     0.597
+1276 es19h [41]Castilla y León                     2019    1.42     0.568
+1277 es19h [42]Castilla-La Mancha                  2019    1.39     0.609
+1278 es19h [43]Extremadura                         2019    1.48     0.678
+1279 es19h [51]Cataluña                            2019    1.52     0.634
+1280 es19h [52]Comunidad Valenciana                2019    1.66     0.618
+1281 es19h [53]Illes Balears                       2019    1.31     0.814
+1282 es19h [61]Andalucía                           2019    1.30     0.616
+1283 es19h [62]Región de Murcia                    2019    1.29     0.720
+1284 es19h [63]Ciudad Autónoma de Ceuta            2019    1.86     0.456
+1285 es19h [64]Ciudad Autónoma de Melilla          2019    3.09     0.482
+1286 es19h [70]Canarias                            2019    1.57     0.631
+1287 es85h <NA>                                    1985   NA        0.461
+1288 es90h [11]Galicia                             1990   NA        0.650
+1289 es90h [12]Principado de Asturia               1990   NA        0.766
+1290 es90h [13]Cantabria                           1990   NA        0.794
+1291 es90h [21]Pais Vasco                          1990   NA        0.681
+1292 es90h [22]Communidad Foral de Navarra         1990   NA        0.715
+1293 es90h [23]La Rioja                            1990   NA        0.716
+1294 es90h [24]Aragon                              1990   NA        0.588
+1295 es90h [30]Communidad de Madrid                1990   NA        0.582
+1296 es90h [41]Castilla y Leon                     1990   NA        0.540
+1297 es90h [42]Castilla la Mancha                  1990   NA        0.558
+1298 es90h [43]Extremadura                         1990   NA        0.495
+1299 es90h [51]Cataluna                            1990   NA        0.611
+1300 es90h [52]Comunidad Valenciana                1990   NA        0.639
+1301 es90h [53]Illes Balears                       1990   NA        0.703
+1302 es90h [61]Andalucia                           1990   NA        0.574
+1303 es90h [62]Region de Murcia                    1990   NA        0.515
+1304 es90h [65]Ciudad Autonoma de Ceuta y Melilla  1990   NA        0.459
+1305 es90h [70]Canarias                            1990   NA        0.556
+1306 es93h [1]North-East                           1993   NA       NA    
+1307 es93h [2]North-West                           1993   NA       NA    
+1308 es93h [3]Madrid                               1993   NA       NA    
+1309 es93h [4]Central                              1993   NA       NA    
+1310 es93h [5]East                                 1993   NA       NA    
+1311 es93h [6]South                                1993   NA       NA    
+1312 es93h [7]Canary Islands                       1993   NA       NA    
+1313 es93h <NA>                                    1993    0.587    0.561
+1314 es94h [1]North-East                           1994   NA       NA    
+1315 es94h [2]North-West                           1994   NA       NA    
+1316 es94h [3]Madrid                               1994   NA       NA    
+1317 es94h [4]Central                              1994   NA       NA    
+1318 es94h [5]East                                 1994   NA       NA    
+1319 es94h [6]South                                1994   NA       NA    
+1320 es94h [7]Canary Islands                       1994   NA       NA    
+1321 es94h <NA>                                    1994    0.890    0.690
+1322 es95h [1]North-East                           1995   NA       NA    
+1323 es95h [2]North-West                           1995   NA       NA    
+1324 es95h [3]Madrid                               1995   NA       NA    
+1325 es95h [4]Central                              1995   NA       NA    
+1326 es95h [5]East                                 1995   NA       NA    
+1327 es95h [6]South                                1995   NA       NA    
+1328 es95h [7]Canary Islands                       1995   NA       NA    
+1329 es95h <NA>                                    1995    0.730    0.759
+1330 es96h [1]North-East                           1996   NA       NA    
+1331 es96h [2]North-West                           1996   NA       NA    
+1332 es96h [3]Madrid                               1996   NA       NA    
+1333 es96h [4]Central                              1996   NA       NA    
+1334 es96h [5]East                                 1996   NA       NA    
+1335 es96h [6]South                                1996   NA       NA    
+1336 es96h [7]Canary Islands                       1996   NA       NA    
+1337 es96h <NA>                                    1996   NA       NA    
+1338 es97h [1]North-East                           1997   NA       NA    
+1339 es97h [2]North-West                           1997   NA       NA    
+1340 es97h [3]Madrid                               1997   NA       NA    
+1341 es97h [4]Central                              1997   NA       NA    
+1342 es97h [5]East                                 1997   NA       NA    
+1343 es97h [6]South                                1997   NA       NA    
+1344 es97h [7]Canary Islands                       1997    0.568    0.661
+1345 es97h <NA>                                    1997    0.623    0.764
+1346 es98h [1]North-East                           1998   NA       NA    
+1347 es98h [2]North-West                           1998   NA       NA    
+1348 es98h [3]Madrid                               1998   NA       NA    
+1349 es98h [4]Central                              1998   NA       NA    
+1350 es98h [5]East                                 1998   NA       NA    
+1351 es98h [6]South                                1998   NA       NA    
+1352 es98h [7]Canary Islands                       1998   NA       NA    
+1353 es98h <NA>                                    1998    0.565    0.657
+1354 es99h [1]North-East                           1999   NA       NA    
+1355 es99h [2]North-West                           1999    1.05     0.665
+1356 es99h [3]Madrid                               1999   NA       NA    
+1357 es99h [4]Central                              1999   NA       NA    
+1358 es99h [5]East                                 1999   NA       NA    
+1359 es99h [6]South                                1999   NA       NA    
+1360 es99h [7]Canary Islands                       1999    0.512    0.668
+1361 es99h <NA>                                    1999   NA       NA    
+1362 fr00h Alsace                                  2000    1.19     0.668
+1363 fr00h Aquitaine                               2000    1.07     0.666
+1364 fr00h Auvergne                                2000    1.14     0.604
+1365 fr00h Basse-Normandie                         2000    0.986    0.641
+1366 fr00h Bourgogne                               2000    1.06     0.606
+1367 fr00h Bretagne                                2000    0.935    0.633
+1368 fr00h Centre                                  2000    1.17     0.662
+1369 fr00h Champagne-Ardenne                       2000    1.18     0.643
+1370 fr00h Franche-Comté                           2000    1.16     0.708
+1371 fr00h Haute-Normandie                         2000    1.12     0.565
+1372 fr00h Ile-de-France                           2000    1.32     0.655
+1373 fr00h Languedoc-Roussillon                    2000    1.11     0.602
+1374 fr00h Limousin                                2000    1.14     0.611
+1375 fr00h Lorraine                                2000    1.09     0.636
+1376 fr00h Midi-Pyrénées                           2000    1.18     0.665
+1377 fr00h Nord-Pas de Calais                      2000    1.07     0.570
+1378 fr00h Pays de la Loire                        2000    1.09     0.629
+1379 fr00h Picardie                                2000    1.19     0.657
+1380 fr00h Poitou-Charentes                        2000    0.926    0.628
+1381 fr00h Provence-Côte d'Azur-Corse              2000    1.10     0.644
+1382 fr00h Rhône-Alpes                             2000    1.19     0.636
+1383 fr01h Alsace                                  2001    1.20     0.637
+1384 fr01h Aquitaine                               2001    1.11     0.660
+1385 fr01h Auvergne                                2001    1.10     0.595
+1386 fr01h Basse-Normandie                         2001    0.939    0.650
+1387 fr01h Bourgogne                               2001    1.06     0.620
+1388 fr01h Bretagne                                2001    1.01     0.626
+1389 fr01h Centre                                  2001    1.20     0.664
+1390 fr01h Champagne-Ardenne                       2001    1.27     0.621
+1391 fr01h Franche-Comté                           2001    1.14     0.655
+1392 fr01h Haute-Normandie                         2001    1.09     0.564
+1393 fr01h Ile-de-France                           2001    1.29     0.655
+1394 fr01h Languedoc-Roussillon                    2001    1.15     0.616
+1395 fr01h Limousin                                2001    1.31     0.612
+1396 fr01h Lorraine                                2001    1.14     0.679
+1397 fr01h Midi-Pyrénées                           2001    1.12     0.681
+1398 fr01h Nord-Pas de Calais                      2001    1.11     0.569
+1399 fr01h Pays de la Loire                        2001    1.08     0.628
+1400 fr01h Picardie                                2001    1.09     0.651
+1401 fr01h Poitou-Charentes                        2001    0.917    0.632
+1402 fr01h Provence-Côte d'Azur-Corse              2001    1.11     0.654
+1403 fr01h Rhône-Alpes                             2001    1.17     0.658
+1404 fr02h Alsace                                  2002    1.15     0.654
+1405 fr02h Aquitaine                               2002    1.06     0.636
+1406 fr02h Auvergne                                2002    0.952    0.595
+1407 fr02h Basse-Normandie                         2002    0.939    0.624
+1408 fr02h Bourgogne                               2002    0.936    0.634
+1409 fr02h Bretagne                                2002    0.848    0.611
+1410 fr02h Centre                                  2002    0.962    0.627
+1411 fr02h Champagne-Ardenne                       2002    1.19     0.584
+1412 fr02h Corse                                   2002    1.25     0.438
+1413 fr02h Franche-Comté                           2002    1.14     0.639
+1414 fr02h Haute-Normandie                         2002    1.18     0.664
+1415 fr02h Ile-de-France                           2002    1.25     0.652
+1416 fr02h Languedoc-Roussillon                    2002    1.11     0.571
+1417 fr02h Limousin                                2002    1.01     0.582
+1418 fr02h Lorraine                                2002    1.04     0.626
+1419 fr02h Midi-Pyrénées                           2002    1.08     0.662
+1420 fr02h Nord-Pas de Calais                      2002    1.11     0.595
+1421 fr02h Pays de la Loire                        2002    1.09     0.613
+1422 fr02h Picardie                                2002    1.17     0.655
+1423 fr02h Poitou-Charentes                        2002    1.02     0.595
+1424 fr02h Provence-Alpes-Côte-d'Azur              2002    1.13     0.599
+1425 fr02h Rhône-Alpes                             2002    1.15     0.643
+1426 fr03h Alsace                                  2003    1.23     0.668
+1427 fr03h Aquitaine                               2003    1.03     0.620
+1428 fr03h Auvergne                                2003    1.03     0.592
+1429 fr03h Basse-Normandie                         2003    1.02     0.659
+1430 fr03h Bourgogne                               2003    1.08     0.569
+1431 fr03h Bretagne                                2003    0.950    0.633
+1432 fr03h Centre                                  2003    1.03     0.640
+1433 fr03h Champagne-Ardenne                       2003    1.19     0.625
+1434 fr03h Corse                                   2003    1.49     0.617
+1435 fr03h Franche-Comté                           2003    1.22     0.637
+1436 fr03h Haute-Normandie                         2003    1.04     0.656
+1437 fr03h Ile-de-France                           2003    1.27     0.664
+1438 fr03h Languedoc-Roussillon                    2003    1.09     0.644
+1439 fr03h Limousin                                2003    1.21     0.562
+1440 fr03h Lorraine                                2003    0.977    0.679
+1441 fr03h Midi-Pyrénées                           2003    1.14     0.700
+1442 fr03h Nord-Pas de Calais                      2003    1.07     0.598
+1443 fr03h Pays de la Loire                        2003    1.00     0.638
+1444 fr03h Picardie                                2003    1.12     0.580
+1445 fr03h Poitou-Charentes                        2003    0.961    0.596
+1446 fr03h Provence-Alpes-Côte-d'Azur              2003    1.09     0.614
+1447 fr03h Rhône-Alpes                             2003    1.16     0.630
+1448 fr04h Alsace                                  2004    1.26     0.695
+1449 fr04h Aquitaine                               2004    0.998    0.601
+1450 fr04h Auvergne                                2004    0.993    0.614
+1451 fr04h Basse-Normandie                         2004    1.16     0.658
+1452 fr04h Bourgogne                               2004    1.06     0.615
+1453 fr04h Bretagne                                2004    1.09     0.629
+1454 fr04h Centre                                  2004    1.09     0.660
+1455 fr04h Champagne-Ardenne                       2004    1.25     0.628
+1456 fr04h Corse                                   2004    1.52     0.541
+1457 fr04h Franche-Comté                           2004    1.31     0.700
+1458 fr04h Haute-Normandie                         2004    0.993    0.677
+1459 fr04h Ile-de-France                           2004    1.24     0.661
+1460 fr04h Languedoc-Roussillon                    2004    1.12     0.600
+1461 fr04h Limousin                                2004    1.19     0.597
+1462 fr04h Lorraine                                2004    1.02     0.647
+1463 fr04h Midi-Pyrénées                           2004    1.04     0.680
+1464 fr04h Nord-Pas de Calais                      2004    1.11     0.592
+1465 fr04h Pays de la Loire                        2004    1.05     0.597
+1466 fr04h Picardie                                2004    1.14     0.617
+1467 fr04h Poitou-Charentes                        2004    1.06     0.635
+1468 fr04h Provence-Alpes-Côte-d'Azur              2004    1.07     0.634
+1469 fr04h Rhône-Alpes                             2004    1.13     0.616
+1470 fr05h Alsace                                  2005    1.15     0.664
+1471 fr05h Aquitaine                               2005    1.05     0.637
+1472 fr05h Auvergne                                2005    1.09     0.656
+1473 fr05h Basse-Normandie                         2005    1.10     0.641
+1474 fr05h Bourgogne                               2005    1.07     0.614
+1475 fr05h Bretagne                                2005    1.08     0.667
+1476 fr05h Centre                                  2005    1.23     0.661
+1477 fr05h Champagne-Ardenne                       2005    1.30     0.598
+1478 fr05h Corse                                   2005    1.32     0.491
+1479 fr05h Franche-Comté                           2005    1.11     0.678
+1480 fr05h Haute-Normandie                         2005    1.08     0.639
+1481 fr05h Ile-de-France                           2005    1.34     0.657
+1482 fr05h Languedoc-Roussillon                    2005    1.09     0.592
+1483 fr05h Limousin                                2005    1.19     0.634
+1484 fr05h Lorraine                                2005    1.06     0.542
+1485 fr05h Midi-Pyrénées                           2005    1.04     0.701
+1486 fr05h Nord-Pas de Calais                      2005    1.05     0.562
+1487 fr05h Pays de la Loire                        2005    1.16     0.616
+1488 fr05h Picardie                                2005    1.06     0.620
+1489 fr05h Poitou-Charentes                        2005    1.02     0.638
+1490 fr05h Provence-Alpes-Côte-d'Azur              2005    1.11     0.663
+1491 fr05h Rhône-Alpes                             2005    1.17     0.653
+1492 fr06h Alsace                                  2006    1.20     0.660
+1493 fr06h Aquitaine                               2006    1.10     0.664
+1494 fr06h Auvergne                                2006    1.01     0.657
+1495 fr06h Basse-Normandie                         2006    0.887    0.648
+1496 fr06h Bourgogne                               2006    1.11     0.603
+1497 fr06h Bretagne                                2006    1.05     0.721
+1498 fr06h Centre                                  2006    1.27     0.676
+1499 fr06h Champagne-Ardenne                       2006    1.34     0.651
+1500 fr06h Corse                                   2006    1.20     0.614
+1501 fr06h Franche-Comté                           2006    1.22     0.670
+1502 fr06h Haute-Normandie                         2006    1.12     0.724
+1503 fr06h Ile-de-France                           2006    1.32     0.644
+1504 fr06h Languedoc-Roussillon                    2006    1.23     0.579
+1505 fr06h Limousin                                2006    1.27     0.620
+1506 fr06h Lorraine                                2006    1.18     0.618
+1507 fr06h Midi-Pyrénées                           2006    1.14     0.664
+1508 fr06h Nord-Pas de Calais                      2006    1.05     0.583
+1509 fr06h Pays de la Loire                        2006    1.23     0.632
+1510 fr06h Picardie                                2006    0.976    0.617
+1511 fr06h Poitou-Charentes                        2006    1.07     0.598
+1512 fr06h Provence-Alpes-Côte-d'Azur              2006    1.10     0.647
+1513 fr06h Rhône-Alpes                             2006    1.20     0.664
+1514 fr07h Alsace                                  2007    1.22     0.698
+1515 fr07h Aquitaine                               2007    1.10     0.668
+1516 fr07h Auvergne                                2007    1.09     0.644
+1517 fr07h Basse-Normandie                         2007    0.714    0.609
+1518 fr07h Bourgogne                               2007    1.19     0.641
+1519 fr07h Bretagne                                2007    1.02     0.713
+1520 fr07h Centre                                  2007    1.16     0.626
+1521 fr07h Champagne-Ardenne                       2007    1.33     0.620
+1522 fr07h Corse                                   2007    1.25     0.550
+1523 fr07h Franche-Comté                           2007    1.25     0.664
+1524 fr07h Haute-Normandie                         2007    1.02     0.649
+1525 fr07h Ile-de-France                           2007    1.34     0.672
+1526 fr07h Languedoc-Roussillon                    2007    1.07     0.614
+1527 fr07h Limousin                                2007    1.40     0.573
+1528 fr07h Lorraine                                2007    1.18     0.655
+1529 fr07h Midi-Pyrénées                           2007    1.17     0.609
+1530 fr07h Nord-Pas de Calais                      2007    1.15     0.612
+1531 fr07h Pays de la Loire                        2007    1.22     0.640
+1532 fr07h Picardie                                2007    1.07     0.621
+1533 fr07h Poitou-Charentes                        2007    1.16     0.640
+1534 fr07h Provence-Alpes-Côte-d'Azur              2007    1.13     0.584
+1535 fr07h Rhône-Alpes                             2007    1.17     0.673
+1536 fr08h Alsace                                  2008    1.32     0.641
+1537 fr08h Aquitaine                               2008    1.04     0.594
+1538 fr08h Auvergne                                2008    1.07     0.632
+1539 fr08h Basse-Normandie                         2008    1.21     0.637
+1540 fr08h Bourgogne                               2008    1.08     0.608
+1541 fr08h Bretagne                                2008    1.12     0.623
+1542 fr08h Centre                                  2008    1.23     0.612
+1543 fr08h Champagne-Ardenne                       2008    1.20     0.670
+1544 fr08h Corse                                   2008    1.02     0.838
+1545 fr08h Franche-Comté                           2008    1.20     0.608
+1546 fr08h Haute-Normandie                         2008    1.08     0.700
+1547 fr08h Ile-de-France                           2008    1.30     0.671
+1548 fr08h Languedoc-Roussillon                    2008    1.23     0.639
+1549 fr08h Limousin                                2008    1.36     0.730
+1550 fr08h Lorraine                                2008    1.06     0.625
+1551 fr08h Midi-Pyrénées                           2008    1.15     0.704
+1552 fr08h Nord-Pas de Calais                      2008    1.12     0.570
+1553 fr08h Pays de la Loire                        2008    1.08     0.586
+1554 fr08h Picardie                                2008    1.05     0.616
+1555 fr08h Poitou-Charentes                        2008    1.24     0.613
+1556 fr08h Provence-Alpes-Côte-d'Azur              2008    1.12     0.612
+1557 fr08h Rhône-Alpes                             2008    1.09     0.674
+1558 fr09h Alsace                                  2009    1.23     0.648
+1559 fr09h Aquitaine                               2009    1.08     0.605
+1560 fr09h Auvergne                                2009    1.03     0.656
+1561 fr09h Basse-Normandie                         2009    1.20     0.617
+1562 fr09h Bourgogne                               2009    1.05     0.623
+1563 fr09h Bretagne                                2009    1.21     0.622
+1564 fr09h Centre                                  2009    1.08     0.597
+1565 fr09h Champagne-Ardenne                       2009    1.23     0.686
+1566 fr09h Corse                                   2009    1.13     0.514
+1567 fr09h Franche-Comté                           2009    1.16     0.610
+1568 fr09h Haute-Normandie                         2009    1.05     0.640
+1569 fr09h Ile-de-France                           2009    1.32     0.665
+1570 fr09h Languedoc-Roussillon                    2009    1.13     0.641
+1571 fr09h Limousin                                2009    1.30     0.681
+1572 fr09h Lorraine                                2009    1.15     0.612
+1573 fr09h Midi-Pyrénées                           2009    1.10     0.660
+1574 fr09h Nord-Pas de Calais                      2009    1.16     0.558
+1575 fr09h Pays de la Loire                        2009    1.12     0.557
+1576 fr09h Picardie                                2009    1.09     0.654
+1577 fr09h Poitou-Charentes                        2009    1.19     0.605
+1578 fr09h Provence-Alpes-Côte-d'Azur              2009    1.14     0.672
+1579 fr09h Rhône-Alpes                             2009    1.10     0.657
+1580 fr10h Alsace                                  2010    1.28     0.664
+1581 fr10h Aquitaine                               2010    1.14     0.636
+1582 fr10h Auvergne                                2010    1.14     0.573
+1583 fr10h Basse-Normandie                         2010    1.35     0.591
+1584 fr10h Bourgogne                               2010    1.21     0.635
+1585 fr10h Bretagne                                2010    1.10     0.628
+1586 fr10h Centre                                  2010    1.16     0.670
+1587 fr10h Champagne-Ardenne                       2010    1.26     0.627
+1588 fr10h Corse                                   2010    1.14     0.460
+1589 fr10h Franche-Comté                           2010    1.30     0.586
+1590 fr10h Haute-Normandie                         2010    1.24     0.621
+1591 fr10h Ile-de-France                           2010    1.33     0.635
+1592 fr10h Languedoc-Roussillon                    2010    1.17     0.593
+1593 fr10h Limousin                                2010    1.16     0.614
+1594 fr10h Lorraine                                2010    1.06     0.599
+1595 fr10h Midi-Pyrénées                           2010    1.16     0.662
+1596 fr10h Nord-Pas de Calais                      2010    1.05     0.561
+1597 fr10h Pays de la Loire                        2010    1.23     0.603
+1598 fr10h Picardie                                2010    1.09     0.597
+1599 fr10h Poitou-Charentes                        2010    1.28     0.609
+1600 fr10h Provence-Alpes-Côte-d'Azur              2010    1.10     0.605
+1601 fr10h Rhône-Alpes                             2010    1.18     0.623
+1602 fr11h Alsace                                  2011    1.24     0.629
+1603 fr11h Aquitaine                               2011    1.18     0.643
+1604 fr11h Auvergne                                2011    1.12     0.629
+1605 fr11h Basse-Normandie                         2011    1.18     0.595
+1606 fr11h Bourgogne                               2011    1.08     0.681
+1607 fr11h Bretagne                                2011    1.08     0.615
+1608 fr11h Centre                                  2011    1.27     0.629
+1609 fr11h Champagne-Ardenne                       2011    1.29     0.586
+1610 fr11h Corse                                   2011    1.21     0.714
+1611 fr11h Franche-Comté                           2011    1.18     0.614
+1612 fr11h Haute-Normandie                         2011    1.50     0.576
+1613 fr11h Ile-de-France                           2011    1.35     0.618
+1614 fr11h Languedoc-Roussillon                    2011    1.18     0.589
+1615 fr11h Limousin                                2011    1.10     0.663
+1616 fr11h Lorraine                                2011    1.24     0.583
+1617 fr11h Midi-Pyrénées                           2011    1.25     0.597
+1618 fr11h Nord-Pas de Calais                      2011    1.15     0.584
+1619 fr11h Pays de la Loire                        2011    1.10     0.597
+1620 fr11h Picardie                                2011    1.15     0.614
+1621 fr11h Poitou-Charentes                        2011    1.12     0.624
+1622 fr11h Provence-Alpes-Côte-d'Azur              2011    1.12     0.628
+1623 fr11h Rhône-Alpes                             2011    1.11     0.636
+1624 fr12h Alsace                                  2012    1.31     0.658
+1625 fr12h Aquitaine                               2012    1.14     0.610
+1626 fr12h Auvergne                                2012    1.15     0.626
+1627 fr12h Basse-Normandie                         2012    1.09     0.598
+1628 fr12h Bourgogne                               2012    1.18     0.630
+1629 fr12h Bretagne                                2012    0.910    0.585
+1630 fr12h Centre                                  2012    1.23     0.639
+1631 fr12h Champagne-Ardenne                       2012    1.38     0.578
+1632 fr12h Corse                                   2012    1.09     0.753
+1633 fr12h Franche-Comté                           2012    1.22     0.617
+1634 fr12h Haute-Normandie                         2012    1.33     0.598
+1635 fr12h Ile-de-France                           2012    1.33     0.629
+1636 fr12h Languedoc-Roussillon                    2012    1.20     0.657
+1637 fr12h Limousin                                2012    0.995    0.583
+1638 fr12h Lorraine                                2012    1.13     0.532
+1639 fr12h Midi-Pyrénées                           2012    1.07     0.635
+1640 fr12h Nord-Pas de Calais                      2012    1.08     0.585
+1641 fr12h Pays de la Loire                        2012    1.13     0.607
+1642 fr12h Picardie                                2012    1.11     0.524
+1643 fr12h Poitou-Charentes                        2012    1.03     0.694
+1644 fr12h Provence-Alpes-Côte-d'Azur              2012    1.17     0.605
+1645 fr12h Rhône-Alpes                             2012    1.08     0.619
+1646 fr13h Alsace                                  2013    1.25     0.684
+1647 fr13h Aquitaine                               2013    1.08     0.651
+1648 fr13h Auvergne                                2013    1.17     0.610
+1649 fr13h Basse-Normandie                         2013    1.08     0.637
+1650 fr13h Bourgogne                               2013    1.10     0.664
+1651 fr13h Bretagne                                2013    1.05     0.645
+1652 fr13h Centre                                  2013    1.23     0.581
+1653 fr13h Champagne-Ardenne                       2013    1.36     0.531
+1654 fr13h Corse                                   2013    1.10     0.689
+1655 fr13h Franche-Comté                           2013    1.21     0.603
+1656 fr13h Haute-Normandie                         2013    1.15     0.575
+1657 fr13h Ile-de-France                           2013    1.28     0.685
+1658 fr13h Languedoc-Roussillon                    2013    1.15     0.614
+1659 fr13h Limousin                                2013    1.34     0.638
+1660 fr13h Lorraine                                2013    1.14     0.574
+1661 fr13h Midi-Pyrénées                           2013    1.08     0.645
+1662 fr13h Nord-Pas de Calais                      2013    1.16     0.565
+1663 fr13h Pays de la Loire                        2013    1.20     0.603
+1664 fr13h Picardie                                2013    1.10     0.583
+1665 fr13h Poitou-Charentes                        2013    0.974    0.673
+1666 fr13h Provence-Alpes-Côte-d'Azur              2013    1.12     0.602
+1667 fr13h Rhône-Alpes                             2013    1.12     0.650
+1668 fr14h Alsace                                  2014    1.21     0.680
+1669 fr14h Aquitaine                               2014    1.14     0.661
+1670 fr14h Auvergne                                2014    1.10     0.639
+1671 fr14h Basse-Normandie                         2014    1.21     0.575
+1672 fr14h Bourgogne                               2014    1.06     0.638
+1673 fr14h Bretagne                                2014    1.08     0.693
+1674 fr14h Centre                                  2014    1.15     0.588
+1675 fr14h Champagne-Ardenne                       2014    1.17     0.609
+1676 fr14h Corse                                   2014    0.958    0.538
+1677 fr14h Franche-Comté                           2014    1.13     0.620
+1678 fr14h Haute-Normandie                         2014    1.25     0.643
+1679 fr14h Ile-de-France                           2014    1.31     0.649
+1680 fr14h Languedoc-Roussillon                    2014    1.12     0.632
+1681 fr14h Limousin                                2014    1.20     0.627
+1682 fr14h Lorraine                                2014    1.17     0.612
+1683 fr14h Midi-Pyrénées                           2014    1.09     0.610
+1684 fr14h Nord-Pas de Calais                      2014    1.12     0.575
+1685 fr14h Pays de la Loire                        2014    1.15     0.599
+1686 fr14h Picardie                                2014    1.23     0.590
+1687 fr14h Poitou-Charentes                        2014    1.17     0.598
+1688 fr14h Provence-Alpes-Côte-d'Azur              2014    1.16     0.618
+1689 fr14h Rhône-Alpes                             2014    1.15     0.619
+1690 fr15h Alsace                                  2015    1.12     0.614
+1691 fr15h Aquitaine                               2015    1.13     0.625
+1692 fr15h Auvergne                                2015    0.904    0.631
+1693 fr15h Basse-Normandie                         2015    1.10     0.606
+1694 fr15h Bourgogne                               2015    1.12     0.696
+1695 fr15h Bretagne                                2015    1.18     0.674
+1696 fr15h Centre                                  2015    1.18     0.585
+1697 fr15h Champagne-Ardenne                       2015    1.28     0.632
+1698 fr15h Corse                                   2015    0.968    0.519
+1699 fr15h Franche-Comté                           2015    1.20     0.646
+1700 fr15h Haute-Normandie                         2015    1.21     0.622
+1701 fr15h Ile-de-France                           2015    1.32     0.653
+1702 fr15h Languedoc-Roussillon                    2015    1.15     0.644
+1703 fr15h Limousin                                2015    1.37     0.638
+1704 fr15h Lorraine                                2015    1.33     0.614
+1705 fr15h Midi-Pyrénées                           2015    1.17     0.601
+1706 fr15h Nord-Pas de Calais                      2015    1.15     0.594
+1707 fr15h Pays de la Loire                        2015    1.19     0.627
+1708 fr15h Picardie                                2015    1.24     0.592
+1709 fr15h Poitou-Charentes                        2015    1.28     0.637
+1710 fr15h Provence-Alpes-Côte-d'Azur              2015    1.18     0.606
+1711 fr15h Rhône-Alpes                             2015    1.16     0.620
+1712 fr16h Alsace                                  2016    1.18     0.653
+1713 fr16h Aquitaine                               2016    1.13     0.666
+1714 fr16h Auvergne                                2016    1.00     0.623
+1715 fr16h Basse-Normandie                         2016    0.993    0.554
+1716 fr16h Bourgogne                               2016    1.25     0.635
+1717 fr16h Bretagne                                2016    1.18     0.675
+1718 fr16h Centre                                  2016    1.14     0.619
+1719 fr16h Champagne-Ardenne                       2016    1.20     0.649
+1720 fr16h Corse                                   2016    1.28     0.647
+1721 fr16h Franche-Comté                           2016    1.06     0.645
+1722 fr16h Haute-Normandie                         2016    1.33     0.564
+1723 fr16h Ile-de-France                           2016    1.33     0.639
+1724 fr16h Languedoc-Roussillon                    2016    1.11     0.631
+1725 fr16h Limousin                                2016    1.30     0.620
+1726 fr16h Lorraine                                2016    1.33     0.608
+1727 fr16h Midi-Pyrénées                           2016    1.09     0.661
+1728 fr16h Nord-Pas de Calais                      2016    1.13     0.578
+1729 fr16h Pays de la Loire                        2016    1.17     0.669
+1730 fr16h Picardie                                2016    1.13     0.600
+1731 fr16h Poitou-Charentes                        2016    1.31     0.621
+1732 fr16h Provence-Alpes-Côte-d'Azur              2016    1.19     0.652
+1733 fr16h Rhône-Alpes                             2016    1.13     0.654
+1734 fr17h Alsace                                  2017    1.20     0.673
+1735 fr17h Aquitaine                               2017    1.12     0.636
+1736 fr17h Auvergne                                2017    1.02     0.652
+1737 fr17h Basse-Normandie                         2017    1.21     0.607
+1738 fr17h Bourgogne                               2017    1.14     0.598
+1739 fr17h Bretagne                                2017    1.07     0.647
+1740 fr17h Centre                                  2017    1.19     0.628
+1741 fr17h Champagne-Ardenne                       2017    1.22     0.622
+1742 fr17h Corse                                   2017    0.962    0.652
+1743 fr17h Franche-Comté                           2017    1.14     0.653
+1744 fr17h Haute-Normandie                         2017    1.35     0.603
+1745 fr17h Ile-de-France                           2017    1.32     0.625
+1746 fr17h Languedoc-Roussillon                    2017    1.19     0.651
+1747 fr17h Limousin                                2017    1.23     0.616
+1748 fr17h Lorraine                                2017    1.23     0.546
+1749 fr17h Midi-Pyrénées                           2017    1.15     0.681
+1750 fr17h Nord-Pas de Calais                      2017    1.15     0.597
+1751 fr17h Pays de la Loire                        2017    1.20     0.637
+1752 fr17h Picardie                                2017    1.06     0.631
+1753 fr17h Poitou-Charentes                        2017    1.18     0.638
+1754 fr17h Provence-Alpes-Côte-d'Azur              2017    1.25     0.638
+1755 fr17h Rhône-Alpes                             2017    1.18     0.681
+1756 fr18h Alsace                                  2018    1.18     0.642
+1757 fr18h Aquitaine                               2018    1.16     0.608
+1758 fr18h Auvergne                                2018    1.14     0.632
+1759 fr18h Basse-Normandie                         2018    1.24     0.651
+1760 fr18h Bourgogne                               2018    1.08     0.615
+1761 fr18h Bretagne                                2018    1.13     0.648
+1762 fr18h Centre                                  2018    1.29     0.655
+1763 fr18h Champagne-Ardenne                       2018    1.27     0.594
+1764 fr18h Corse                                   2018    1.24     0.658
+1765 fr18h Franche-Comté                           2018    1.16     0.640
+1766 fr18h Haute-Normandie                         2018    1.29     0.600
+1767 fr18h Ile-de-France                           2018    1.30     0.653
+1768 fr18h Languedoc-Roussillon                    2018    1.23     0.602
+1769 fr18h Limousin                                2018    1.19     0.622
+1770 fr18h Lorraine                                2018    1.17     0.627
+1771 fr18h Midi-Pyrénées                           2018    1.05     0.633
+1772 fr18h Nord-Pas de Calais                      2018    1.16     0.570
+1773 fr18h Pays de la Loire                        2018    1.24     0.611
+1774 fr18h Picardie                                2018    1.15     0.583
+1775 fr18h Poitou-Charentes                        2018    1.07     0.611
+1776 fr18h Provence-Alpes-Côte-d'Azur              2018    1.21     0.619
+1777 fr18h Rhône-Alpes                             2018    1.16     0.624
+1778 fr84h <NA>                                    1984   NA       NA    
+1779 fr90h <NA>                                    1990   NA       NA    
+1780 fr96h Alsace                                  1996    1.23     0.620
+1781 fr96h Aquitaine                               1996    1.02     0.643
+1782 fr96h Auvergne                                1996    0.922    0.572
+1783 fr96h Basse-Normandie                         1996    0.769    0.646
+1784 fr96h Bourgogne                               1996    1.15     0.659
+1785 fr96h Bretagne                                1996    1.11     0.641
+1786 fr96h Centre                                  1996    1.20     0.611
+1787 fr96h Champagne-Ardenne                       1996    1.19     0.593
+1788 fr96h Franche-Comté                           1996    1.22     0.714
+1789 fr96h Haute-Normandie                         1996    1.26     0.615
+1790 fr96h Ile-de-France                           1996    1.36     0.685
+1791 fr96h Languedoc-Roussillon                    1996    1.18     0.626
+1792 fr96h Limousin                                1996    1.32     0.597
+1793 fr96h Lorraine                                1996    1.16     0.614
+1794 fr96h Midi-Pyrénées                           1996    1.05     0.634
+1795 fr96h Nord-Pas de Calais                      1996    1.18     0.648
+1796 fr96h Pays de la Loire                        1996    1.05     0.672
+1797 fr96h Picardie                                1996    1.18     0.649
+1798 fr96h Poitou-Charentes                        1996    0.888    0.590
+1799 fr96h Provence-Côte d'Azur-Corse              1996    1.09     0.647
+1800 fr96h Rhône-Alpes                             1996    1.18     0.646
+1801 fr97h Alsace                                  1997    1.17     0.655
+1802 fr97h Aquitaine                               1997    1.09     0.670
+1803 fr97h Auvergne                                1997    0.962    0.605
+1804 fr97h Basse-Normandie                         1997    0.808    0.640
+1805 fr97h Bourgogne                               1997    1.10     0.662
+1806 fr97h Bretagne                                1997    1.04     0.632
+1807 fr97h Centre                                  1997    1.26     0.629
+1808 fr97h Champagne-Ardenne                       1997    1.15     0.612
+1809 fr97h Franche-Comté                           1997    1.16     0.697
+1810 fr97h Haute-Normandie                         1997    1.22     0.611
+1811 fr97h Ile-de-France                           1997    1.33     0.680
+1812 fr97h Languedoc-Roussillon                    1997    1.25     0.640
+1813 fr97h Limousin                                1997    1.29     0.631
+1814 fr97h Lorraine                                1997    1.18     0.628
+1815 fr97h Midi-Pyrénées                           1997    1.13     0.650
+1816 fr97h Nord-Pas de Calais                      1997    1.06     0.572
+1817 fr97h Pays de la Loire                        1997    1.08     0.621
+1818 fr97h Picardie                                1997    1.20     0.641
+1819 fr97h Poitou-Charentes                        1997    0.789    0.612
+1820 fr97h Provence-Côte d'Azur-Corse              1997    1.10     0.668
+1821 fr97h Rhône-Alpes                             1997    1.21     0.652
+1822 fr98h Alsace                                  1998    1.15     0.744
+1823 fr98h Aquitaine                               1998    1.12     0.606
+1824 fr98h Auvergne                                1998    1.07     0.603
+1825 fr98h Basse-Normandie                         1998    0.777    0.618
+1826 fr98h Bourgogne                               1998    1.18     0.652
+1827 fr98h Bretagne                                1998    1.01     0.630
+1828 fr98h Centre                                  1998    1.14     0.668
+1829 fr98h Champagne-Ardenne                       1998    1.10     0.651
+1830 fr98h Franche-Comté                           1998    1.10     0.676
+1831 fr98h Haute-Normandie                         1998    1.12     0.611
+1832 fr98h Ile-de-France                           1998    1.28     0.677
+1833 fr98h Languedoc-Roussillon                    1998    1.11     0.622
+1834 fr98h Limousin                                1998    1.09     0.634
+1835 fr98h Lorraine                                1998    1.15     0.639
+1836 fr98h Midi-Pyrénées                           1998    1.17     0.656
+1837 fr98h Nord-Pas de Calais                      1998    1.12     0.579
+1838 fr98h Pays de la Loire                        1998    1.00     0.656
+1839 fr98h Picardie                                1998    1.20     0.618
+1840 fr98h Poitou-Charentes                        1998    0.989    0.641
+1841 fr98h Provence-Côte d'Azur-Corse              1998    1.10     0.657
+1842 fr98h Rhône-Alpes                             1998    1.17     0.651
+1843 fr99h Alsace                                  1999    1.24     0.678
+1844 fr99h Aquitaine                               1999    1.11     0.629
+1845 fr99h Auvergne                                1999    1.12     0.604
+1846 fr99h Basse-Normandie                         1999    0.805    0.608
+1847 fr99h Bourgogne                               1999    1.15     0.634
+1848 fr99h Bretagne                                1999    1.06     0.662
+1849 fr99h Centre                                  1999    1.20     0.620
+1850 fr99h Champagne-Ardenne                       1999    1.17     0.649
+1851 fr99h Franche-Comté                           1999    1.12     0.693
+1852 fr99h Haute-Normandie                         1999    1.09     0.612
+1853 fr99h Ile-de-France                           1999    1.25     0.667
+1854 fr99h Languedoc-Roussillon                    1999    1.09     0.617
+1855 fr99h Limousin                                1999    1.15     0.606
+1856 fr99h Lorraine                                1999    1.07     0.634
+1857 fr99h Midi-Pyrénées                           1999    1.13     0.677
+1858 fr99h Nord-Pas de Calais                      1999    1.15     0.602
+1859 fr99h Pays de la Loire                        1999    0.965    0.668
+1860 fr99h Picardie                                1999    1.23     0.617
+1861 fr99h Poitou-Charentes                        1999    0.937    0.642
+1862 fr99h Provence-Côte d'Azur-Corse              1999    1.10     0.636
+1863 fr99h Rhône-Alpes                             1999    1.21     0.658
+1864 it00h [1]ITC1 - Piemonte                      2000    1.27     0.531
+1865 it00h [10]ITI2 - Umbria                       2000   NA       NA    
+1866 it00h [11]ITI3 - Marche                       2000    1.35     0.595
+1867 it00h [12]ITI4 - Lazio                        2000    0.920    0.582
+1868 it00h [13]ITF1 - Abruzzo                      2000    1.18     0.499
+1869 it00h [14]ITF2 - Molise                       2000    1.45     0.776
+1870 it00h [15]ITF3 - Campania                     2000    0.968    0.432
+1871 it00h [16]ITF4 - Puglia                       2000    1.29     0.505
+1872 it00h [17]ITF5 - Basilicata                   2000    1.27     0.528
+1873 it00h [18]ITF6 - Calabria                     2000    1.11     0.466
+1874 it00h [19]ITG1 - Sicilia                      2000    1.40     0.396
+1875 it00h [2]ITC2 - Valle d'Aosta                 2000   NA        0.563
+1876 it00h [20]ITG2 - Sardegna                     2000    0.775    0.642
+1877 it00h [3]ITC4 - Lombardia                     2000    1.14     0.532
+1878 it00h [4]ITH1 and ITH2 - Trentino             2000    1.24     0.687
+1879 it00h [5]ITH3 - Veneto                        2000    1.55     0.488
+1880 it00h [6]ITH4 - Friuli                        2000    0.873    0.634
+1881 it00h [7]ITC3 - Liguria                       2000    1.33     0.588
+1882 it00h [8]ITH5 - Emilia Romagna                2000    1.08     0.697
+1883 it00h [9]ITI1 - Toscana                       2000    1.00     0.694
+1884 it04h [1]ITC1 - Piemonte                      2004    1.34     0.624
+1885 it04h [10]ITI2 - Umbria                       2004    1.39     0.631
+1886 it04h [11]ITI3 - Marche                       2004    1.44     0.636
+1887 it04h [12]ITI4 - Lazio                        2004    0.922    0.693
+1888 it04h [13]ITF1 - Abruzzo                      2004    0.927    0.527
+1889 it04h [14]ITF2 - Molise                       2004    1.01     0.433
+1890 it04h [15]ITF3 - Campania                     2004    0.807    0.549
+1891 it04h [16]ITF4 - Puglia                       2004    1.19     0.595
+1892 it04h [17]ITF5 - Basilicata                   2004    1.31     0.390
+1893 it04h [18]ITF6 - Calabria                     2004    1.15     0.516
+1894 it04h [19]ITG1 - Sicilia                      2004    0.955    0.480
+1895 it04h [2]ITC2 - Valle d'Aosta                 2004    1.36     0.575
+1896 it04h [20]ITG2 - Sardegna                     2004    0.718    0.584
+1897 it04h [3]ITC4 - Lombardia                     2004    1.09     0.530
+1898 it04h [4]ITH1 and ITH2 - Trentino             2004    1.32     0.495
+1899 it04h [5]ITH3 - Veneto                        2004    1.64     0.539
+1900 it04h [6]ITH4 - Friuli                        2004    0.904    0.516
+1901 it04h [7]ITC3 - Liguria                       2004    1.39     0.599
+1902 it04h [8]ITH5 - Emilia Romagna                2004    1.57     0.602
+1903 it04h [9]ITI1 - Toscana                       2004    1.37     0.630
+1904 it08h [1]ITC1 - Piemonte                      2008    1.25     0.511
+1905 it08h [10]ITI2 - Umbria                       2008    1.45     0.746
+1906 it08h [11]ITI3 - Marche                       2008    1.43     0.539
+1907 it08h [12]ITI4 - Lazio                        2008    1.24     0.557
+1908 it08h [13]ITF1 - Abruzzo                      2008    1.07     0.575
+1909 it08h [14]ITF2 - Molise                       2008    0.853    0.623
+1910 it08h [15]ITF3 - Campania                     2008    1.45     0.497
+1911 it08h [16]ITF4 - Puglia                       2008    1.03     0.499
+1912 it08h [17]ITF5 - Basilicata                   2008    1.17     0.458
+1913 it08h [18]ITF6 - Calabria                     2008    1.92     0.501
+1914 it08h [19]ITG1 - Sicilia                      2008    1.05     0.442
+1915 it08h [2]ITC2 - Valle d'Aosta                 2008    1.49     0.738
+1916 it08h [20]ITG2 - Sardegna                     2008    1.22     0.501
+1917 it08h [3]ITC4 - Lombardia                     2008    1.37     0.476
+1918 it08h [4]ITH1 and ITH2 - Trentino             2008    1.84     0.760
+1919 it08h [5]ITH3 - Veneto                        2008    1.68     0.655
+1920 it08h [6]ITH4 - Friuli                        2008    1.70     0.644
+1921 it08h [7]ITC3 - Liguria                       2008    1.32     0.763
+1922 it08h [8]ITH5 - Emilia Romagna                2008    1.60     0.667
+1923 it08h [9]ITI1 - Toscana                       2008    1.21     0.643
+1924 it10h [1]ITC1 - Piemonte                      2010    1.32     0.562
+1925 it10h [10]ITI2 - Umbria                       2010    1.47     0.649
+1926 it10h [11]ITI3 - Marche                       2010    1.62     0.651
+1927 it10h [12]ITI4 - Lazio                        2010   NA       NA    
+1928 it10h [13]ITF1 - Abruzzo                      2010   NA       NA    
+1929 it10h [14]ITF2 - Molise                       2010    0.971    0.551
+1930 it10h [15]ITF3 - Campania                     2010   NA       NA    
+1931 it10h [16]ITF4 - Puglia                       2010    1.75     0.559
+1932 it10h [17]ITF5 - Basilicata                   2010    0.742    0.422
+1933 it10h [18]ITF6 - Calabria                     2010    1.11     0.598
+1934 it10h [19]ITG1 - Sicilia                      2010    1.16     0.485
+1935 it10h [2]ITC2 - Valle d'Aosta                 2010    1.45     0.707
+1936 it10h [20]ITG2 - Sardegna                     2010    1.47     0.494
+1937 it10h [3]ITC4 - Lombardia                     2010   NA       NA    
+1938 it10h [4]ITH1 and ITH2 - Trentino             2010    1.50     0.508
+1939 it10h [5]ITH3 - Veneto                        2010   NA       NA    
+1940 it10h [6]ITH4 - Friuli                        2010   NA       NA    
+1941 it10h [7]ITC3 - Liguria                       2010   NA       NA    
+1942 it10h [8]ITH5 - Emilia Romagna                2010   NA       NA    
+1943 it10h [9]ITI1 - Toscana                       2010    1.47     0.655
+1944 it14h [1]ITC1 - Piemonte                      2014    1.33     0.572
+1945 it14h [10]ITI2 - Umbria                       2014    1.92     0.706
+1946 it14h [11]ITI3 - Marche                       2014    1.36     0.734
+1947 it14h [12]ITI4 - Lazio                        2014    1.45     0.623
+1948 it14h [13]ITF1 - Abruzzo                      2014    0.969    0.613
+1949 it14h [14]ITF2 - Molise                       2014    1.20     0.588
+1950 it14h [15]ITF3 - Campania                     2014    1.37     0.430
+1951 it14h [16]ITF4 - Puglia                       2014    1.16     0.566
+1952 it14h [17]ITF5 - Basilicata                   2014    1.02     0.805
+1953 it14h [18]ITF6 - Calabria                     2014    1.27     0.476
+1954 it14h [19]ITG1 - Sicilia                      2014    1.43     0.435
+1955 it14h [2]ITC2 - Valle d'Aosta                 2014   NA        0.464
+1956 it14h [20]ITG2 - Sardegna                     2014    0.984    0.547
+1957 it14h [3]ITC4 - Lombardia                     2014    1.85     0.582
+1958 it14h [4]ITH1 and ITH2 - Trentino             2014    1.55     0.757
+1959 it14h [5]ITH3 - Veneto                        2014    1.87     0.698
+1960 it14h [6]ITH4 - Friuli                        2014    1.48     0.698
+1961 it14h [7]ITC3 - Liguria                       2014    1.62     0.690
+1962 it14h [8]ITH5 - Emilia Romagna                2014    1.68     0.642
+1963 it14h [9]ITI1 - Toscana                       2014    1.32     0.651
+1964 it16h [1]ITC1 - Piemonte                      2016    1.69     0.541
+1965 it16h [10]ITI2 - Umbria                       2016    1.55     0.738
+1966 it16h [11]ITI3 - Marche                       2016    1.55     0.728
+1967 it16h [12]ITI4 - Lazio                        2016   NA       NA    
+1968 it16h [13]ITF1 - Abruzzo                      2016    1.73     0.650
+1969 it16h [14]ITF2 - Molise                       2016    1.36     0.718
+1970 it16h [15]ITF3 - Campania                     2016    1.36     0.404
+1971 it16h [16]ITF4 - Puglia                       2016    1.48     0.607
+1972 it16h [17]ITF5 - Basilicata                   2016    2.28     0.437
+1973 it16h [18]ITF6 - Calabria                     2016    1.50     0.457
+1974 it16h [19]ITG1 - Sicilia                      2016    1.32     0.376
+1975 it16h [2]ITC2 - Valle d'Aosta                 2016   NA        0.674
+1976 it16h [20]ITG2 - Sardegna                     2016    1.52     0.546
+1977 it16h [3]ITC4 - Lombardia                     2016    1.86     0.526
+1978 it16h [4]ITH1 and ITH2 - Trentino             2016    1.05     0.651
+1979 it16h [5]ITH3 - Veneto                        2016    1.79     0.686
+1980 it16h [6]ITH4 - Friuli                        2016    2.07     0.600
+1981 it16h [7]ITC3 - Liguria                       2016    1.65     0.635
+1982 it16h [8]ITH5 - Emilia Romagna                2016    1.98     0.685
+1983 it16h [9]ITI1 - Toscana                       2016    1.33     0.605
+1984 it20h [1]ITC1 - Piemonte                      2020    1.36     0.671
+1985 it20h [10]ITI2 - Umbria                       2020    1.02     0.635
+1986 it20h [11]ITI3 - Marche                       2020    0.999    0.752
+1987 it20h [12]ITI4 - Lazio                        2020    1.32     0.543
+1988 it20h [13]ITF1 - Abruzzo                      2020    1.34     0.617
+1989 it20h [14]ITF2 - Molise                       2020    1.48     0.444
+1990 it20h [15]ITF3 - Campania                     2020    1.07     0.455
+1991 it20h [16]ITF4 - Puglia                       2020    1.39     0.525
+1992 it20h [17]ITF5 - Basilicata                   2020    1.36     0.442
+1993 it20h [18]ITF6 - Calabria                     2020    1.02     0.564
+1994 it20h [19]ITG1 - Sicilia                      2020    1.03     0.378
+1995 it20h [2]ITC2 - Valle d'Aosta                 2020    1.38     0.860
+1996 it20h [20]ITG2 - Sardegna                     2020    1.77     0.418
+1997 it20h [3]ITC4 - Lombardia                     2020    1.54     0.599
+1998 it20h [4]ITH1 and ITH2 - Trentino             2020    1.33     0.656
+1999 it20h [5]ITH3 - Veneto                        2020    1.35     0.551
+2000 it20h [6]ITH4 - Friuli                        2020    1.11     0.621
+2001 it20h [7]ITC3 - Liguria                       2020    1.44     0.501
+2002 it20h [8]ITH5 - Emilia Romagna                2020    1.30     0.661
+2003 it20h [9]ITI1 - Toscana                       2020    1.14     0.582
+2004 it89h [1]ITC1 - Piemonte                      1989    1.10     0.644
+2005 it89h [10]ITI2 - Umbria                       1989    0.977    0.724
+2006 it89h [11]ITI3 - Marche                       1989    1.31     0.734
+2007 it89h [12]ITI4 - Lazio                        1989    0.675    0.561
+2008 it89h [13]ITF1 - Abruzzo                      1989    0.955    0.483
+2009 it89h [14]ITF2 - Molise                       1989    1.89     0.582
+2010 it89h [15]ITF3 - Campania                     1989    0.741    0.459
+2011 it89h [16]ITF4 - Puglia                       1989    1.00     0.486
+2012 it89h [17]ITF5 - Basilicata                   1989    1.37     0.458
+2013 it89h [18]ITF6 - Calabria                     1989    0.571    0.595
+2014 it89h [19]ITG1 - Sicilia                      1989    0.917    0.499
+2015 it89h [20]ITG2 - Sardegna                     1989    1.83     0.494
+2016 it89h [3]ITC4 - Lombardia                     1989    0.624    0.578
+2017 it89h [4]ITH1 and ITH2 - Trentino             1989    1.09     0.729
+2018 it89h [5]ITH3 - Veneto                        1989    1.31     0.610
+2019 it89h [6]ITH4 - Friuli                        1989    0.940    0.580
+2020 it89h [7]ITC3 - Liguria                       1989    1.05     0.655
+2021 it89h [8]ITH5 - Emilia Romagna                1989    1.38     0.665
+2022 it89h [9]ITI1 - Toscana                       1989    0.951    0.706
+2023 it91h [1]ITC1 - Piemonte                      1991    1.12     0.629
+2024 it91h [10]ITI2 - Umbria                       1991    0.805    0.695
+2025 it91h [11]ITI3 - Marche                       1991    1.20     0.582
+2026 it91h [12]ITI4 - Lazio                        1991    0.670    0.556
+2027 it91h [13]ITF1 - Abruzzo                      1991    0.919    0.433
+2028 it91h [14]ITF2 - Molise                       1991    0.705    0.437
+2029 it91h [15]ITF3 - Campania                     1991    0.971    0.569
+2030 it91h [16]ITF4 - Puglia                       1991    1.18     0.494
+2031 it91h [17]ITF5 - Basilicata                   1991   NA        0.407
+2032 it91h [18]ITF6 - Calabria                     1991    0.612    0.609
+2033 it91h [19]ITG1 - Sicilia                      1991    1.06     0.484
+2034 it91h [20]ITG2 - Sardegna                     1991    1.25     0.673
+2035 it91h [3]ITC4 - Lombardia                     1991    1.20     0.589
+2036 it91h [4]ITH1 and ITH2 - Trentino             1991    0.861    0.565
+2037 it91h [5]ITH3 - Veneto                        1991    1.15     0.569
+2038 it91h [6]ITH4 - Friuli                        1991    0.970    0.460
+2039 it91h [7]ITC3 - Liguria                       1991    0.757    0.645
+2040 it91h [8]ITH5 - Emilia Romagna                1991    0.882    0.695
+2041 it91h [9]ITI1 - Toscana                       1991    1.11     0.748
+2042 it93h [1]ITC1 - Piemonte                      1993    1.29     0.477
+2043 it93h [10]ITI2 - Umbria                       1993    0.832    0.546
+2044 it93h [11]ITI3 - Marche                       1993    1.36     0.379
+2045 it93h [12]ITI4 - Lazio                        1993    0.844    0.576
+2046 it93h [13]ITF1 - Abruzzo                      1993    1.16     0.432
+2047 it93h [14]ITF2 - Molise                       1993    1.22     0.398
+2048 it93h [15]ITF3 - Campania                     1993    1.16     0.416
+2049 it93h [16]ITF4 - Puglia                       1993    1.06     0.405
+2050 it93h [17]ITF5 - Basilicata                   1993   NA        0.268
+2051 it93h [18]ITF6 - Calabria                     1993    0.908    0.450
+2052 it93h [19]ITG1 - Sicilia                      1993    1.13     0.362
+2053 it93h [20]ITG2 - Sardegna                     1993    1.02     0.471
+2054 it93h [3]ITC4 - Lombardia                     1993    1.11     0.542
+2055 it93h [4]ITH1 and ITH2 - Trentino             1993    0.938    0.674
+2056 it93h [5]ITH3 - Veneto                        1993    1.16     0.496
+2057 it93h [6]ITH4 - Friuli                        1993    1.31     0.368
+2058 it93h [7]ITC3 - Liguria                       1993    1.04     0.502
+2059 it93h [8]ITH5 - Emilia Romagna                1993    0.779    0.699
+2060 it93h [9]ITI1 - Toscana                       1993    1.33     0.681
+2061 it95h [1]ITC1 - Piemonte                      1995    1.20     0.512
+2062 it95h [10]ITI2 - Umbria                       1995    0.612    0.654
+2063 it95h [11]ITI3 - Marche                       1995    1.09     0.559
+2064 it95h [12]ITI4 - Lazio                        1995    0.751    0.493
+2065 it95h [13]ITF1 - Abruzzo                      1995    1.34     0.426
+2066 it95h [14]ITF2 - Molise                       1995    0.961    0.413
+2067 it95h [15]ITF3 - Campania                     1995    0.920    0.479
+2068 it95h [16]ITF4 - Puglia                       1995    1.07     0.481
+2069 it95h [17]ITF5 - Basilicata                   1995    0.312    0.444
+2070 it95h [18]ITF6 - Calabria                     1995    1.54     0.485
+2071 it95h [19]ITG1 - Sicilia                      1995   NA       NA    
+2072 it95h [20]ITG2 - Sardegna                     1995    1.26     0.427
+2073 it95h [3]ITC4 - Lombardia                     1995    0.962    0.472
+2074 it95h [4]ITH1 and ITH2 - Trentino             1995    0.930    0.406
+2075 it95h [5]ITH3 - Veneto                        1995    1.25     0.536
+2076 it95h [6]ITH4 - Friuli                        1995    1.13     0.487
+2077 it95h [7]ITC3 - Liguria                       1995    0.837    0.549
+2078 it95h [8]ITH5 - Emilia Romagna                1995    1.23     0.616
+2079 it95h [9]ITI1 - Toscana                       1995    1.18     0.634
+2080 it98h [1]ITC1 - Piemonte                      1998    1.49     0.648
+2081 it98h [10]ITI2 - Umbria                       1998    0.818    0.619
+2082 it98h [11]ITI3 - Marche                       1998    1.42     0.549
+2083 it98h [12]ITI4 - Lazio                        1998    0.627    0.613
+2084 it98h [13]ITF1 - Abruzzo                      1998    1.13     0.526
+2085 it98h [14]ITF2 - Molise                       1998    0.851    0.581
+2086 it98h [15]ITF3 - Campania                     1998    0.833    0.517
+2087 it98h [16]ITF4 - Puglia                       1998    1.52     0.513
+2088 it98h [17]ITF5 - Basilicata                   1998    0.412    0.577
+2089 it98h [18]ITF6 - Calabria                     1998    1.29     0.435
+2090 it98h [19]ITG1 - Sicilia                      1998    1.16     0.363
+2091 it98h [2]ITC2 - Valle d'Aosta                 1998   NA        0.610
+2092 it98h [20]ITG2 - Sardegna                     1998    1.31     0.401
+2093 it98h [3]ITC4 - Lombardia                     1998    1.16     0.543
+2094 it98h [4]ITH1 and ITH2 - Trentino             1998    1.03     0.476
+2095 it98h [5]ITH3 - Veneto                        1998    1.16     0.505
+2096 it98h [6]ITH4 - Friuli                        1998    0.966    0.530
+2097 it98h [7]ITC3 - Liguria                       1998    1.52     0.608
+2098 it98h [8]ITH5 - Emilia Romagna                1998    1.49     0.606
+2099 it98h [9]ITI1 - Toscana                       1998    1.10     0.720

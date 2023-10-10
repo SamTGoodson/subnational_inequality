@@ -113,5 +113,7 @@ df2 <- df2 %>%
   mutate(ratio = (`[1]low` / `[3]high`)) %>%
   select(region_c,year,ratio)
 
+merged_df <- merge(df1,df2,by = c("region_c","year"))
+
 print(tbl_df(df2), n=502)
 

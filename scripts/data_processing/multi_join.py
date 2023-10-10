@@ -18,10 +18,16 @@ inequality_data_path = os.path.abspath(ineq_folder_relative)
 results_folder_relative = os.path.join('..', '..', 'data', 'cleaned','national','joined_electoral_lissy.csv')
 results_data_path = os.path.abspath(results_folder_relative)
 
+ineq_im_ed_folder_relative = os.path.join('..', '..', 'data', 'raw', 'lissy', 'multination_im_ed.txt')
+ineq_im_ed_data_path = os.path.abspath(ineq_im_ed_folder_relative)
+
 df_elections = pd.read_csv(electoral_data_path, delimiter=",", encoding='UTF-8')
 
 df_inequality = pd.read_fwf(inequality_data_path, skiprows=3, header=None,
                                 names=["file","region", "year", "avg_gini"])
+
+df_inequality_im_ed = pd.read_fwf(ineq_im_ed_data_path, skiprows=3, header=None,
+                                    names=["file", "region", "year", "im_ratio", "ed_ratio"])
 
 def clean_inequality_region(df):
     df.reset_index(drop=True, inplace=True)
@@ -46,6 +52,15 @@ def get_country_name(abbreviation):
         return None
     
 
+def clean_im_ed_region(df):
+    df.reset_index(drop=True, inplace=True)
+
+    df['cleaned_region'] = df['region'].str.lower().apply(lambda x: re.sub(r'\[\d+\](.+)', r'\1', x))
+    df['cleaned_region'] = df['cleaned_region'].str.strip()
+
+    return df
+
+
 def map_regions(df, df2):
     region_mapping = {}
     
@@ -64,22 +79,26 @@ def find_best_match(region, choices):
     return match, score
 
 
-def clean_and_prepare(df_inequality,df_elections):
+def clean_and_prepare(df_inequality, df_elections, df_inequality_im_ed):
     df_inequality['country'] = df_inequality['file'].str[:2]
     df_inequality['country_name'] = df_inequality['country'].apply(get_country_name)
 
+    df_inequality_im_ed['country'] = df_inequality_im_ed['file'].str[:2]
+    df_inequality_im_ed['country_name'] = df_inequality_im_ed['country'].apply(get_country_name)
+
     df_inequality.dropna(subset=['region'], inplace=True)
     df_elections.dropna(subset=['regionname'], inplace=True)
+    df_inequality_im_ed.dropna(subset=['region'], inplace=True)
 
     df_inequality['cleaned_region'] = df_inequality['region'].str.lower().apply(clean_region)
     df_elections['cleaned_region'] = df_elections['regionname'].str.lower().str.replace('[^\w\s]', '')
+    df_inequality_im_ed['cleaned_region'] = df_inequality_im_ed['region'].str.lower().apply(clean_region)
 
-    df_inequality = df_inequality[df_inequality['country_name'] != 'Austria']
-
-    countries_to_keep = df_inequality['country_name'].unique()
-    df_elections = df_elections[df_elections['country'].isin(countries_to_keep)]
+    df_inequality = pd.merge(df_inequality, df_inequality_im_ed, on=["country_name","file", 
+                                                                     "cleaned_region", "year"], how="left")
 
     return df_inequality, df_elections
+
 
 def return_election_data(df_elections):
     elec_data = []
@@ -97,14 +116,16 @@ def return_election_data(df_elections):
 
 def make_join_df(df_inequality, election_df):
 
-    regions = df_inequality[['country_name','cleaned_region']]
+    regions = df_inequality[['country_name', 'cleaned_region']]
     regions.drop_duplicates(inplace=True)
     region_join = regions.merge(election_df, left_on=['country_name'], right_on=['country'], how='left')
-    inequality_with_elections = df_inequality.merge(region_join, left_on=['country_name','cleaned_region','year'], right_on=['country_name','cleaned_region','year'], how='outer')
+    inequality_with_elections = df_inequality.merge(region_join, left_on=['country_name', 'cleaned_region', 'year'],
+                                                    right_on=['country_name', 'cleaned_region', 'year'], how='outer')
 
     inequality_with_elections['flag'].fillna(0, inplace=True)
 
-    df = inequality_with_elections[['country_name', 'cleaned_region', 'year', 'avg_gini', 'flag', 'country_y']]
+    df = inequality_with_elections[['country_name', 'cleaned_region', 'year', 'avg_gini', 'im_ratio', 'ed_ratio',
+                                    'flag', 'country_y']]
     
     df['interp_gini'] = df.sort_values(by=['cleaned_region', 'year'])['avg_gini'].transform(lambda x: x.interpolate())
     
@@ -129,7 +150,7 @@ if __name__ == '__main__':
 
     try:
         warnings.filterwarnings("ignore")
-        df_inequality, df_elections = clean_and_prepare(df_inequality, df_elections)
+        df_inequality, df_elections = clean_and_prepare(df_inequality, df_elections, df_inequality_im_ed)
         election_df = return_election_data(df_elections)
         joined_data = make_join_df(df_inequality, election_df)
 
