@@ -8,6 +8,7 @@ from fuzzywuzzy import fuzz,process
 from tqdm import tqdm
 import pycountry
 import warnings 
+from unidecode import unidecode
 
 electoral_folder_relative = os.path.join('..', '..', 'data', 'raw','national_election','eu_ned_national_nuts2(1).csv')
 electoral_data_path = os.path.abspath(electoral_folder_relative)
@@ -41,6 +42,7 @@ def clean_inequality_region(df):
 def clean_region(region):
     cleaned_region = re.sub(r'^\[\d+\](.+)', r'\1', region)
     cleaned_region = re.sub(r'^.*-', '', cleaned_region)
+    cleaned_region = unidecode(cleaned_region)
     
     return cleaned_region.strip()
 
@@ -96,6 +98,8 @@ def clean_and_prepare(df_inequality, df_elections, df_inequality_im_ed):
 
     df_inequality = pd.merge(df_inequality, df_inequality_im_ed, on=["country_name","file", 
                                                                      "cleaned_region", "year"], how="left")
+    
+    df_inequality = df_inequality[df_inequality['country_name'] != 'Austria']
 
     return df_inequality, df_elections
 
@@ -128,10 +132,18 @@ def make_join_df(df_inequality, election_df):
                                     'flag', 'country_y']]
     
     df['interp_gini'] = df.sort_values(by=['cleaned_region', 'year'])['avg_gini'].transform(lambda x: x.interpolate())
+    df['interp_im'] = df.sort_values(by=['cleaned_region', 'year'])['im_ratio'].transform(lambda x: x.interpolate())
+    df['interp_ed'] = df.sort_values(by=['cleaned_region', 'year'])['ed_ratio'].transform(lambda x: x.interpolate())
     
     df.sort_values(['country_name', 'cleaned_region', 'year'], inplace=True)
     df['delta_gini'] = df.groupby(['country_name', 'cleaned_region', 'flag'])['interp_gini'].diff()
     df['avg_gini_period'] = df.groupby(['country_name', 'cleaned_region', 'flag'])['interp_gini'].transform(lambda x: x.rolling(len(x), min_periods=1).mean())
+
+    df['delta_im'] = df.groupby(['country_name', 'cleaned_region', 'flag'])['interp_im'].diff()
+    df['avg_im_period'] = df.groupby(['country_name', 'cleaned_region', 'flag'])['interp_im'].transform(lambda x: x.rolling(len(x), min_periods=1).mean())
+
+    df['delta_ed'] = df.groupby(['country_name', 'cleaned_region', 'flag'])['interp_ed'].diff()
+    df['avg_ed_period'] = df.groupby(['country_name', 'cleaned_region', 'flag'])['interp_ed'].transform(lambda x: x.rolling(len(x), min_periods=1).mean())
 
     election_years_df = df[df['flag'] == 1].copy()
     election_years_df.reset_index(drop=True, inplace=True)
