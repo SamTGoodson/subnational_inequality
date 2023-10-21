@@ -1,7 +1,3 @@
-install.packages('lme4')
-install.packages('emmeans')
-install.packages('lmerTest')
-
 library(tidyverse)
 library(tidymodels)
 library(plm)
@@ -11,6 +7,7 @@ library(janitor)
 library(lme4)
 library(emmeans)
 library(lmerTest)
+library(lmtest)
 
 france_manifesto <- read.csv('C:/Users/samtg/github/subnational_inequality/data/cleaned/national/france_manifesto.csv')
 multi_country <- read.csv('C:/Users/samtg/github/subnational_inequality/data/cleaned/national/joined_electoral_lissy.csv')
@@ -74,7 +71,13 @@ multi_country <- multi_country %>%
 multi_country <- multi_country %>%
   left_join(mp, by = c("country_name" = "countryname","year" = "year","dataset_party_id" = "party"))
 
-tail(multi_country)
+
+dim(multi_country)
+str(multi_country)
+summary(multi_country)
+head(multi_country)
+sum(is.na(multi_country))
+
 
 # Calculate percent NA in rile for each country
 multi_country%>%
@@ -100,6 +103,17 @@ highest_vote <- france_manifesto %>%
 highest_vote_m <- multi_country%>%
   group_by(cleaned_region_x, year) %>%
   filter(perc_vote == max(perc_vote)) %>%
+  ungroup()
+colnames(multi_country)
+colnames(highest_vote_m)
+# Same thing with tiebreaker and an averaging for years with multiple elections (eg. Spain 2019)
+highest_vote_m <- multi_country %>%
+  group_by(cleaned_region_x, year, party_english) %>%
+  mutate(avg_perc_vote = mean(perc_vote, na.rm = TRUE)) %>%
+  ungroup() %>%
+  group_by(cleaned_region_x, year) %>%
+  filter(avg_perc_vote == max(avg_perc_vote)) %>%
+  slice_head(n = 1) %>%
   ungroup()
 
 
@@ -141,3 +155,108 @@ tabyl(socdem_sum)
 
 random_model3 <- lmer(socdem_sum ~ interp_gini * interp_ed + (1|country_name) + (1|year), data = highest_vote_m)
 summary(random_model3)
+
+
+head(multi_country)
+
+# Explore immigration codes 
+highest_vote_m %>%
+drop_na(per608,per608_1,per608_2,per608_3)%>%
+select(per608,per608_1,per608_2,per608_3)%>%
+head()
+
+# Create a new var that is the sum of anti_immigrant categories, treating NAs as zeros
+highest_vote_m$imm_sum <- rowSums(highest_vote_m[,c('per608','per601')], na.rm = TRUE)
+
+simpile_im_model <- lm(imm_sum ~ interp_gini + delta_gini + factor(country_name) + factor(year), data = highest_vote_m)
+summary(simpile_im_model)
+
+# Make a model with fixed country and year effects
+random_im_model <- lmer(imm_sum ~ interp_gini + delta_gini + (1|country_name) + (1|year), data = highest_vote_m)
+summary(random_im_model)
+# Now with random slopes for interp_gini
+random_im_model2 <- lmer(imm_sum ~ interp_gini + delta_gini + (interp_gini|country_name) + (1|year), data = highest_vote_m)
+summary(random_im_model2)
+
+
+highest_vote_m_p <- pdata.frame(highest_vote_m, index = c("cleaned_region_x", "year"))
+
+fixed_im_model <- plm(imm_sum ~ interp_gini + delta_gini, data = highest_vote_m_p, model = "within")
+summary(fixed_im_model)
+
+random_im_model_plm <- plm(imm_sum ~ interp_gini + delta_gini, data = highest_vote_m_p, model = "random")
+summary(random_im_model_plm)
+
+phtest(fixed_im_model, random_im_model_plm)
+
+
+fixed_im_model <- plm(imm_sum ~ interp_gini + delta_gini + imm_sum * factor(country_name), data = highest_vote_m_p, model = "within")
+summary(fixed_im_model)
+
+fixed_im_model <- plm(imm_sum ~ interp_gini + delta_gini + imm_sum:factor(country_name), data = highest_vote_m_p, model = "within")
+summary(fixed_im_model)
+
+ols_model <- lm(imm_sum ~ interp_gini + delta_gini + imm_sum * factor(country_name), data = highest_vote_m)
+summary(ols_model)
+
+# Plot the interactions
+highest_vote_m%>%
+ggplot(aes(x = delta_gini, y = imm_sum, color = country_name)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_wrap(~country_name, ncol = 2)+
+  theme_minimal()
+
+
+highest_vote_m %>%
+  ggplot(aes(x = interp_im, y = imm_sum, color = country_name, 
+             label = paste(cleaned_region_x, year, party_english, sep = "-"))) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  geom_text(nudge_y = 0.5, check_overlap = TRUE) +
+  facet_wrap(~country_name, ncol = 2) +
+  theme_minimal()
+
+
+colnames(multi_country)
+multi_country%>%
+  tabyl(parfam)
+
+# Make new vars for analysis
+change_df <- highest_vote_m %>%
+
+  arrange(cleaned_region_x, year) %>%
+  group_by(cleaned_region_x, year) %>%
+  mutate(change_in_parfam = if_else(lag(parfam) != parfam & !is.na(lag(parfam)), 1, 0, missing = 0))
+
+change_df %>%
+tabyl(change_in_parfam)
+
+highest_vote_m %>%
+  group_by(cleaned_region_x,year,parfam) %>%
+  mutate(lag_parfam = lag(parfam, order_by = year)) %>%
+  ungroup() %>%
+  select(cleaned_region_x, year, parfam, lag_parfam)
+
+party_family <- highest_vote_m %>%
+  group_by(cleaned_region_x,year,parfam) %>%
+  pivot_wider(names_from = parfam, values_from = perc_vote) %>%
+  rename(nationalist = `70`, socialist = `20`)
+
+parfam_ols <- lm(socialist ~ interp_im + interp_gini * factor(country_name) + delta_gini, data = party_family)
+summary(parfam_ols)
+
+
+party_family%>%
+ggplot(aes(x = interp_gini, y = nationalist, color = country_name)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  facet_wrap(~country_name, ncol = 2)+
+  theme_minimal()
+
+# Try and get a var for change in parfam by region and year 
+highest_vote_m %>%
+  mutate(lag_parfam = lag(parfam, order_by = c(cleaned_region_x,year)))%>%
+  select(cleaned_region_x, year, parfam, lag_parfam)
+
+ 
