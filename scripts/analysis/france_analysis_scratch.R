@@ -117,7 +117,7 @@ highest_vote_m <- multi_country %>%
   ungroup()
 
 
-panel_data <- pdata.frame(highest_vote_m,index = c('country_name','year'))
+panel_data <- pdata.frame(highest_vote_m,index = c('cleaned_region_x','year'))
 
 fixed_model <- plm(rile ~ avg_gini, data = panel_data, model = "within")
 summary(fixed_model)
@@ -168,8 +168,54 @@ head()
 # Create a new var that is the sum of anti_immigrant categories, treating NAs as zeros
 highest_vote_m$imm_sum <- rowSums(highest_vote_m[,c('per608','per601')], na.rm = TRUE)
 
-simpile_im_model <- lm(imm_sum ~ interp_gini + delta_gini + factor(country_name) + factor(year), data = highest_vote_m)
-summary(simpile_im_model)
+#create the same var in multi_country
+multi_country$imm_sum <- rowSums(multi_country[,c('per608','per601')], na.rm = TRUE)
+#create new var perc_im that multiplies im_sum by perc_vote
+multi_country$perc_im <- multi_country$imm_sum * multi_country$perc_vote
+#rollup multi_year by region and year with the sum of perc_im
+multi_year <- multi_country %>%
+  group_by(country_name,cleaned_region_x, year) %>%
+  summarize(perc_im = sum(perc_im, na.rm = TRUE),
+  interp_gini = mean(interp_gini, na.rm = TRUE),
+  interp_im = mean(interp_im, na.rm = TRUE)) %>%
+  ungroup()
+
+# calculate z-score for perc_im
+multi_year$z_perc_im <- scale(multi_year$perc_im)  
+
+# Create a new var that is the sum of per403 per404 per406 per409 per412 per415 per504 and per701, treating NAs as zeros
+highest_vote_m$socdem_sum <- rowSums(highest_vote_m[,c('per403','per404','per406','per409','per412','per415','per504','per701')], na.rm = TRUE)
+#create teh same var in multi_country
+multi_country$socdem_sum <- rowSums(multi_country[,c('per403','per404','per406','per409','per412','per415','per504','per701')], na.rm = TRUE)
+#create new var perc_socdem that multiplies socdem_sum by perc_vote
+multi_country$perc_socdem <- multi_country$socdem_sum * multi_country$perc_vote
+#rollup multi_year by region and year with the sum of perc_socdem
+multi_year_soc <- multi_country %>%
+  group_by(country_name,cleaned_region_x, year) %>%
+  summarize(perc_socdem = sum(perc_socdem, na.rm = TRUE),
+  interp_gini = mean(interp_gini, na.rm = TRUE),
+  interp_im = mean(interp_im, na.rm = TRUE)) %>%
+  ungroup()
+
+# calculate z-score for perc_socdem
+multi_year_soc$z_perc_socdem <- scale(multi_year_soc$perc_socdem)
+
+# Run a simple ols model with fixed year and country effects with multi_year with perc_im as the DV and interp_gini and interp_im as the IVs
+fixed_model3 <- lm(z_perc_im ~ interp_gini + interp_im + factor(country_name) + factor(year), data = multi_year)
+summary(fixed_model3)
+
+# Run a simple ols model with fixed year and country effects with multi_year_soc with perc_socdem as the DV and interp_gini and interp_im as the IVs
+fixed_model4 <- lm(z_perc_socdem ~ interp_gini + interp_im + factor(country_name) + factor(year), data = multi_year_soc)
+summary(fixed_model4)
+
+
+# Trying to make bar chart
+pdata <- pdata.frame(multi_year, index = c("cleaned_region_x", "year"))
+panel_model <- plm(z_perc_im ~ interp_gini + interp_im + factor(year) + 
+                   country_name:interp_gini, 
+                   data = pdata, 
+                   model = "random")
+
 
 # Make a model with fixed country and year effects
 random_im_model <- lmer(imm_sum ~ interp_gini + delta_gini + (1|country_name) + (1|year), data = highest_vote_m)
@@ -259,4 +305,15 @@ highest_vote_m %>%
   mutate(lag_parfam = lag(parfam, order_by = c(cleaned_region_x,year)))%>%
   select(cleaned_region_x, year, parfam, lag_parfam)
 
- 
+highest_vote_m %>%
+select(country,cleaned_region_x,year,partyvote,parfam)%>%
+head()
+
+highest_vote_m %>%
+  select(country, cleaned_region_x, year, partyvote, parfam) %>%
+  group_by(cleaned_region_x) %>%
+  arrange(year) %>%
+  mutate(vote_change = ifelse(parfam != lag(parfam, default = parfam[1]), 1, 0)) %>%
+  ungroup() %>%
+  filter(cleaned_region_x == 'abruzzo') %>%
+  head()

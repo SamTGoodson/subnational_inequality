@@ -1,0 +1,68 @@
+---
+title: "multi_country_analysis"
+author: "Sam Goodson"
+date: "2023-11-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r libraries, include=FALSE}
+library(tidyverse)
+library(tidymodels)
+library(plm)
+library(languageserver)
+library(lubridate)
+library(janitor)
+library(lme4)
+library(emmeans)
+library(lmerTest)
+library(lmtest)
+```
+
+```{r dfs, include=FALSE}
+france_manifesto <- read.csv('C:/Users/samtg/github/subnational_inequality/data/cleaned/national/france_manifesto.csv')
+multi_country <- read.csv('C:/Users/samtg/github/subnational_inequality/data/cleaned/national/joined_electoral_lissy.csv')
+mp <- read.csv('data/raw/parties/manifesto_full.csv')
+crosswalk<-read.csv('data/raw/crosswalks/manif_cross.csv')
+ches <- read.csv('data/raw/parties/ches.csv')
+```
+
+
+```{r join, echo= FALSE}
+mp$year <- year(dmy(mp$edate))
+multi_country <- multi_country %>% 
+  filter(country_name != "Belgium")
+# Join crosswalk to multi_country on partyfacts_id
+multi_country <- multi_country %>% 
+  left_join(crosswalk, by = c("partyfacts_id" = "partyfacts_id"))
+
+#Join mp to multi_country on year, country, and partyname
+multi_country <- multi_country %>%
+  left_join(mp, by = c("country_name" = "countryname","year" = "year","dataset_party_id" = "party"))
+
+```
+
+
+```{r clean}
+multi_country <- multi_country %>% 
+  drop_na(rile,interp_gini)
+
+multi_country <- multi_country %>%
+  mutate(perc_vote = (partyvote/totalvote)*100)
+
+```
+
+```{r}
+highest_vote_m <- multi_country %>%
+  group_by(cleaned_region_x, year, party_english) %>%
+  mutate(avg_perc_vote = mean(perc_vote, na.rm = TRUE)) %>%
+  ungroup() %>%
+  group_by(cleaned_region_x, year) %>%
+  filter(avg_perc_vote == max(avg_perc_vote)) %>%
+  slice_head(n = 1) %>%
+  ungroup()
+```
+
