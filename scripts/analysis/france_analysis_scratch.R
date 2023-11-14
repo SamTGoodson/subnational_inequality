@@ -8,13 +8,21 @@ library(lme4)
 library(emmeans)
 library(lmerTest)
 library(lmtest)
+library(stargazer)
+library(ggtext)
+library(broom)
+library(ggrepel)        
+library(MetBrewer) 
+
+
 
 france_manifesto <- read.csv('C:/Users/samtg/github/subnational_inequality/data/cleaned/national/france_manifesto.csv')
 multi_country <- read.csv('C:/Users/samtg/github/subnational_inequality/data/cleaned/national/joined_electoral_lissy.csv')
 mp <- read.csv('data/raw/parties/manifesto_full.csv')
 crosswalk<-read.csv('data/raw/crosswalks/manif_cross.csv')
 ches <- read.csv('data/raw/parties/ches.csv')
-
+multi_country <- read.csv("C:/Users/samtg/github/subnational_inequality/data/cleaned/national/updated_multi_country.csv")
+getwd()
 # Get Crosswalk
 file_name <- "partyfacts-mapping.csv"
 if( ! file_name %in% list.files()) {
@@ -317,3 +325,246 @@ highest_vote_m %>%
   ungroup() %>%
   filter(cleaned_region_x == 'abruzzo') %>%
   head()
+
+colnames(multi_country)
+write.csv(multi_country, 'data/cleaned/national/multi_country.csv')
+
+theme_mfx <- function() {
+  theme_minimal(base_family = "IBM Plex Sans Condensed") +
+    theme(panel.grid.minor = element_blank(),
+          plot.background = element_rect(fill = "white", color = NA),
+          plot.title = element_text(face = "bold"),
+          axis.title = element_text(face = "bold"),
+          strip.text = element_text(face = "bold"),
+          strip.background = element_rect(fill = "grey80", color = NA),
+          legend.title = element_text(face = "bold"))
+}
+
+# Make labels use IBM Plex Sans by default
+update_geom_defaults("label", 
+                     list(family = "IBM Plex Sans Condensed"))
+update_geom_defaults(ggtext::GeomRichText, 
+                     list(family = "IBM Plex Sans Condensed"))
+update_geom_defaults("label_repel", 
+                     list(family = "IBM Plex Sans Condensed"))
+
+# Use the Johnson color palette
+clrs <- met.brewer("Johnson")
+
+nice_number <- label_number(style_negative = "minus", accuracy = 0.01)
+nice_p <- label_pvalue(prefix = c("p < ", "p = ", "p > "))
+
+
+model_1 <- plm(z_perc_socdem ~ z_perc_socdem_lag + interp_gini + 
+               unemployment + immig, 
+               data = soc_panel, 
+               model = "within")
+
+model_2 <- plm(z_perc_socdem ~ z_perc_socdem_lag + interp_ed  +
+               unemployment + immig, 
+               data = soc_panel, 
+               model = "within")
+model_3 <- plm(z_perc_socdem ~ z_perc_socdem_lag + interp_im  +
+               unemployment + immig, 
+               data = soc_panel, 
+               model = "within")
+model_4 <- plm(z_perc_socdem ~ z_perc_socdem_lag + wage_ratio + 
+               unemployment + immig, 
+               data = soc_panel, 
+               model = "within")  
+model_5 <- plm(z_perc_socdem ~ z_perc_socdem_lag + interp_gini + interp_ed + interp_im + wage_ratio +  
+               unemployment + immig,
+               data = soc_panel,
+               model = "within")              
+
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/z_perc_socdem.html')
+
+model_1 <- plm(z_perc_im ~ z_perc_im_lag + interp_gini + 
+                 unemployment + immig, 
+               data = im_panel, 
+               model = "within")
+
+model_2 <- plm(z_perc_im ~ z_perc_im_lag + interp_ed  +
+                 unemployment + immig, 
+               data = im_panel, 
+               model = "within")
+model_3 <- plm(z_perc_im ~ z_perc_im_lag + interp_im  +
+                 unemployment + immig, 
+               data = im_panel, 
+               model = "within")
+model_4 <- plm(z_perc_im ~ z_perc_im_lag + wage_ratio + 
+                 unemployment + immig, 
+               data = im_panel, 
+               model = "within")  
+model_5 <- plm(z_perc_im ~ z_perc_im_lag + interp_gini + interp_ed + interp_im + wage_ratio +  
+                 unemployment + immig,
+               data = im_panel,
+               model = "within")              
+
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/z_perc_im.html')
+
+
+model_1 <- plm(rile ~ rile_lag + interp_avg_gini + 
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+
+model_2 <- plm(rile ~ rile_lag + interp_ed_ratio  +
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+model_3 <- plm(rile ~ rile_lag + interp_im_ratio  +
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+model_4 <- plm(rile ~ rile_lag + interp_wage_ratio + 
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")  
+model_5 <- plm(rile ~ rile_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+                 interp_unemployment + interp_immig,
+               data = hv_panel,
+               model = "within")              
+
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/rile.html')
+
+panel_regressions <- function(var,lag_var){
+  model_1 <- plm(var ~ lag_var + interp_avg_gini + 
+                   interp_unemployment + interp_immig, 
+                 data = hv_panel, 
+                 model = "within")
+  
+  model_2 <- plm(var ~ lag_var + interp_ed_ratio  +
+                   interp_unemployment + interp_immig, 
+                 data = hv_panel, 
+                 model = "within")
+  model_3 <- plm(var ~ lag_var + interp_im_ratio  +
+                   interp_unemployment + interp_immig, 
+                 data = hv_panel, 
+                 model = "within")
+  model_4 <- plm(var ~ lag_var + interp_wage_ratio + 
+                   interp_unemployment + interp_immig, 
+                 data = hv_panel, 
+                 model = "within")  
+  model_5 <- plm(var ~ lag_var + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+                   interp_unemployment + interp_immig,
+                 data = hv_panel,
+                 model = "within")              
+  
+  stargazer(model_1, model_2, model_3, model_4, model_5, type = 'html', out = paste0('data/output/', var, '.html'))
+}
+
+panel_regressions('z_socdem_sum','z_socdem_sum_lag')
+
+
+model_1 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_avg_gini + 
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+
+model_2 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_ed_ratio  +
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+model_3 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_im_ratio  +
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+model_4 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_wage_ratio + 
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")  
+model_5 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+                 interp_unemployment + interp_immig,
+               data = hv_panel,
+               model = "within")              
+
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/z_socdem_sum.html')
+
+model_1 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_avg_gini + 
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+
+model_2 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_ed_ratio  +
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+model_3 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_im_ratio  +
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+model_4 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_wage_ratio + 
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")  
+model_5 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+                 interp_unemployment + interp_immig,
+               data = hv_panel,
+               model = "within")              
+
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/z_socdem_sum.html')
+
+model_1 <- plm(welfare ~ welfare_lag + interp_avg_gini + 
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+
+model_2 <- plm(welfare ~ welfare_lag + interp_ed_ratio  +
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+model_3 <- plm(welfare ~ welfare_lag + interp_im_ratio  +
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+model_4 <- plm(welfare ~ welfare_lag + interp_wage_ratio + 
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")  
+model_5 <- plm(welfare ~ welfare_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+                 interp_unemployment + interp_immig,
+               data = hv_panel,
+               model = "within")              
+
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/welfare.html')
+
+model_1 <- plm(markeco ~ markeco_lag + interp_avg_gini + 
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+
+model_2 <- plm(markeco ~ markeco_lag + interp_ed_ratio  +
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+model_3 <- plm(markeco ~ markeco_lag + interp_im_ratio  +
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+model_4 <- plm(markeco ~ markeco_lag + interp_wage_ratio + 
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")  
+model_5 <- plm(markeco ~ markeco_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+                 interp_unemployment + interp_immig,
+               data = hv_panel,
+               model = "within")              
+
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/markeco.html')
+
+
+#Try to visualize 
+tidied<-model_5 %>%
+  tidy(conf.int = TRUE)%>%
+  mutate(nice_slope = nice_number(estimate))
+
+ggplot(tidied, aes(x = estimate, y = term, color = term)) +
+  geom_vline(xintercept = 0, linewidth = 0.5, linetype = "24", color = clrs[1]) +
+  geom_pointrange(aes(xmin = conf.low, xmax = conf.high)) +
+  geom_label(aes(label = nice_slope), nudge_y = 0.3) +
+  labs(x = "Marginal effect (percentage points)", y = NULL) +
+  scale_color_manual(values = c(clrs[4], clrs[1], clrs[2],clrs[3],clrs[5],clrs[4],clrs[1]), guide = "none") +
+  theme_mfx()
+
+pdwtest(model_5)

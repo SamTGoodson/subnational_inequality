@@ -24,10 +24,17 @@ library(lmtest)
 
 ```{r dfs, include=FALSE}
 france_manifesto <- read.csv('C:/Users/samtg/github/subnational_inequality/data/cleaned/national/france_manifesto.csv')
-multi_country <- read.csv('C:/Users/samtg/github/subnational_inequality/data/cleaned/national/joined_electoral_lissy.csv')
-mp <- read.csv('data/raw/parties/manifesto_full.csv')
-crosswalk<-read.csv('data/raw/crosswalks/manif_cross.csv')
-ches <- read.csv('data/raw/parties/ches.csv')
+multi_country <- read.csv("C:/Users/samtg/github/subnational_inequality/data/cleaned/national/updated_multi_country.csv")
+mp <- read.csv('C:/Users/samtg/github/subnational_inequality/data/raw/parties/manifesto_full.csv')
+crosswalk<-read.csv('C:/Users/samtg/github/subnational_inequality/data/raw/crosswalks/manif_cross.csv')
+```
+
+```{r}
+getwd()
+```
+
+```{r dfs, include=FALSE}
+ches <- read.csv('C:/Users/samtg/github/subnational_inequality/data/raw/parties/ches.csv')
 ```
 
 
@@ -57,12 +64,64 @@ multi_country <- multi_country %>%
 
 ```{r}
 highest_vote_m <- multi_country %>%
-  group_by(cleaned_region_x, year, party_english) %>%
+  group_by(region, year, party_english) %>%
   mutate(avg_perc_vote = mean(perc_vote, na.rm = TRUE)) %>%
   ungroup() %>%
-  group_by(cleaned_region_x, year) %>%
+  group_by(region, year) %>%
   filter(avg_perc_vote == max(avg_perc_vote)) %>%
   slice_head(n = 1) %>%
   ungroup()
+```
+
+```{r,warning=FALSE}
+# Create a new var that is the sum of anti_immigrant categories, treating NAs as zeros
+highest_vote_m$imm_sum <- rowSums(highest_vote_m[,c('per608','per601')], na.rm = TRUE)
+
+#create the same var in multi_country
+multi_country$imm_sum <- rowSums(multi_country[,c('per608','per601')], na.rm = TRUE)
+#create new var perc_im that multiplies im_sum by perc_vote
+multi_country$perc_im <- multi_country$imm_sum * multi_country$perc_vote
+#rollup multi_year by region and year with the sum of perc_im
+multi_country_im <- multi_country %>%
+  group_by(country_name,region, year) %>%
+  summarize(perc_im = sum(perc_im, na.rm = TRUE),
+  unemployment = mean(unemployment, na.rm = TRUE),
+  wage_ratio = mean(wage_ratio, na.rm = TRUE),
+  immig = mean(immig, na.rm = TRUE),
+  interp_gini = mean(interp_gini, na.rm = TRUE),
+  interp_im = mean(interp_im, na.rm = TRUE)) %>%
+  ungroup()
+
+# calculate z-score for perc_im
+multi_country_im$z_perc_im <- scale(multi_country_im$perc_im)  
+```
+
+
+```{r,warning=FALSE}
+# Create a new var that is the sum of per403 per404 per406 per409 per412 per415 per504 and per701, treating NAs as zeros
+highest_vote_m$socdem_sum <- rowSums(highest_vote_m[,c('per403','per404','per406','per409','per412','per415','per504','per701')], na.rm = TRUE)
+#create teh same var in multi_country
+multi_country$socdem_sum <- rowSums(multi_country[,c('per403','per404','per406','per409','per412','per415','per504','per701')], na.rm = TRUE)
+#create new var perc_socdem that multiplies socdem_sum by perc_vote
+multi_country$perc_socdem <- multi_country$socdem_sum * multi_country$perc_vote
+#rollup multi_year by region and year with the sum of perc_socdem
+multi_year_soc <- multi_country %>%
+  group_by(country_name,region, year) %>%
+  summarize(perc_socdem = sum(perc_socdem, na.rm = TRUE),
+  unemployment = mean(unemployment, na.rm = TRUE),
+  wage_ratio = mean(wage_ratio, na.rm = TRUE),
+  immig = mean(immig, na.rm = TRUE),
+  interp_gini = mean(interp_gini, na.rm = TRUE),
+  interp_im = mean(interp_im, na.rm = TRUE)) %>%
+  ungroup()
+
+# calculate z-score for perc_socdem
+multi_year_soc$z_perc_socdem <- scale(multi_year_soc$perc_socdem)
+```
+
+```{r}
+hv_panel <- pdata.frame(highest_vote_m,index = c('region','year'))
+soc_panel <- pdata.frame(multi_year_soc,index = c('region','year'))
+im_panel <- pdata.frame(multi_country_im,index = c('region','year'))
 ```
 
