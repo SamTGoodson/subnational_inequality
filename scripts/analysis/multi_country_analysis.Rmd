@@ -27,20 +27,16 @@ library(ggrepel)
 library(MetBrewer) 
 ```
 
-```{r dfs, include=FALSE}
-france_manifesto <- read.csv('C:/Users/samtg/github/subnational_inequality/data/cleaned/national/france_manifesto.csv')
-multi_country <- read.csv("C:/Users/samtg/github/subnational_inequality/data/cleaned/national/updated_multi_country.csv")
-mp <- read.csv('C:/Users/samtg/github/subnational_inequality/data/raw/parties/manifesto_full.csv')
-crosswalk<-read.csv('C:/Users/samtg/github/subnational_inequality/data/raw/crosswalks/manif_cross.csv')
-```
-
 ```{r}
 getwd()
 ```
 
+
 ```{r dfs, include=FALSE}
-ches <- read.csv('C:/Users/samtg/github/subnational_inequality/data/raw/parties/ex_ches.csv')
-ches_crosswalk<-read.csv('C:/Users/samtg/github/subnational_inequality/data/raw/crosswalks/ches_pfid_manifesto.csv')
+france_manifesto <- read.csv("data/cleaned/national/updated_multi_country.csv")
+multi_country <- read.csv("data/cleaned/national/updated_multi_country.csv")
+mp <- read.csv('data/raw/parties/manifesto_full.csv')
+crosswalk<-read.csv('data/raw/crosswalks/manif_cross.csv')
 ```
 
 
@@ -165,6 +161,64 @@ highest_vote_m$z_welplan <- scale(highest_vote_m$welplan)
 ```
 
 
+```{r,markeco}
+multi_country$perc_markeco <- multi_country$markeco * multi_country$perc_vote
+#rollup multi_year by region and year with the sum of perc_socdem
+multi_country_markeco <- multi_country %>%
+  group_by(country_name,region, year) %>%
+  summarize(perc_markeco = sum(perc_markeco, na.rm = TRUE),
+  unemployment = mean(interp_unemployment, na.rm = TRUE),
+  wage_ratio = mean(interp_wage_ratio, na.rm = TRUE),
+  immig = mean(interp_immig, na.rm = TRUE),
+  interp_gini = mean(interp_avg_gini, na.rm = TRUE),
+  interp_im = mean(interp_im_ratio, na.rm = TRUE),
+  interp_ed = mean(interp_ed_ratio, na.rm = TRUE)) %>%
+  ungroup()
+
+# calculate z-score
+multi_country_markeco$z_perc_markeco <- scale(multi_country_markeco$perc_markeco)
+
+multi_country_markeco<-multi_country_markeco%>%
+  group_by(region) %>%
+  arrange(year) %>%
+  mutate(z_perc_markeco_lag = dplyr::lag(z_perc_markeco, 1))
+
+multi_country_markeco$immig_ratio <- multi_country_markeco$immig * 100000
+multi_country_markeco$unemployment_ratio <- multi_country_markeco$unemployment * 100
+
+```
+
+
+```{r,cultural left}
+multi_country$perc_cl <- rowSums(multi_country[,c('per503','per607','per604')], na.rm = TRUE)
+highest_vote_m$cl <- rowSums(highest_vote_m[,c('per503','per607','per604')], na.rm = TRUE)
+#rollup multi_year by region and year with the sum of perc_socdem
+multi_country_cl <- multi_country %>%
+  group_by(country_name,region, year) %>%
+  summarize(perc_cl = sum(perc_cl, na.rm = TRUE),
+  unemployment = mean(interp_unemployment, na.rm = TRUE),
+  wage_ratio = mean(interp_wage_ratio, na.rm = TRUE),
+  immig = mean(interp_immig, na.rm = TRUE),
+  interp_gini = mean(interp_avg_gini, na.rm = TRUE),
+  interp_im = mean(interp_im_ratio, na.rm = TRUE),
+  interp_ed = mean(interp_ed_ratio, na.rm = TRUE)) %>%
+  ungroup()
+
+# calculate z-score
+multi_country_cl$z_perc_cl <- scale(multi_country_cl$perc_cl)
+highest_vote_m$z_cl <- scale(highest_vote_m$cl)
+
+multi_country_cl<-multi_country_cl%>%
+  group_by(region) %>%
+  arrange(year) %>%
+  mutate(z_perc_cl_lag = dplyr::lag(z_perc_cl, 1))
+
+multi_country_cl$immig_ratio <- multi_country_cl$immig * 100000
+multi_country_cl$unemployment_ratio <- multi_country_cl$unemployment * 100
+```
+
+
+
 
 ```{r}
 highest_vote_m <- highest_vote_m%>%
@@ -191,6 +245,7 @@ highest_vote_m <- var_lag(highest_vote_m,'z_im_sum')
 highest_vote_m <- var_lag(highest_vote_m,'welfare')
 highest_vote_m <- var_lag(highest_vote_m,'markeco')
 highest_vote_m <- var_lag(highest_vote_m,'z_welplan')
+highest_vote_m <- var_lag(highest_vote_m,'z_cl')
 ```
 
 ```{r}
@@ -247,8 +302,72 @@ hv_panel <- pdata.frame(highest_vote_m,index = c('region','year'))
 soc_panel <- pdata.frame(multi_year_soc,index = c('region','year'))
 im_panel <- pdata.frame(multi_country_im,index = c('region','year'))
 welpan <- pdata.frame(multi_year_welpan,index = c('region','year'))
+markpan <- pdata.frame(multi_country_markeco,index = c('region','year'))
+cl_pan <- pdata.frame(multi_country_cl,index = c('region','year'))
 ```
 
+
+The models in the two tables in the paper 
+
+```{r}
+model_rile <- plm(rile ~ rile_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+                 unemployment_ratio + interp_immig_ratio,
+               data = hv_panel,
+               model = "within")  
+
+model_socdem <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+                 unemployment_ratio + interp_immig_ratio,
+               data = hv_panel,
+               model = "within")   
+
+model_markeco <- plm(markeco ~ markeco_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+                 unemployment_ratio + interp_immig_ratio,
+               data = hv_panel,
+               model = "within") 
+
+model_im <- plm(z_im_sum ~ z_im_sum_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+                 unemployment_ratio + interp_immig_ratio,
+               data = hv_panel,
+               model = "within")   
+
+
+stargazer(model_rile,model_socdem,model_markeco,model_im,type='html',out='data/output/sum.html',
+          dep.var.labels = c('Rile','Socialst','Market Eco','Anti-Immigrant'), covariate.labels = c('Rile Lag','Socialst Lag','Market Eco Lag',
+                                                                                                    'Anti-Immigrant Lag',
+                                                                        'Gini','Education Ratio',
+                                                                        'Immigration Ratio','Manufacturing Wage',
+                                                                        'Unemployment','Immigrants per 100k'),
+          omit.stat=c("LL","ser","f"), no.space=TRUE)
+
+
+ 
+pan_soc <- plm(z_perc_socdem ~ z_perc_socdem_lag + interp_gini + interp_ed + interp_im + wage_ratio +  
+                 unemployment + immig_ratio,
+               data = soc_panel,
+               model = "within")
+pan_im <- plm(z_perc_im ~ z_perc_im_lag + interp_gini + interp_ed + interp_im + wage_ratio +  
+                 unemployment + immig_ratio,
+               data = im_panel,
+               model = "within")  
+pan_mark <- plm(z_perc_markeco ~ z_perc_markeco_lag + interp_gini + interp_ed + interp_im + wage_ratio +  
+                 unemployment + immig_ratio,
+               data = markpan,
+               model = "within")   
+
+stargazer(pan_soc,pan_im,pan_mark,type='html',out='data/output/sum2.html',
+          dep.var.labels = c('Socialst','Anti-Immigrant','Market Eco'), covariate.labels = c('Socialst Lag','Anti-Immigrant Lag','Market Eco Lag',
+                                                                                                    
+                                                                                                    'Gini','Education Ratio',
+                                                                                                    'Immigration Ratio','Manufacturing Wage',
+                                                                                                    'Unemployment','Immigrants per 100k'),
+          omit.stat=c("LL","ser","f"), no.space=TRUE)
+
+pdwtest(pan_soc)
+```
+
+
+
+Other models, visualization, and scratch work. 
 
 
 ```{r}

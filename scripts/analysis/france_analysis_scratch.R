@@ -15,8 +15,9 @@ library(ggrepel)
 library(MetBrewer) 
 library(gt)
 library(sf)
+library(webshot2)
 
-
+install.packages('webshot2')
 
 france_manifesto <- read.csv('C:/Users/samtg/github/subnational_inequality/data/cleaned/national/france_manifesto.csv')
 multi_country <- read.csv('C:/Users/samtg/github/subnational_inequality/data/cleaned/national/joined_electoral_lissy.csv')
@@ -428,7 +429,11 @@ model_5 <- plm(rile ~ rile_lag + interp_avg_gini + interp_ed_ratio + interp_im_r
                data = hv_panel,
                model = "within")              
 
-stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/rile.html')
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/rile.html',
+          dep.var.labels = 'Rile', covariate.labels = c('Rile Lag','Gini','Education Ratio',
+                                                                        'Immigration Ratio','Manufacturing Wage',
+                                                                        'Unemployment','Immigrants per 100k'),
+          omit.stat=c("LL","ser","f"), no.space=TRUE)
 
 
 
@@ -526,7 +531,11 @@ model_5 <- plm(markeco ~ markeco_lag + interp_avg_gini + interp_ed_ratio + inter
                data = hv_panel,
                model = "within")              
 
-stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/markeco.html')
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/markeco.html',
+          dep.var.labels = 'Market Economy Score', covariate.labels = c('Markeco Lag','Gini','Education Ratio',
+                                                                        'Immigration Ratio','Manufacturing Wage',
+                                                                        'Unemployment','Immigrants per 100k'),
+          omit.stat=c("LL","ser","f"), no.space=TRUE)
 
 
 
@@ -579,11 +588,107 @@ model_5 <- plm(z_perc_welpan ~ z_perc_welpan_lag + interp_gini + interp_ed + int
 
 stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/z_welplan.html')
 
+model_1 <- plm(z_perc_markeco ~ z_perc_markeco_lag + interp_gini + 
+                 unemployment + immig_ratio, 
+               data = markpan, 
+               model = "within")
 
+model_2 <- plm(z_perc_markeco ~ z_perc_markeco_lag + interp_ed  +
+                 unemployment + immig_ratio, 
+               data = markpan, 
+               model = "within")
+model_3 <- plm(z_perc_markeco ~ z_perc_markeco_lag + interp_im  +
+                 unemployment + immig_ratio, 
+               data = markpan, 
+               model = "within")
+model_4 <- plm(z_perc_markeco ~ z_perc_markeco_lag + wage_ratio + 
+                 unemployment + immig_ratio, 
+               data = markpan, 
+               model = "within")  
+model_5 <- plm(z_perc_markeco ~ z_perc_markeco_lag + interp_gini + interp_ed + interp_im + wage_ratio +  
+                 unemployment + immig_ratio,
+               data = markpan,
+               model = "within")              
+
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/z_markpan.html')
+
+
+model_1 <- plm(z_im_sum ~ z_im_sum_lag + interp_avg_gini + 
+                 unemployment_ratio + interp_immig_ratio, 
+               data = hv_panel, 
+               model = "within")
+
+model_2 <- plm(z_im_sum ~ z_im_sum_lag + interp_ed_ratio  +
+                 unemployment_ratio + interp_immig_ratio, 
+               data = hv_panel, 
+               model = "within")
+model_3 <- plm(z_im_sum ~ z_im_sum_lag + interp_im_ratio  +
+                 unemployment_ratio + interp_immig_ratio, 
+               data = hv_panel, 
+               model = "within")
+model_4 <- plm(z_im_sum ~ z_im_sum_lag + interp_wage_ratio + 
+                 unemployment_ratio + interp_immig_ratio, 
+               data = hv_panel, 
+               model = "within")  
+model_5 <- plm(z_im_sum ~ z_im_sum_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+                 unemployment_ratio + interp_immig_ratio,
+               data = hv_panel,
+               model = "within")              
+
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/hv_z_im_sum.html')
+
+model_1 <- plm(z_perc_cl ~ z_perc_cl_lag + interp_gini +   
+                 unemployment + immig_ratio, 
+               data = cl_pan, 
+               model = "within")
+
+model_2 <- plm(z_perc_cl ~ z_perc_cl_lag + interp_ed  +   
+                 unemployment + immig_ratio, 
+               data = cl_pan, 
+               model = "within")
+model_3 <- plm(z_perc_cl ~ z_perc_cl_lag + interp_im +   
+                 unemployment + immig_ratio,  
+               data = cl_pan, 
+               model = "within")
+model_4 <- plm(z_perc_cl ~ z_perc_cl_lag +  wage_ratio +  
+                 unemployment + immig_ratio, 
+               data = cl_pan, 
+               model = "within")  
+model_5 <- plm(z_perc_cl ~ z_perc_cl_lag + interp_gini + interp_ed + interp_im + wage_ratio +  
+                 unemployment + immig_ratio, 
+               data = cl_pan,
+               model = "within")              
+
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/z_perc_cl_lag.html')
+
+model_1 <- plm(z_cl ~ z_cl_lag + interp_avg_gini + 
+                 unemployment_ratio + interp_immig_ratio, 
+               data = hv_panel, 
+               model = "within")
+
+model_2 <- plm(z_cl ~ z_cl_lag + interp_ed_ratio  +
+                 unemployment_ratio + interp_immig_ratio, 
+               data = hv_panel, 
+               model = "within")
+model_3 <- plm(z_cl ~ z_cl_lag + interp_im_ratio  +
+                 unemployment_ratio + interp_immig_ratio, 
+               data = hv_panel, 
+               model = "within")
+model_4 <- plm(z_cl ~ z_cl_lag + interp_wage_ratio + 
+                 unemployment_ratio + interp_immig_ratio, 
+               data = hv_panel, 
+               model = "within")  
+model_5 <- plm(z_cl ~ z_cl_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+                 unemployment_ratio + interp_immig_ratio,
+               data = hv_panel,
+               model = "within")              
+
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/hv_cl.html')
 
 
 
 #Try to visualize 
+#Markeco
 tidied<-model_5 %>%
   tidy(conf.int = TRUE, conf.level = 0.9)%>%
   mutate(nice_slope = nice_number(estimate))
@@ -612,6 +717,8 @@ ggplot(tidied, aes(x = estimate, y = nice_term, color = term)) +
   theme_mfx()
 
 
+# Rile
+
 tidied_rile<-model_5 %>%
   tidy(conf.int = TRUE, conf.level = 0.9)%>%
   mutate(nice_slope = nice_number(estimate))
@@ -637,20 +744,19 @@ ggplot(tidied_rile, aes(x = estimate, y = nice_term, color = term)) +
   geom_vline(xintercept = 0, linewidth = 0.5, linetype = "24", color = clrs[1]) +
   geom_pointrange(aes(xmin = conf.low, xmax = conf.high)) +
   geom_label(aes(label = nice_slope), nudge_y = 0.3) +
-  labs(title = "Winning Party's Market Rile Score", subtitle = '90 Percent Confidence Intervals',x = NULL, y = NULL) +
+  labs(title = "Winning Party's Rile Score", subtitle = '90 Percent Confidence Intervals',x = NULL, y = NULL) +
   scale_color_manual(values = c(clrs[4], clrs[1], clrs[2],clrs[3],clrs[5],clrs[4],clrs[1]), guide = "none") +
   theme_mfx()
 
 
-
-socdem_rile<-model_5 %>%
+#z_perc_socdem
+tidied_socdem<-model_5 %>%
   tidy(conf.int = TRUE, conf.level = 0.9)%>%
   mutate(nice_slope = nice_number(estimate))
 
-socdem_rile
 
 name_mapping <- c(
-  "z_perc_socdem_lag" = "Lagged Rile",
+  "z_perc_socdem_lag" = "Lagged Soc",
   "interp_avg_gini" = "Average Gini",
   "interp_ed_ratio" = "Education Ratio",
   "interp_im_ratio" = "Immigrant Wage Ratio",
@@ -659,7 +765,7 @@ name_mapping <- c(
   "interp_immig_ratio" = "Immigrats per 100k"
 )
 
-tidied_rile <- tidied_rile %>%
+tidied_socdem <- tidied_socdem %>%
   mutate(nice_term = name_mapping[as.character(term)])
 
 
@@ -668,10 +774,9 @@ ggplot(tidied_rile, aes(x = estimate, y = nice_term, color = term)) +
   geom_vline(xintercept = 0, linewidth = 0.5, linetype = "24", color = clrs[1]) +
   geom_pointrange(aes(xmin = conf.low, xmax = conf.high)) +
   geom_label(aes(label = nice_slope), nudge_y = 0.3) +
-  labs(title = "Winning Party's Market Rile Score", subtitle = '90 Percent Confidence Intervals',x = NULL, y = NULL) +
+  labs(title = "Winning Party's Socialist Score", subtitle = '90 Percent Confidence Intervals',x = NULL, y = NULL) +
   scale_color_manual(values = c(clrs[4], clrs[1], clrs[2],clrs[3],clrs[5],clrs[4],clrs[1]), guide = "none") +
   theme_mfx()
-
 
 
 
@@ -684,7 +789,7 @@ hv_panel%>%
 
 
 highest_vote_m%>%
-  ggplot(aes(x=interp_immig,y=rile,color = factor(country_name)))+
+  ggplot(aes(x=interp_im_ratio,y=markeco,color = factor(country_name)))+
   geom_smooth(method='lm')+
   theme_minimal()
 
@@ -696,3 +801,29 @@ highest_vote_m%>%
 
 eu_map <- read_sf('C:/Users/samtg/github/subnational_inequality/data/raw/shaperfiles')
 head(eu_map)
+
+
+coverage_summary <- multi_country %>%
+  group_by(country_name) %>%
+  summarise(unique_regions = n_distinct(region),
+            years_list = toString(sort(unique(year))),
+            total_distinct_parties = n_distinct(party_abbreviation)) %>%
+  ungroup()
+
+coverage_table<-coverage_summary %>%
+  gt() %>%
+  tab_header(
+    title = "Dataset Coverage"
+  ) %>%
+  cols_label(
+    country_name = "Country",
+    unique_regions = "Regions",
+    years_list = "Years",
+    total_distinct_parties = "Count of Total Political Parties"
+  )
+
+gtsave(coverage_table,'C:/Users/samtg/github/subnational_inequality/data/output/table.png')
+
+multi_country %>%
+  filter(country_name == "Italy") %>%
+  tabyl(party_abbreviation)
