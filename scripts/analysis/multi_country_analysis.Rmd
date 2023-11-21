@@ -20,6 +20,11 @@ library(lme4)
 library(emmeans)
 library(lmerTest)
 library(lmtest)
+library(stargazer)
+library(ggtext)
+library(broom)
+library(ggrepel)        
+library(MetBrewer) 
 ```
 
 ```{r dfs, include=FALSE}
@@ -34,7 +39,8 @@ getwd()
 ```
 
 ```{r dfs, include=FALSE}
-ches <- read.csv('C:/Users/samtg/github/subnational_inequality/data/raw/parties/ches.csv')
+ches <- read.csv('C:/Users/samtg/github/subnational_inequality/data/raw/parties/ex_ches.csv')
+ches_crosswalk<-read.csv('C:/Users/samtg/github/subnational_inequality/data/raw/crosswalks/ches_pfid_manifesto.csv')
 ```
 
 
@@ -55,7 +61,7 @@ multi_country <- multi_country %>%
 
 ```{r clean}
 multi_country <- multi_country %>% 
-  drop_na(rile,interp_gini)
+  drop_na(rile,interp_avg_gini)
 
 multi_country <- multi_country %>%
   mutate(perc_vote = (partyvote/totalvote)*100)
@@ -73,6 +79,13 @@ highest_vote_m <- multi_country %>%
   ungroup()
 ```
 
+```{r}
+soc_panel%>%
+  filter(region == 'abruzzo')%>%
+  select(country_name,region,year,z_perc_socdem)
+```
+
+
 ```{r,warning=FALSE}
 # Create a new var that is the sum of anti_immigrant categories, treating NAs as zeros
 highest_vote_m$imm_sum <- rowSums(highest_vote_m[,c('per608','per601')], na.rm = TRUE)
@@ -85,19 +98,25 @@ multi_country$perc_im <- multi_country$imm_sum * multi_country$perc_vote
 multi_country_im <- multi_country %>%
   group_by(country_name,region, year) %>%
   summarize(perc_im = sum(perc_im, na.rm = TRUE),
-  unemployment = mean(unemployment, na.rm = TRUE),
-  wage_ratio = mean(wage_ratio, na.rm = TRUE),
-  immig = mean(immig, na.rm = TRUE),
-  interp_gini = mean(interp_gini, na.rm = TRUE),
-  interp_im = mean(interp_im, na.rm = TRUE)) %>%
+  unemployment = mean(interp_unemployment, na.rm = TRUE),
+  wage_ratio = mean(interp_wage_ratio, na.rm = TRUE),
+  immig = mean(interp_immig, na.rm = TRUE),
+  interp_gini = mean(interp_avg_gini, na.rm = TRUE),
+  interp_im = mean(interp_im_ratio, na.rm = TRUE),
+  interp_ed = mean(interp_ed_ratio, na.rm = TRUE)) %>%
   ungroup()
 
 # calculate z-score for perc_im
-multi_country_im$z_perc_im <- scale(multi_country_im$perc_im)  
 ```
 
 
 ```{r,warning=FALSE}
+multi_country_im$z_perc_im <- scale(multi_country_im$perc_im)  
+highest_vote_m$z_im_sum <- scale(highest_vote_m$imm_sum)
+```
+
+
+```{r,soc,warning=FALSE}
 # Create a new var that is the sum of per403 per404 per406 per409 per412 per415 per504 and per701, treating NAs as zeros
 highest_vote_m$socdem_sum <- rowSums(highest_vote_m[,c('per403','per404','per406','per409','per412','per415','per504','per701')], na.rm = TRUE)
 #create teh same var in multi_country
@@ -108,20 +127,276 @@ multi_country$perc_socdem <- multi_country$socdem_sum * multi_country$perc_vote
 multi_year_soc <- multi_country %>%
   group_by(country_name,region, year) %>%
   summarize(perc_socdem = sum(perc_socdem, na.rm = TRUE),
-  unemployment = mean(unemployment, na.rm = TRUE),
-  wage_ratio = mean(wage_ratio, na.rm = TRUE),
-  immig = mean(immig, na.rm = TRUE),
-  interp_gini = mean(interp_gini, na.rm = TRUE),
-  interp_im = mean(interp_im, na.rm = TRUE)) %>%
+  unemployment = mean(interp_unemployment, na.rm = TRUE),
+  wage_ratio = mean(interp_wage_ratio, na.rm = TRUE),
+  immig = mean(interp_immig, na.rm = TRUE),
+  interp_gini = mean(interp_avg_gini, na.rm = TRUE),
+  interp_im = mean(interp_im_ratio, na.rm = TRUE),
+  interp_ed = mean(interp_ed_ratio, na.rm = TRUE)) %>%
   ungroup()
 
 # calculate z-score for perc_socdem
 multi_year_soc$z_perc_socdem <- scale(multi_year_soc$perc_socdem)
+highest_vote_m$z_socdem_sum <- scale(highest_vote_m$socdem_sum)
 ```
+
+```{r,welplan,warning=FALSE}
+# Create a new var that is the sum of per403 per404 per406 per409 per412 per415 per504 and per701, treating NAs as zeros
+highest_vote_m$welplan <- rowSums(highest_vote_m[,c('welfare','planeco')], na.rm = TRUE)
+#create teh same var in multi_country
+multi_country$welplan <- rowSums(multi_country[,c('welfare','planeco')], na.rm = TRUE)
+#create new var perc_socdem that multiplies socdem_sum by perc_vote
+multi_country$perc_welplan <- multi_country$welplan * multi_country$perc_vote
+#rollup multi_year by region and year with the sum of perc_socdem
+multi_year_welpan <- multi_country %>%
+  group_by(country_name,region, year) %>%
+  summarize(perc_welplan = sum(perc_welplan, na.rm = TRUE),
+  unemployment = mean(interp_unemployment, na.rm = TRUE),
+  wage_ratio = mean(interp_wage_ratio, na.rm = TRUE),
+  immig = mean(interp_immig, na.rm = TRUE),
+  interp_gini = mean(interp_avg_gini, na.rm = TRUE),
+  interp_im = mean(interp_im_ratio, na.rm = TRUE),
+  interp_ed = mean(interp_ed_ratio, na.rm = TRUE)) %>%
+  ungroup()
+
+# calculate z-score for perc_socdem
+multi_year_welpan$z_perc_welpan <- scale(multi_year_welpan$perc_welplan)
+highest_vote_m$z_welplan <- scale(highest_vote_m$welplan)
+```
+
+
+
+```{r}
+highest_vote_m <- highest_vote_m%>%
+  group_by(region)%>%
+  arrange(year)%>%
+  mutate()
+```
+
+```{r}
+
+var_lag <- function(df, var) {
+  var_lag_name <- paste0(var, '_lag')
+  df %>%
+    group_by(region) %>%
+    arrange(year) %>%
+    mutate(!!var_lag_name := dplyr::lag(.data[[var]], 1))
+}
+```
+
+```{r}
+highest_vote_m <- var_lag(highest_vote_m,'rile')
+highest_vote_m <- var_lag(highest_vote_m,'z_socdem_sum')
+highest_vote_m <- var_lag(highest_vote_m,'z_im_sum')
+highest_vote_m <- var_lag(highest_vote_m,'welfare')
+highest_vote_m <- var_lag(highest_vote_m,'markeco')
+highest_vote_m <- var_lag(highest_vote_m,'z_welplan')
+```
+
+```{r}
+# Make a ratio
+highest_vote_m$interp_immig_ratio <- highest_vote_m$interp_immig * 100000
+multi_year_soc$immig_ratio <- multi_year_soc$immig * 100000
+multi_country_im$immig_ratio <- multi_country_im$immig * 100000
+multi_year_welpan$immig_ratio <- multi_year_welpan$immig * 100000
+```
+
+
+```{r}
+highest_vote_m$unemployment_ratio <- highest_vote_m$interp_unemployment * 100
+multi_year_soc$unemployment_ratio <- multi_year_soc$unemployment * 100
+multi_country_im$unemployment_ratio <- multi_country_im$unemployment * 100
+multi_year_welpan$unemployment_ratio <- multi_year_welpan$unemployment * 100
+```
+
+
+```{r}
+highest_vote_m <- highest_vote_m %>%
+  group_by(region) %>%
+  arrange(year) %>%
+  mutate(rile_lag = dplyr::lag(rile, 1))
+```
+
+
+
+```{r}
+multi_country_im<-multi_country_im%>%
+  group_by(region) %>%
+  arrange(year) %>%
+  mutate(z_perc_im_lag = dplyr::lag(z_perc_im, 1))
+```
+
+
+```{r}
+multi_year_soc<- multi_year_soc %>%
+  group_by(region) %>%
+  arrange(year) %>%
+  mutate(z_perc_socdem_lag = dplyr::lag(z_perc_socdem, 1))
+```
+
+```{r}
+multi_year_welpan<- multi_year_welpan %>%
+  group_by(region) %>%
+  arrange(year) %>%
+  mutate(z_perc_welpan_lag = dplyr::lag(z_perc_welpan, 1))
+```
+
 
 ```{r}
 hv_panel <- pdata.frame(highest_vote_m,index = c('region','year'))
 soc_panel <- pdata.frame(multi_year_soc,index = c('region','year'))
 im_panel <- pdata.frame(multi_country_im,index = c('region','year'))
+welpan <- pdata.frame(multi_year_welpan,index = c('region','year'))
+```
+
+
+
+```{r}
+model_1 <- plm(z_perc_socdem ~ z_perc_socdem_lag + interp_gini + interp_ed + interp_im + 
+                 unemployment + wage_ratio + immig, 
+                data = soc_panel, 
+                model = "within")
+summary(model_1)
+```
+
+
+
+```{r}
+model_2 <- plm(z_perc_im ~ z_perc_im_lag + interp_gini + interp_ed + interp_im + 
+                 unemployment + wage_ratio + immig, 
+                data = im_panel, 
+                model = "random")
+summary(model_2)
+```
+
+
+
+```{r}
+model_1 <- plm(z_perc_socdem ~ z_perc_socdem_lag + interp_gini + 
+               unemployment + immig, 
+               data = soc_panel, 
+               model = "within")
+
+model_2 <- plm(z_perc_socdem ~ z_perc_socdem_lag + interp_ed  +
+               unemployment + immig, 
+               data = soc_panel, 
+               model = "within")
+model_3 <- plm(z_perc_socdem ~ z_perc_socdem_lag + interp_im  +
+               unemployment + immig, 
+               data = soc_panel, 
+               model = "within")
+model_4 <- plm(z_perc_socdem ~ z_perc_socdem_lag + wage_ratio + 
+               unemployment + immig, 
+               data = soc_panel, 
+               model = "within")  
+model_5 <- plm(z_perc_socdem ~ z_perc_socdem_lag + interp_gini + interp_ed + interp_im + wage_ratio +  
+               unemployment + immig,
+               data = soc_panel,
+               model = "within")              
+
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/cleaned/national/model_tables.html')
+```
+
+
+```{r}
+
+model_1 <- plm(rile ~ rile_lag + interp_avg_gini + 
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+
+model_2 <- plm(rile ~ rile_lag + interp_ed_ratio  +
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+model_3 <- plm(rile ~ rile_lag + interp_im_ratio  +
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+model_4 <- plm(rile ~ rile_lag + interp_wage_ratio + 
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")  
+model_5 <- plm(rile ~ rile_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+                 interp_unemployment + interp_immig,
+               data = hv_panel,
+               model = "within")              
+
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/rile.html')
+
+```
+
+
+```{r}
+model_1 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_avg_gini + 
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+
+model_2 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_ed_ratio  +
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+model_3 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_im_ratio  +
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")
+model_4 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_wage_ratio + 
+                 interp_unemployment + interp_immig, 
+               data = hv_panel, 
+               model = "within")  
+model_5 <- plm(z_socdem_sum ~ z_socdem_sum_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+                 interp_unemployment + interp_immig,
+               data = hv_panel,
+               model = "within")              
+
+stargazer(model_1,model_2,model_3,model_4,model_5,type='html',out='data/output/z_socdem_sum.html')
+
+```
+
+```{r}
+tidied<-model_5 %>%
+  tidy(conf.int = TRUE)%>%
+  mutate(nice_slope = nice_number(estimate))
+```
+
+
+```{r}
+theme_mfx <- function() {
+  theme_minimal(base_family = "IBM Plex Sans Condensed") +
+    theme(panel.grid.minor = element_blank(),
+          plot.background = element_rect(fill = "white", color = NA),
+          plot.title = element_text(face = "bold"),
+          axis.title = element_text(face = "bold"),
+          strip.text = element_text(face = "bold"),
+          strip.background = element_rect(fill = "grey80", color = NA),
+          legend.title = element_text(face = "bold"))
+}
+
+# Make labels use IBM Plex Sans by default
+update_geom_defaults("label", 
+                     list(family = "IBM Plex Sans Condensed"))
+update_geom_defaults(ggtext::GeomRichText, 
+                     list(family = "IBM Plex Sans Condensed"))
+
+clrs <- met.brewer("Johnson")
+
+nice_number <- label_number(style_negative = "minus", accuracy = 0.01)
+nice_p <- label_pvalue(prefix = c("p < ", "p = ", "p > "))
+
+```
+
+
+
+
+```{r}
+ggplot(tidied, aes(x = estimate, y = term, color = term)) +
+  geom_vline(xintercept = 0, linewidth = 0.5, linetype = "24", color = clrs[1]) +
+  geom_pointrange(aes(xmin = conf.low, xmax = conf.high)) +
+  geom_label(aes(label = nice_slope), nudge_y = 0.3) +
+  labs(x = "Marginal effect (percentage points)", y = NULL) +
+  scale_color_manual(values = c(clrs[4], clrs[1], clrs[2],clrs[3],clrs[5],clrs[4],clrs[1]), guide = "none") +
+  theme_mfx()
+
 ```
 
