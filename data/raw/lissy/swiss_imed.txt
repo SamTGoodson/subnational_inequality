@@ -1,0 +1,140 @@
+    file  region                    year im_ratio ed_ratio
+    <chr> <chr>                    <int>    <dbl>    <dbl>
+  1 ch00h [1]Région lémanique       2000    1.01     0.684
+  2 ch00h [2]Espace Mittelland      2000    1.09     0.738
+  3 ch00h [3]Nordwestschweiz        2000    1.14     0.754
+  4 ch00h [4]Zürich                 2000    1.22     0.668
+  5 ch00h [5]Ostschweiz             2000    1.01     0.702
+  6 ch00h [6]Zentralschweiz         2000    1.11     0.739
+  7 ch00h [7]Ticino                 2000    0.961    0.809
+  8 ch02h [1]Région lémanique       2002    1.16     0.673
+  9 ch02h [2]Espace Mittelland      2002    1.05     0.717
+ 10 ch02h [3]Nordwestschweiz        2002    1.35     0.719
+ 11 ch02h [4]Zürich                 2002    1.18     0.756
+ 12 ch02h [5]Ostschweiz             2002    1.17     0.651
+ 13 ch02h [6]Zentralschweiz         2002    1.16     0.621
+ 14 ch02h [7]Ticino                 2002    1.24     0.674
+ 15 ch04h [1]Région lémanique       2004    1.19     0.751
+ 16 ch04h [2]Espace Mittelland      2004    1.15     0.733
+ 17 ch04h [3]Nordwestschweiz        2004    1.02     0.843
+ 18 ch04h [4]Zürich                 2004    1.13     0.656
+ 19 ch04h [5]Ostschweiz             2004    1.20     0.756
+ 20 ch04h [6]Zentralschweiz         2004    1.18     0.692
+ 21 ch04h [7]Ticino                 2004    1.05     0.706
+ 22 ch06h [1]Région lémanique       2006    1.03     0.678
+ 23 ch06h [2]Espace Mittelland      2006    1.13     0.676
+ 24 ch06h [3]Nordwestschweiz        2006    1.27     0.741
+ 25 ch06h [4]Zürich                 2006    1.15     0.776
+ 26 ch06h [5]Ostschweiz             2006    1.18     0.726
+ 27 ch06h [6]Zentralschweiz         2006    1.09     0.679
+ 28 ch06h [7]Ticino                 2006    1.15     0.601
+ 29 ch07h [1]Région lémanique       2007    1.07     0.673
+ 30 ch07h [2]Espace Mittelland      2007    1.10     0.721
+ 31 ch07h [3]Nordwestschweiz        2007    1.21     0.753
+ 32 ch07h [4]Zürich                 2007    1.14     0.659
+ 33 ch07h [5]Ostschweiz             2007    1.25     0.730
+ 34 ch07h [6]Zentralschweiz         2007    1.13     0.663
+ 35 ch07h [7]Ticino                 2007    1.05     0.699
+ 36 ch08h [1]Région lémanique       2008    0.996    0.690
+ 37 ch08h [2]Espace Mittelland      2008    1.07     0.679
+ 38 ch08h [3]Nordwestschweiz        2008    1.25     0.687
+ 39 ch08h [4]Zürich                 2008    1.17     0.625
+ 40 ch08h [5]Ostschweiz             2008    1.23     0.714
+ 41 ch08h [6]Zentralschweiz         2008    1.04     0.683
+ 42 ch08h [7]Ticino                 2008    1.20     0.684
+ 43 ch09h [1]Région lémanique       2009    0.944    0.661
+ 44 ch09h [2]Espace Mittelland      2009    1.13     0.721
+ 45 ch09h [3]Nordwestschweiz        2009    1.02     0.849
+ 46 ch09h [4]Zürich                 2009    1.01     0.640
+ 47 ch09h [5]Ostschweiz             2009    1.15     0.673
+ 48 ch09h [6]Zentralschweiz         2009    1.11     0.653
+ 49 ch09h [7]Ticino                 2009    1.15     0.745
+ 50 ch10h [1]Région lémanique       2010    0.895    0.629
+ 51 ch10h [2]Espace Mittelland      2010    1.09     0.655
+ 52 ch10h [3]Nordwestschweiz        2010    1.13     0.736
+ 53 ch10h [4]Zürich                 2010    1.06     0.645
+ 54 ch10h [5]Ostschweiz             2010    1.12     0.724
+ 55 ch10h [6]Zentralschweiz         2010    1.04     0.650
+ 56 ch10h [7]Ticino                 2010    1.15     0.669
+ 57 ch11h [1]Région lémanique       2011    0.995    0.644
+ 58 ch11h [2]Espace Mittelland      2011    1.14     0.650
+ 59 ch11h [3]Nordwestschweiz        2011    1.08     0.734
+ 60 ch11h [4]Zürich                 2011    1.07     0.731
+ 61 ch11h [5]Ostschweiz             2011    1.05     0.718
+ 62 ch11h [6]Zentralschweiz         2011    0.985    0.624
+ 63 ch11h [7]Ticino                 2011    1.10     0.578
+ 64 ch12h [1]Région lémanique       2012    0.989    0.689
+ 65 ch12h [2]Espace Mittelland      2012    1.06     0.727
+ 66 ch12h [3]Nordwestschweiz        2012    1.02     0.720
+ 67 ch12h [4]Zürich                 2012    1.08     0.723
+ 68 ch12h [5]Ostschweiz             2012    1.05     0.726
+ 69 ch12h [6]Zentralschweiz         2012    0.817    0.626
+ 70 ch12h [7]Ticino                 2012    1.02     0.679
+ 71 ch13h [1]Région lémanique       2013    1.04     0.811
+ 72 ch13h [2]Espace Mittelland      2013    1.11     0.809
+ 73 ch13h [3]Nordwestschweiz        2013    1.11     0.802
+ 74 ch13h [4]Zürich                 2013    1.11     0.813
+ 75 ch13h [5]Ostschweiz             2013    1.16     0.712
+ 76 ch13h [6]Zentralschweiz         2013    0.809    0.682
+ 77 ch13h [7]Ticino                 2013    1.28     0.655
+ 78 ch14h [1]Région lémanique       2014    1.09     0.831
+ 79 ch14h [2]Espace Mittelland      2014    1.05     0.853
+ 80 ch14h [3]Nordwestschweiz        2014    0.987    0.819
+ 81 ch14h [4]Zürich                 2014    1.13     0.813
+ 82 ch14h [5]Ostschweiz             2014    1.15     0.782
+ 83 ch14h [6]Zentralschweiz         2014    0.949    0.756
+ 84 ch14h [7]Ticino                 2014    1.19     0.739
+ 85 ch15h [1]Région lémanique       2015    1.08     0.797
+ 86 ch15h [2]Espace Mittelland      2015    1.06     0.836
+ 87 ch15h [3]Nordwestschweiz        2015    1.05     0.831
+ 88 ch15h [4]Zürich                 2015    1.11     0.809
+ 89 ch15h [5]Ostschweiz             2015    1.12     0.898
+ 90 ch15h [6]Zentralschweiz         2015    0.963    0.653
+ 91 ch15h [7]Ticino                 2015    1.16     0.735
+ 92 ch16h [1]Région lémanique       2016    1.07     0.820
+ 93 ch16h [2]Espace Mittelland      2016    1.05     0.823
+ 94 ch16h [3]Nordwestschweiz        2016    1.11     0.796
+ 95 ch16h [4]Zürich                 2016    1.01     0.851
+ 96 ch16h [5]Ostschweiz             2016    1.14     0.855
+ 97 ch16h [6]Zentralschweiz         2016    0.847    0.672
+ 98 ch16h [7]Ticino                 2016    1.10     0.776
+ 99 ch17h [1]Région lémanique       2017    0.922    0.775
+100 ch17h [2]Espace Mittelland      2017    1.09     0.860
+101 ch17h [3]Nordwestschweiz        2017    1.15     0.816
+102 ch17h [4]Zürich                 2017    1.04     0.819
+103 ch17h [5]Ostschweiz             2017    1.12     0.829
+104 ch17h [6]Zentralschweiz         2017    1.16     0.756
+105 ch17h [7]Ticino                 2017    1.00     0.823
+106 ch18h [1]Région lémanique       2018    1.03     0.768
+107 ch18h [2]Espace Mittelland      2018    1.09     0.850
+108 ch18h [3]Nordwestschweiz        2018    1.18     0.890
+109 ch18h [4]Zürich                 2018    1.02     0.841
+110 ch18h [5]Ostschweiz             2018    1.07     0.907
+111 ch18h [6]Zentralschweiz         2018    1.09     0.734
+112 ch18h [7]Ticino                 2018    0.931    0.777
+113 ch92h [1]Aargau                 1992    1.04     0.792
+114 ch92h [10]Graubunden            1992    1.41     0.721
+115 ch92h [11]Jura                  1992    1.23     0.628
+116 ch92h [12]Luzern                1992    1.36     0.503
+117 ch92h [13]Neuenburg             1992    1.01     0.862
+118 ch92h [14]Nidwalden             1992    1.25     0.826
+119 ch92h [15]Obwalden              1992   NA        0.427
+120 ch92h [16]Sankt Gallen          1992    1.24     0.716
+121 ch92h [17]Schaffhausen          1992    1.05     0.808
+122 ch92h [18]Solothurn             1992    1.47     0.443
+123 ch92h [19]Schwyz                1992    1.60     0.724
+124 ch92h [2]Appenzell Innerhoden   1992    1.09     1.70 
+125 ch92h [20]Thurgau               1992    1.06     0.563
+126 ch92h [21]Tessin                1992    1.65     0.477
+127 ch92h [22]Uri                   1992    1.10     0.807
+128 ch92h [23]Waadt                 1992    1.20     0.601
+129 ch92h [24]Wallis                1992    1.14     0.634
+130 ch92h [25]Zug                   1992    1.71     0.570
+131 ch92h [26]Zurich                1992    1.29     0.618
+132 ch92h [3]Appenzell Ausserhoden  1992    0.717    0.706
+133 ch92h [4]Bern                   1992    1.02     0.443
+134 ch92h [5]Basel Land             1992    0.975    0.612
+135 ch92h [6]Basel Stadt            1992    1.09     0.829
+136 ch92h [7]Freiburg               1992    1.12     0.563
+137 ch92h [8]Genf                   1992    1.06     0.854
+138 ch92h [9]Glarus                 1992    0.835    0.710

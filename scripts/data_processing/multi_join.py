@@ -9,13 +9,13 @@ import pycountry
 import warnings 
 from unidecode import unidecode
 
-electoral_folder_relative = os.path.join('..', '..', 'data', 'raw','national_election','eu_ned_national_nuts2(1).csv')
+electoral_folder_relative = os.path.join('..', '..', 'data', 'raw','national_election','eu_ned_national_nuts2.csv')
 electoral_data_path = os.path.abspath(electoral_folder_relative)
 
 ineq_folder_relative = os.path.join('..', '..', 'data', 'raw','lissy','multination_gini.txt')
 inequality_data_path = os.path.abspath(ineq_folder_relative)
 
-results_folder_relative = os.path.join('..', '..', 'data', 'cleaned','national','joined_electoral_lissy.csv')
+results_folder_relative = os.path.join('..', '..', 'data', 'cleaned','national','new_multijoin.csv')
 results_data_path = os.path.abspath(results_folder_relative)
 
 ineq_im_ed_folder_relative = os.path.join('..', '..', 'data', 'raw', 'lissy', 'multination_im_ed.txt')
@@ -217,7 +217,7 @@ def make_join_df(df_inequality, election_df):
                             "interp_avg_gini", "interp_im_ratio", "interp_ed_ratio", "interp_unemployment", "interp_immig",
                             'interp_wage_ratio','delta_ed', 'avg_ed_period', 'party_abbreviation', 'party_english', 
                             'party_native', 'partyfacts_id',
-                            'partyvote', 'electorate', 'totalvote', 'validvote']]
+                            'partyvote', 'electorate', 'totalvote', 'validvote','nuts2']]
     
     joined_data.rename(columns={'cleaned_region_x': 'region'}, inplace=True)
 

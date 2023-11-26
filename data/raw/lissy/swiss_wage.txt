@@ -1,0 +1,93 @@
+   file  region                year wage_ratio
+   <chr> <chr>                <int>      <dbl>
+ 1 ch06h [1]Région lémanique   2006      1.01 
+ 2 ch06h [2]Espace Mittelland  2006      1.08 
+ 3 ch06h [3]Nordwestschweiz    2006      0.998
+ 4 ch06h [4]Zürich             2006      1.05 
+ 5 ch06h [5]Ostschweiz         2006      1.08 
+ 6 ch06h [6]Zentralschweiz     2006      1.10 
+ 7 ch06h [7]Ticino             2006      0.834
+ 8 ch07h [1]Région lémanique   2007      1.04 
+ 9 ch07h [2]Espace Mittelland  2007      1.07 
+10 ch07h [3]Nordwestschweiz    2007      1.02 
+11 ch07h [4]Zürich             2007      1.00 
+12 ch07h [5]Ostschweiz         2007      1.03 
+13 ch07h [6]Zentralschweiz     2007      0.976
+14 ch07h [7]Ticino             2007      0.812
+15 ch08h [1]Région lémanique   2008      1.03 
+16 ch08h [2]Espace Mittelland  2008      1.11 
+17 ch08h [3]Nordwestschweiz    2008      1.00 
+18 ch08h [4]Zürich             2008      1.07 
+19 ch08h [5]Ostschweiz         2008      1.04 
+20 ch08h [6]Zentralschweiz     2008      1.03 
+21 ch08h [7]Ticino             2008      1.15 
+22 ch09h [1]Région lémanique   2009      1.02 
+23 ch09h [2]Espace Mittelland  2009      1.15 
+24 ch09h [3]Nordwestschweiz    2009      1.05 
+25 ch09h [4]Zürich             2009      1.07 
+26 ch09h [5]Ostschweiz         2009      1.05 
+27 ch09h [6]Zentralschweiz     2009      1.06 
+28 ch09h [7]Ticino             2009      1.24 
+29 ch10h [1]Région lémanique   2010      1.12 
+30 ch10h [2]Espace Mittelland  2010      1.15 
+31 ch10h [3]Nordwestschweiz    2010      1.02 
+32 ch10h [4]Zürich             2010      1.02 
+33 ch10h [5]Ostschweiz         2010      1.08 
+34 ch10h [6]Zentralschweiz     2010      1.06 
+35 ch10h [7]Ticino             2010      1.38 
+36 ch11h [1]Région lémanique   2011      1.06 
+37 ch11h [2]Espace Mittelland  2011      1.08 
+38 ch11h [3]Nordwestschweiz    2011      1.05 
+39 ch11h [4]Zürich             2011      1.03 
+40 ch11h [5]Ostschweiz         2011      1.09 
+41 ch11h [6]Zentralschweiz     2011      1.03 
+42 ch11h [7]Ticino             2011      1.18 
+43 ch12h [1]Région lémanique   2012      1.12 
+44 ch12h [2]Espace Mittelland  2012      1.14 
+45 ch12h [3]Nordwestschweiz    2012      1.13 
+46 ch12h [4]Zürich             2012      1.10 
+47 ch12h [5]Ostschweiz         2012      1.13 
+48 ch12h [6]Zentralschweiz     2012      0.962
+49 ch12h [7]Ticino             2012      0.959
+50 ch13h [1]Région lémanique   2013      0.981
+51 ch13h [2]Espace Mittelland  2013      1.10 
+52 ch13h [3]Nordwestschweiz    2013      1.20 
+53 ch13h [4]Zürich             2013      0.981
+54 ch13h [5]Ostschweiz         2013      1.05 
+55 ch13h [6]Zentralschweiz     2013      1.08 
+56 ch13h [7]Ticino             2013      0.984
+57 ch14h [1]Région lémanique   2014      1.05 
+58 ch14h [2]Espace Mittelland  2014      1.06 
+59 ch14h [3]Nordwestschweiz    2014      1.23 
+60 ch14h [4]Zürich             2014      1.06 
+61 ch14h [5]Ostschweiz         2014      1.06 
+62 ch14h [6]Zentralschweiz     2014      1.00 
+63 ch14h [7]Ticino             2014      0.956
+64 ch15h [1]Région lémanique   2015      1.02 
+65 ch15h [2]Espace Mittelland  2015      1.07 
+66 ch15h [3]Nordwestschweiz    2015      1.17 
+67 ch15h [4]Zürich             2015      1.07 
+68 ch15h [5]Ostschweiz         2015      1.07 
+69 ch15h [6]Zentralschweiz     2015      0.938
+70 ch15h [7]Ticino             2015      1.52 
+71 ch16h [1]Région lémanique   2016      0.984
+72 ch16h [2]Espace Mittelland  2016      1.06 
+73 ch16h [3]Nordwestschweiz    2016      1.06 
+74 ch16h [4]Zürich             2016      1.01 
+75 ch16h [5]Ostschweiz         2016      1.16 
+76 ch16h [6]Zentralschweiz     2016      0.953
+77 ch16h [7]Ticino             2016      1.06 
+78 ch17h [1]Région lémanique   2017      0.981
+79 ch17h [2]Espace Mittelland  2017      1.09 
+80 ch17h [3]Nordwestschweiz    2017      1.10 
+81 ch17h [4]Zürich             2017      1.16 
+82 ch17h [5]Ostschweiz         2017      1.17 
+83 ch17h [6]Zentralschweiz     2017      0.891
+84 ch17h [7]Ticino             2017      1.01 
+85 ch18h [1]Région lémanique   2018      1.11 
+86 ch18h [2]Espace Mittelland  2018      1.08 
+87 ch18h [3]Nordwestschweiz    2018      0.927
+88 ch18h [4]Zürich             2018      0.957
+89 ch18h [5]Ostschweiz         2018      1.05 
+90 ch18h [6]Zentralschweiz     2018      1.08 
+91 ch18h [7]Ticino             2018      0.940

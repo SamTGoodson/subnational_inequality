@@ -75,13 +75,6 @@ highest_vote_m <- multi_country %>%
   ungroup()
 ```
 
-```{r}
-soc_panel%>%
-  filter(region == 'abruzzo')%>%
-  select(country_name,region,year,z_perc_socdem)
-```
-
-
 ```{r,warning=FALSE}
 # Create a new var that is the sum of anti_immigrant categories, treating NAs as zeros
 highest_vote_m$imm_sum <- rowSums(highest_vote_m[,c('per608','per601')], na.rm = TRUE)

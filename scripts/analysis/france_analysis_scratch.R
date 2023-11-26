@@ -19,12 +19,13 @@ library(webshot2)
 
 install.packages('webshot2')
 
-france_manifesto <- read.csv('C:/Users/samtg/github/subnational_inequality/data/cleaned/national/france_manifesto.csv')
-multi_country <- read.csv('C:/Users/samtg/github/subnational_inequality/data/cleaned/national/joined_electoral_lissy.csv')
+
+france_manifesto <- read.csv('subnational_inequality/data/cleaned/national/france_manifesto.csv')
+multi_country <- read.csv('subnational_inequality/data/cleaned/national/joined_electoral_lissy.csv')
 mp <- read.csv('data/raw/parties/manifesto_full.csv')
 crosswalk<-read.csv('data/raw/crosswalks/manif_cross.csv')
 ches <- read.csv('data/raw/parties/ches.csv')
-multi_country <- read.csv("C:/Users/samtg/github/subnational_inequality/data/cleaned/national/updated_multi_country.csv")
+multi_country <- read.csv("subnational_inequality/data/cleaned/national/updated_multi_country.csv")
 getwd()
 # Get Crosswalk
 file_name <- "partyfacts-mapping.csv"
@@ -522,11 +523,11 @@ model_3 <- plm(markeco ~ markeco_lag + interp_im_ratio  +
                  unemployment_ratio + interp_immig_ratio, 
                data = hv_panel, 
                model = "within")
-model_4 <- plm(markeco ~ markeco_lag + interp_wage_ratio + 
+model_4 <- plm(markeco ~ markeco_lag + interp_wage_ratio * 
                  unemployment_ratio + interp_immig_ratio, 
                data = hv_panel, 
                model = "within")  
-model_5 <- plm(markeco ~ markeco_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
+model_5 <- plm(markeco ~ markeco_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio *  
                  unemployment_ratio + interp_immig_ratio,
                data = hv_panel,
                model = "within")              
@@ -622,7 +623,7 @@ model_2 <- plm(z_im_sum ~ z_im_sum_lag + interp_ed_ratio  +
                  unemployment_ratio + interp_immig_ratio, 
                data = hv_panel, 
                model = "within")
-model_3 <- plm(z_im_sum ~ z_im_sum_lag + interp_im_ratio  +
+model_3 <- plm(z_im_sum ~ z_im_sum_lag + interp_im_ratio +
                  unemployment_ratio + interp_immig_ratio, 
                data = hv_panel, 
                model = "within")
@@ -631,7 +632,7 @@ model_4 <- plm(z_im_sum ~ z_im_sum_lag + interp_wage_ratio +
                data = hv_panel, 
                model = "within")  
 model_5 <- plm(z_im_sum ~ z_im_sum_lag + interp_avg_gini + interp_ed_ratio + interp_im_ratio + interp_wage_ratio +  
-                 unemployment_ratio + interp_immig_ratio,
+                 unemployment_ratio + interp_immig_ratio ,
                data = hv_panel,
                model = "within")              
 
